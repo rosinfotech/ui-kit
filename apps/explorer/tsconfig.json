@@ -1,0 +1,13 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "paths": {
+            "@/*": ["../../src/*"],
+            "@explorer/route-tree": ["./src/routeTree.gen.ts"],
+            "@explorer/*": ["./src/*"],
+            "@rosinfo.tech/ui-kit": ["../../src/index.ts"],
+            "@rosinfo.tech/ui-kit/*": ["../../src/*"]
+        }
+    },
+    "include": ["src"]
+}

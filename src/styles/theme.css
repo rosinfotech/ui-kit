@@ -1,0 +1,28 @@
+@theme inline {
+    --color-bg: var(--ui-color-bg);
+    --color-fg: var(--ui-color-fg);
+
+    --color-muted: var(--ui-color-muted);
+    --color-muted-fg: var(--ui-color-muted-fg);
+
+    --color-border: var(--ui-color-border);
+    --color-ring: var(--ui-color-ring);
+
+    --color-default: var(--ui-color-default);
+    --color-default-fg: var(--ui-color-default-fg);
+
+    --color-primary: var(--ui-color-primary);
+    --color-primary-fg: var(--ui-color-primary-fg);
+
+    --color-accent: var(--ui-color-accent);
+    --color-accent-fg: var(--ui-color-accent-fg);
+
+    --color-positive: var(--ui-color-positive);
+    --color-positive-fg: var(--ui-color-positive-fg);
+
+    --color-attention: var(--ui-color-attention);
+    --color-attention-fg: var(--ui-color-attention-fg);
+
+    --color-negative: var(--ui-color-negative);
+    --color-negative-fg: var(--ui-color-negative-fg);
+}

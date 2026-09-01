@@ -1,0 +1,57 @@
+:root {
+    --ui-color-bg: #ffffff;
+    --ui-color-fg: #0f172a;
+
+    --ui-color-muted: #f1f5f9;
+    --ui-color-muted-fg: #475569;
+
+    --ui-color-border: #e2e8f0;
+    --ui-color-ring: #2563eb;
+
+    --ui-color-default: #f1f5f9;
+    --ui-color-default-fg: #0f172a;
+
+    --ui-color-primary: #2563eb;
+    --ui-color-primary-fg: #ffffff;
+
+    --ui-color-accent: #7c3aed;
+    --ui-color-accent-fg: #ffffff;
+
+    --ui-color-positive: #16a34a;
+    --ui-color-positive-fg: #ffffff;
+
+    --ui-color-attention: #d97706;
+    --ui-color-attention-fg: #ffffff;
+
+    --ui-color-negative: #dc2626;
+    --ui-color-negative-fg: #ffffff;
+}
+
+.ui-dark {
+    --ui-color-bg: #0f172a;
+    --ui-color-fg: #f8fafc;
+
+    --ui-color-muted: #1e293b;
+    --ui-color-muted-fg: #94a3b8;
+
+    --ui-color-border: #334155;
+    --ui-color-ring: #3b82f6;
+
+    --ui-color-default: #1e293b;
+    --ui-color-default-fg: #f8fafc;
+
+    --ui-color-primary: #3b82f6;
+    --ui-color-primary-fg: #ffffff;
+
+    --ui-color-accent: #8b5cf6;
+    --ui-color-accent-fg: #ffffff;
+
+    --ui-color-positive: #22c55e;
+    --ui-color-positive-fg: #052e16;
+
+    --ui-color-attention: #f59e0b;
+    --ui-color-attention-fg: #431407;
+
+    --ui-color-negative: #ef4444;
+    --ui-color-negative-fg: #ffffff;
+}

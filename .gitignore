@@ -1,0 +1,8 @@
+.DS_Store
+.build/
+.playwright-mcp/
+coverage/
+dist/
+node_modules/
+*.local
+apps/explorer/src/routeTree.gen.ts

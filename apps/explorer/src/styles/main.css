@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@import "@rosinfo.tech/ui-kit/styles/theme.css";
+@import "@rosinfo.tech/ui-kit/styles/tokens.css";
+
+@source "../../../../src";
+@source "../";
+
+body {
+    @apply bg-bg text-fg antialiased;
+}

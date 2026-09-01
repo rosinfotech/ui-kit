@@ -1,0 +1,77 @@
+{
+    "name": "@rosinfo.tech/ui-kit",
+    "version": "0.1.0",
+    "description": "Rosinfotech UI Kit",
+    "type": "module",
+    "workspaces": [
+        "apps/*"
+    ],
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        },
+        "./styles.css": "./dist/styles.css"
+    },
+    "files": [
+        "dist"
+    ],
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "scripts": {
+        "build": "vite build && npm run build --workspace apps/explorer",
+        "dev": "npm run dev --workspace apps/explorer",
+        "format": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css}\"",
+        "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css}\"",
+        "husky:pre-commit": "",
+        "husky:pre-push": "npm run format:fix && npm run lint:fix && npm run type-check",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "prepare": "husky",
+        "type-check": "tsc --noEmit && npm run type-check --workspaces"
+    },
+    "peerDependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "dependencies": {
+        "@radix-ui/react-slot": "^1.2.3",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "tailwind-merge": "^3.3.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@rosinfo.tech/eslint-config-import": "^0.0.9",
+        "@rosinfo.tech/eslint-config-javascript": "^0.0.33",
+        "@rosinfo.tech/eslint-config-react": "^0.0.20",
+        "@rosinfo.tech/eslint-config-typescript": "^0.1.0",
+        "@rosinfo.tech/prettier-config-standard": "^0.0.12",
+        "@types/node": "^22.10.2",
+        "@types/react": "^19.2.7",
+        "@types/react-dom": "^19.2.3",
+        "eslint": "^10.8.1",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-import-resolver-typescript": "^4.4.4",
+        "eslint-plugin-import-x": "^4.17.1",
+        "globals": "^17.11.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^17.3.0",
+        "prettier": "^3.7.4",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "typescript": "~6.0.3",
+        "typescript-eslint": "^8.67.0",
+        "vite": "^7.3.6",
+        "vite-plugin-dts": "^4.5.4"
+    },
+    "engines": {
+        "node": ">=22.22.1",
+        "npm": ">=9.0.0"
+    }
+}
