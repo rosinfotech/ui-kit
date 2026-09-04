@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Отступы — DNA</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23080808'/%3E%3Ctext x='8' y='12' font-family='monospace' font-size='10' fill='%23DBDBDB' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"
+        />
+        <link rel="stylesheet" href="./assets/dna.css" />
+    </head>
+    <body>
+        <div class="layout">
+            <aside class="sidebar">
+                <a class="brand" href="./index.html">
+                    ДНК UI-Kit'а
+                    <small>Rosinfotech</small>
+                </a>
+                <nav class="nav">
+                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
+                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
+                    <a href="./spc.html" aria-current="page"
+                        >Отступы <span class="tag">SPC</span></a
+                    >
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
+                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
+                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
+                    <a href="./fty.html">Функц. типографика <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
+                </nav>
+            </aside>
+            <main class="content">
+                <h1>Отступы / SPC</h1>
+                <p class="lead">
+                    Единая шкала расстояний: внешние и внутренние отступы, промежутки auto-layout
+                    (gap), высоты строк контролов. Семь числовых переменных — применяются напрямую.
+                </p>
+
+                <h2 id="scale">Шкала</h2>
+                <div class="scale-row">
+                    <span class="name">XXS</span>
+                    <span class="vals">4 px · 0.25 rem</span>
+                    <div class="demo"><div class="sp-sample" style="width: 24px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">SXS</span>
+                    <span class="vals">8 px · 0.5 rem</span>
+                    <div class="demo"><div class="sp-sample" style="width: 48px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">SZS</span>
+                    <span class="vals">16 px · 1 rem</span>
+                    <div class="demo"><div class="sp-sample" style="width: 96px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">SZM</span>
+                    <span class="vals">24 px · 1.5 rem</span>
+                    <div class="demo"><div class="sp-sample" style="width: 144px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">SZL</span>
+                    <span class="vals">32 px · 2 rem</span>
+                    <div class="demo"><div class="sp-sample" style="width: 192px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">SXL</span>
+                    <span class="vals">48 px · 3 rem</span>
+                    <div class="demo"><div class="sp-sample" style="width: 288px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">XXL</span>
+                    <span class="vals">64 px · 4 rem</span>
+                    <div class="demo"><div class="sp-sample" style="width: 384px"></div></div>
+                </div>
+
+                <div class="note">
+                    Базовая единица дизайн-системы — <strong>4</strong>. Все отступы, размеры и
+                    координаты кратны ей; шкала SPC — её кратные ступени. Допустимые исключения —
+                    толщины линий (THK начинается с 1) и метрики шрифта из TXT/FTY.
+                </div>
+
+                <h2 id="usage">Применение</h2>
+                <ul>
+                    <li>
+                        <code>gap</code> / <code>itemSpacing</code> и
+                        <code>padding</code> auto-layout-слоёв привязываются к переменным шкалы;
+                    </li>
+                    <li>
+                        Высоты контролов берутся из той же шкалы:
+                        <ul>
+                            <li><code>SZS</code> = 16 — малый размер;</li>
+                            <li><code>SZM</code> = 24 — средний размер;</li>
+                            <li><code>SZL</code> = 32 — большой размер;</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Компонент <code>Spacer</code> — прокладка с вариантами
+                        <code>Size=XXS…XXL</code>;
+                    </li>
+                </ul>
+
+                <div class="note danger">
+                    Замечено на канвасе: <code>Spacer Size=L</code> равен 24 (совпадает с M), тогда
+                    как по шкале SZL = 32. Привязку следует исправить в Figma.
+                </div>
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
+            </main>
+        </div>
+    </body>
+</html>

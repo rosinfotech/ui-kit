@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Семантика — DNA</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23080808'/%3E%3Ctext x='8' y='12' font-family='monospace' font-size='10' fill='%23DBDBDB' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"
+        />
+        <link rel="stylesheet" href="./assets/dna.css" />
+    </head>
+    <body>
+        <div class="layout">
+            <aside class="sidebar">
+                <a class="brand" href="./index.html">
+                    ДНК UI-Kit'а
+                    <small>Rosinfotech</small>
+                </a>
+                <nav class="nav">
+                    <a href="./semantics.html" aria-current="page"
+                        >Семантика <span class="tag">SEM</span></a
+                    >
+                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
+                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
+                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
+                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
+                    <a href="./fty.html">Функц. типографика <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
+                </nav>
+            </aside>
+            <main class="content">
+                <h1>Семантика / SEM</h1>
+                <p class="lead">
+                    Единая система трёхбуквенных кодов и грамматик имён. Любое имя в дизайн-системе
+                    — от цвета до компонента — собирается из конечного реестра кодов по
+                    фиксированным формулам. Этот реестр — основа, на которой в Figma строятся
+                    переменные, стили и компоненты: прочитав имя, понимаешь смысл значения, не
+                    открывая файл.
+                </p>
+
+                <h2 id="principles">Принципы</h2>
+                <ul>
+                    <li>
+                        Код — три заглавные латинные буквы, иногда с суффиксом:
+                        <code>BRA/PRM</code>, <code>FGR_CVB_100</code>;
+                    </li>
+                    <li>
+                        Одно значение — одно имя. Имя отвечает на вопрос «что это», а не «какое
+                        оно»;
+                    </li>
+                    <li>
+                        Имя читается слева направо от общего к частному: домен → группа → деталь;
+                    </li>
+                    <li>
+                        Разделители нормированы:
+                        <ul>
+                            <li><code>/</code> — внутри путей токенов;</li>
+                            <li><code>_</code> — внутри составных кодов и имён сетов;</li>
+                            <li><code>=</code> — в значениях вариантов;</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2 id="space">Пространство — три слоя</h2>
+                <p>
+                    Система пространственная: каждый элемент представляется трёхмерным и находится в
+                    одном из трёх слоёв. Слой — первый осмысленный сегмент цветового токена.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Смысл</th>
+                            <th>Примеры</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code><span class="seg layer">ABV</span></code>
+                            </td>
+                            <td>Above surface</td>
+                            <td>Над поверхностью: приподнятые элементы, отбрасывают тень вниз</td>
+                            <td>кнопки, чипы, лейблы, тогглы</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg layer">SFC</span></code>
+                            </td>
+                            <td>Surface</td>
+                            <td>Сама поверхность: несущие плоскости</td>
+                            <td>карточки, панели, контейнеры</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg layer">BLW</span></code>
+                            </td>
+                            <td>Below surface</td>
+                            <td>Под поверхностью, «в яме»: утопленные элементы</td>
+                            <td>поле ввода текста, канавки, wells</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="emphasis">Акценты — смысловая роль</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Когда применяется</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code><span class="seg emph">DFT</span></code>
+                            </td>
+                            <td>Default</td>
+                            <td>Обычное, нейтральное состояние по умолчанию</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg emph">PRM</span></code>
+                            </td>
+                            <td>Primary</td>
+                            <td>Основное действие в контексте, одно на экран</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg emph">ACC</span></code>
+                            </td>
+                            <td>Accent</td>
+                            <td>Акцентное выделение, привлечение внимания брендом</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg emph">POS</span></code>
+                            </td>
+                            <td>Positive</td>
+                            <td>Успех, подтверждение, корректность</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg emph">ATN</span></code>
+                            </td>
+                            <td>Attention</td>
+                            <td>Предупреждение, требует внимания</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg emph">NEG</span></code>
+                            </td>
+                            <td>Negative</td>
+                            <td>Ошибка, опасное действие</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="state">Состояния — интерактив</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Смысл</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code><span class="seg state">RGL</span></code>
+                            </td>
+                            <td>Regular</td>
+                            <td>Покой, состояние по умолчанию</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg state">HVR</span></code>
+                            </td>
+                            <td>Hover</td>
+                            <td>Курсор над элементом</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg state">FCS</span></code>
+                            </td>
+                            <td>Focus</td>
+                            <td>Фокус клавиатуры/ввода</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg state">PRS</span></code>
+                            </td>
+                            <td>Pressed</td>
+                            <td>Нажатие</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg state">DSB</span></code>
+                            </td>
+                            <td>Disabled</td>
+                            <td>Недоступен</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg state">CHD</span></code>
+                            </td>
+                            <td>Checked</td>
+                            <td>Включён/выбран — вместо PRS у переключаемых (CHB, TOG, RAD)</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg state">_*_FLD</span></code>
+                            </td>
+                            <td>Filled</td>
+                            <td>
+                                Суффикс «заполнено» — только у INP: RGL_FLD, HVR_FLD, FCS_FLD,
+                                DSB_FLD
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="role">Роли — что красим</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Смысл</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code><span class="seg role">FGR</span></code>
+                            </td>
+                            <td>Foreground</td>
+                            <td>Цвет контента: текст, иконка, глиф</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg role">BRD</span></code>
+                            </td>
+                            <td>Border</td>
+                            <td>Цвет рамки, обводки, разделителя</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg role">BGR</span></code>
+                            </td>
+                            <td>Background</td>
+                            <td>Цвет фона элемента</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="domains">Домены значений</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Что хранит</th>
+                            <th>Форма</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code><span class="seg domain">CLR</span></code>
+                            </td>
+                            <td>Absolute color palette</td>
+                            <td>442 абсолютных цвета: 13 семейств × шкала 025–975</td>
+                            <td>семейство/шаг</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg domain">FCL</span></code>
+                            </td>
+                            <td>Functional color palette</td>
+                            <td>263 функциональных цвета — переменные Figma</td>
+                            <td>слой/акцент/состояние/роль</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg domain">TXT</span></code>
+                            </td>
+                            <td>Absolute text palette</td>
+                            <td>84 текстовых стиля: 12 начертаний × 7 размеров</td>
+                            <td>TXT/начертание/размер</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg domain">FTY</span></code>
+                            </td>
+                            <td>Functional text palette</td>
+                            <td>10 функциональных текстовых ролей</td>
+                            <td>FTY/роль</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg domain">SPC</span></code>
+                            </td>
+                            <td>Spacings</td>
+                            <td>Шкала отступов 4–64 px</td>
+                            <td>шаг</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg domain">RAD</span></code>
+                            </td>
+                            <td>Radiuses</td>
+                            <td>Шкала скруглений 4–40 px</td>
+                            <td>шаг</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg domain">THK</span></code>
+                            </td>
+                            <td>Thicknesses</td>
+                            <td>Шкала толщин 1–7 px</td>
+                            <td>шаг</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code><span class="seg domain">ICN</span></code>
+                            </td>
+                            <td>Icons</td>
+                            <td>Библиотека иконок</td>
+                            <td>имя иконки</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="components">Компоненты</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Примечание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>BTN</code></td>
+                            <td>Button</td>
+                            <td>кнопка с текстом и иконками</td>
+                        </tr>
+                        <tr>
+                            <td><code>BTI</code></td>
+                            <td>Icon button</td>
+                            <td>иконочная кнопка</td>
+                        </tr>
+                        <tr>
+                            <td><code>CHB</code></td>
+                            <td>Checkbox</td>
+                            <td>состояние CHD</td>
+                        </tr>
+                        <tr>
+                            <td><code>TOG</code></td>
+                            <td>Toggle</td>
+                            <td>состояние CHD</td>
+                        </tr>
+                        <tr>
+                            <td><code>INP</code></td>
+                            <td>Input</td>
+                            <td>состояния с суффиксом _FLD</td>
+                        </tr>
+                        <tr>
+                            <td><code>RAD</code></td>
+                            <td>Radiobutton</td>
+                            <td>
+                                <strong>коллизия</strong> с RAD радиуса — см.
+                                <a href="#conflicts">известные коллизии</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>SPC</code></td>
+                            <td>Spacer</td>
+                            <td>компонент-прокладка; коллизия с SPC отступов</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="modifiers">Модификаторы</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th>Смысл</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>GRD</code></td>
+                            <td>Gradient — градиент «света сверху» для слоя ABV (8 стилей)</td>
+                        </tr>
+                        <tr>
+                            <td><code>SHD</code></td>
+                            <td>Shadow — тень, кодирует глубину слоя (90 стилей)</td>
+                        </tr>
+                        <tr>
+                            <td><code>CVB</code></td>
+                            <td>
+                                Contrast variant — контрастный вариант контента на другом слое:
+                                FGR_CVB_100, FGR_CVB_200
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>LGT</code></td>
+                            <td>Light — тема/режим светлого</td>
+                        </tr>
+                        <tr>
+                            <td><code>SEM</code></td>
+                            <td>Semantics — этот раздел документации</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="grammar">Грамматики имён</h2>
+
+                <h3>Функциональный цвет (переменная FCL)</h3>
+                <div class="formula">
+                    &lt;слой&gt;/&lt;акцент&gt;/&lt;состояние&gt;/&lt;роль&gt;<br />
+                    <span class="seg layer">ABV</span>/<span class="seg emph">DFT</span>/<span
+                        class="seg state"
+                        >RGL</span
+                    >/<span class="seg role">BGR</span>
+                    &nbsp;— фон обычной приподнятой кнопки
+                </div>
+
+                <h3>Абсолютный цвет (токен CLR)</h3>
+                <div class="formula">
+                    &lt;семейство&gt;/&lt;шаг&gt;<br />
+                    GRY/200 &nbsp;— серый, шаг 200 шкалы 025–975<br />
+                    BRA/PRM/025 &nbsp;— бренд-основной, шаг 025
+                </div>
+                <p>
+                    Семейства: BLU, BRN, GRY, GRN, ORG, PNK, RED, VIL, YEL, BRA/PRM, BRA/SEC +
+                    особые WHT и BLC. Функциональный токен всегда ссылается на абсолютный:
+                    <code>FCL → CLR</code>.
+                </p>
+
+                <h3>Тень и градиент</h3>
+                <div class="formula">
+                    &lt;слой&gt;/&lt;акцент&gt;/&lt;состояние&gt;/SHD &nbsp;&nbsp;напр.
+                    <span class="seg layer">BLW</span>/<span class="seg emph">NEG</span>/<span
+                        class="seg state"
+                        >HVR</span
+                    >/SHD<br />
+                    ABV/&lt;PRM|ACC&gt;/&lt;состояние&gt;/GRD &nbsp;&nbsp;напр. ABV/<span
+                        class="seg emph"
+                        >PRM</span
+                    >/<span class="seg state">RGL</span>/GRD
+                </div>
+
+                <h3>Типографика</h3>
+                <div class="formula">
+                    TXT/&lt;начертание&gt;/&lt;размер&gt; &nbsp;&nbsp;напр. TXT/TWR/SZM — Roboto
+                    Flex Regular 16<br />
+                    FTY/&lt;роль&gt; &nbsp;&nbsp;напр. FTY/HD1 — заголовок 1 (Inter Medium 32)
+                </div>
+                <p>
+                    Начертания: TWT Thin 100, TWL Light 300, TWR Regular 400, TWM Medium 500, TWB
+                    Bold 700, TWE ExtraBold 800; курсивные — те же с I вместо W: TIT, TIL, TIR, TIM,
+                    TIB, TIE.
+                </p>
+
+                <h3>Компонент-сет</h3>
+                <div class="formula">
+                    &lt;КОД_КОМПОНЕНТА&gt;_&lt;размер&gt; &nbsp;&nbsp;напр. BTN_SZM<br />
+                    вариант: Emphasis=&lt;код&gt;, State=&lt;код&gt; &nbsp;&nbsp;напр.
+                    Emphasis=<span class="seg emph">PRM</span>, State=<span class="seg state"
+                        >HVR</span
+                    >
+                </div>
+                <p>
+                    Размеры компонентов: SZS 16, SZM 24, SZL 32 (высота строки контроля в px из
+                    шкалы SPC).
+                </p>
+
+                <h2 id="scales">Шкалы шагов</h2>
+                <p>
+                    Одни и те же имена шагов <code>XXS SXS SZS SZM SZL SXL XXL</code> используются
+                    во всех шкалах, но означают разные значения. Шаг выбирается по смыслу, значение
+                    — из таблицы шкалы.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Шаг</th>
+                            <th><code>SPC</code> отступы, px</th>
+                            <th><code>RAD</code> скругления, px</th>
+                            <th><code>THK</code> толщины, px</th>
+                            <th><code>TXT</code> кегль, px</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>XXS</code></td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>1</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td><code>SXS</code></td>
+                            <td>8</td>
+                            <td>8</td>
+                            <td>2</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td><code>SZS</code></td>
+                            <td>16</td>
+                            <td>12</td>
+                            <td>3</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td><code>SZM</code></td>
+                            <td>24</td>
+                            <td>16</td>
+                            <td>4</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td><code>SZL</code></td>
+                            <td>32</td>
+                            <td>24</td>
+                            <td>5</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td><code>SXL</code></td>
+                            <td>48</td>
+                            <td>32</td>
+                            <td>6</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td><code>XXL</code></td>
+                            <td>64</td>
+                            <td>40</td>
+                            <td>7</td>
+                            <td>32</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    Отступы дополнительно выражаются в rem (0.25 / 0.5 / 1 / 1.5 / 2 / 3 / 4) — база
+                    16 px. Скругления компонентов по умолчанию — <code>RAD/SZS</code> = 12 px.
+                </div>
+
+                <h2 id="rules">Правила именования</h2>
+                <ul>
+                    <li>
+                        Новый код добавляется только в реестр этой страницы — свободная
+                        трёхбуквенная комбинация, не совпадающая с существующими;
+                    </li>
+                    <li>Имя токена целиком в верхнем регистре;</li>
+                    <li>
+                        Сегменты имени разделяются через <code>/</code>, порядок фиксирован формулой
+                        домена;
+                    </li>
+                    <li>Имя сета компонентов — <code>КОД_SZ*</code>;</li>
+                    <li>
+                        Вариант сета описывается парами <code>Ключ=Значение</code> через запятую;
+                    </li>
+                    <li>
+                        Составные коды пишутся через <code>_</code>:
+                        <ul>
+                            <li><code>FGR_CVB_100</code> — правило;</li>
+                            <li><code>BRA/PRM</code> — исключение: семейство со слэшем;</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Человеческое имя обязательно дублируется кодом («Emphasis Primary / PRM»);
+                    </li>
+                </ul>
+
+                <h2 id="conflicts">Известные коллизии</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th>Значение 1</th>
+                            <th>Значение 2</th>
+                            <th>Как различать</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>RAD</code></td>
+                            <td>Radiuses — шкала скруглений</td>
+                            <td>Radiobutton — компонент</td>
+                            <td>
+                                контекст: шкала идёт одна, компонент — с суффиксом размера: RAD_SZM
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>SPC</code></td>
+                            <td>Spacings — шкала отступов</td>
+                            <td>Spacer — компонент-прокладка</td>
+                            <td>сет Spacer без суффикса размера, варианты Size=XXS…XXL</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="examples">Разбор имён</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Имя</th>
+                            <th>Читается как</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code
+                                    ><span class="seg layer">ABV</span>/<span class="seg emph"
+                                        >DFT</span
+                                    >/<span class="seg state">RGL</span>/<span class="seg role"
+                                        >FGR</span
+                                    ></code
+                                >
+                            </td>
+                            <td>
+                                контент (текст, иконка) обычной приподнятой кнопки в покое → GRY/925
+                                = #1B1B1B
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code
+                                    ><span class="seg layer">ABV</span>/<span class="seg emph"
+                                        >DFT</span
+                                    >/<span class="seg state">RGL</span>/<span class="seg role"
+                                        >BGR</span
+                                    ></code
+                                >
+                            </td>
+                            <td>фон обычной приподнятой кнопки в покое → GRY/200 = #DBDBDB</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code
+                                    ><span class="seg layer">BLW</span>/<span class="seg emph"
+                                        >DFT</span
+                                    >/<span class="seg state">RGL</span>/<span class="seg role"
+                                        >BGR</span
+                                    ></code
+                                >
+                            </td>
+                            <td>фон поля ввода в покое, «дно ямы» → GRY/975 = #0E0E0E</td>
+                        </tr>
+                        <tr>
+                            <td><code>ABV/NEG/HVR/SHD</code></td>
+                            <td>тень приподнятого элемента ошибки при наведении</td>
+                        </tr>
+                        <tr>
+                            <td><code>TXT/TIB/SXS</code></td>
+                            <td>Roboto Flex Bold Italic, кегль 12</td>
+                        </tr>
+                        <tr>
+                            <td><code>INP_SZL</code> <code>Emphasis=POS, State=FCS_FLD</code></td>
+                            <td>большое поле ввода, акцент «успех», в фокусе, заполнено</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
+            </main>
+        </div>
+    </body>
+</html>

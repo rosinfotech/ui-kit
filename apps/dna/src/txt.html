@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Типографика — DNA</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23080808'/%3E%3Ctext x='8' y='12' font-family='monospace' font-size='10' fill='%23DBDBDB' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"
+        />
+        <link rel="stylesheet" href="./assets/dna.css" />
+    </head>
+    <body>
+        <div class="layout">
+            <aside class="sidebar">
+                <a class="brand" href="./index.html">
+                    ДНК UI-Kit'а
+                    <small>Rosinfotech</small>
+                </a>
+                <nav class="nav">
+                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
+                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
+                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
+                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
+                    <a href="./txt.html" aria-current="page"
+                        >Типографика <span class="tag">TXT</span></a
+                    >
+                    <a href="./fty.html">Функц. типографика <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
+                </nav>
+            </aside>
+            <main class="content">
+                <h1>Типографика / TXT</h1>
+                <p class="lead">
+                    Абсолютная матрица текста: 84 стиля — шрифт Roboto Flex, шесть весов в прямом и
+                    курсивном начертании, семь кеглей. Компоненты ссылаются не на TXT напрямую, а на
+                    <a href="./fty.html">функциональные роли</a>.
+                </p>
+
+                <h2 id="grammar">Грамматика</h2>
+                <div class="formula">
+                    TXT/&lt;начертание&gt;/&lt;размер&gt;<br />
+                    TXT/<span class="seg emph">TWM</span>/<span class="seg state">SZL</span> —
+                    Roboto Flex Medium, кегль 20
+                </div>
+                <ul>
+                    <li>
+                        Начертания:
+                        <ul>
+                            <li><code>TWT</code> — Thin 100;</li>
+                            <li><code>TWL</code> — Light 300;</li>
+                            <li><code>TWR</code> — Regular 400;</li>
+                            <li><code>TWM</code> — Medium 500;</li>
+                            <li><code>TWB</code> — Bold 700;</li>
+                            <li><code>TWE</code> — ExtraBold 800;</li>
+                            <li>
+                                курсивные — те же шесть с <code>I</code> вместо <code>W</code>:
+                                <code>TIT…TIE</code>;
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Размеры шкалы: XXS=10 … XXL=32 px;</li>
+                </ul>
+
+                <h2 id="metrics">Метрики кеглей</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Шаг</th>
+                            <th>Кегль, px</th>
+                            <th>Интерлиньяж, px</th>
+                            <th>Интерлиньяж, %</th>
+                            <th>Трекинг</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>XXS</code></td>
+                            <td>10</td>
+                            <td>16.0</td>
+                            <td>137</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><code>SXS</code></td>
+                            <td>12</td>
+                            <td>14.1</td>
+                            <td>100</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><code>SZS</code></td>
+                            <td>14</td>
+                            <td>16.4</td>
+                            <td>100</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><code>SZM</code></td>
+                            <td>16</td>
+                            <td>24.0</td>
+                            <td>128</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><code>SZL</code></td>
+                            <td>20</td>
+                            <td>24.0</td>
+                            <td>102</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><code>SXL</code></td>
+                            <td>24</td>
+                            <td>28.1</td>
+                            <td>100</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><code>XXL</code></td>
+                            <td>32</td>
+                            <td>37.5</td>
+                            <td>100</td>
+                            <td>-0.48</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    Интерлиньяж смешанный: часть кеглей — авто (100%, метрика шрифта), часть —
+                    ручной (XXS 136%, SZM 128%, SZL 102%). Трекинг отличен от нуля только у XXL
+                    (−0.48). Изменения метрик — только через этот реестр.
+                </div>
+
+                <h2 id="matrix">Матрица</h2>
+                <h3>Прямые</h3>
+                <div class="type-matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>XXS<br /><small>10 px</small></th>
+                                <th>SXS<br /><small>12 px</small></th>
+                                <th>SZS<br /><small>14 px</small></th>
+                                <th>SZM<br /><small>16 px</small></th>
+                                <th>SZL<br /><small>20 px</small></th>
+                                <th>SXL<br /><small>24 px</small></th>
+                                <th>XXL<br /><small>32 px</small></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th><code>TWT</code><br /><small>Thin 100</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 16px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 20px; line-height: 23px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><code>TWL</code><br /><small>Light 300</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 16px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 20px; line-height: 23px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><code>TWR</code><br /><small>Regular 400</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 400; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 400; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 400; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 400; font-size: 16px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 400; font-size: 20px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 400; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 400; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><code>TWM</code><br /><small>Medium 500</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 16px; line-height: 19px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 20px; line-height: 23px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><code>TWB</code><br /><small>Bold 700</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 16px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 20px; line-height: 23px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><code>TWE</code><br /><small>ExtraBold 800</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 16px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 20px; line-height: 23px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>Курсивные</h3>
+                <div class="type-matrix">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>XXS<br /><small>10 px</small></th>
+                                <th>SXS<br /><small>12 px</small></th>
+                                <th>SZS<br /><small>14 px</small></th>
+                                <th>SZM<br /><small>16 px</small></th>
+                                <th>SZL<br /><small>20 px</small></th>
+                                <th>SXL<br /><small>24 px</small></th>
+                                <th>XXL<br /><small>32 px</small></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th><code>TIT</code><br /><small>Thin Italic 100</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 16px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 20px; line-height: 23px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 100; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><code>TIL</code><br /><small>Light Italic 300</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 16px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 20px; line-height: 23px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 300; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><code>TIR</code><br /><small>Italic 400</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="
+                                            font-weight: 400;
+                                            font-size: 10px;
+                                            font-style: italic;
+                                            line-height: 16px;
+                                        "
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="
+                                            font-weight: 400;
+                                            font-size: 12px;
+                                            font-style: italic;
+                                            line-height: 14px;
+                                        "
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="
+                                            font-weight: 400;
+                                            font-size: 14px;
+                                            font-style: italic;
+                                            line-height: 16px;
+                                        "
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="
+                                            font-weight: 400;
+                                            font-size: 16px;
+                                            font-style: italic;
+                                            line-height: 24px;
+                                        "
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="
+                                            font-weight: 400;
+                                            font-size: 20px;
+                                            font-style: italic;
+                                            line-height: 23px;
+                                        "
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="
+                                            font-weight: 400;
+                                            font-size: 24px;
+                                            font-style: italic;
+                                            line-height: 28px;
+                                        "
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="
+                                            font-weight: 400;
+                                            font-size: 32px;
+                                            font-style: italic;
+                                            line-height: 38px;
+                                        "
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><code>TIM</code><br /><small>Medium Italic 500</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 16px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 20px; line-height: 23px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 500; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><code>TIB</code><br /><small>Bold Italic 700</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 16px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 20px; line-height: 23px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 700; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><code>TIE</code><br /><small>ExtraBold Italic 800</small></th>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 10px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 12px; line-height: 14px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 14px; line-height: 16px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 16px; line-height: 24px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 20px; line-height: 23px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 24px; line-height: 28px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                                <td>
+                                    <p
+                                        class="type-cell"
+                                        style="font-weight: 800; font-size: 32px; line-height: 38px"
+                                    >
+                                        Аа Яя 39
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
+            </main>
+        </div>
+    </body>
+</html>

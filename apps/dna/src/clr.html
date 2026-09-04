@@ -1,0 +1,1948 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Абсолютная цветовая палитра — DNA</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23080808'/%3E%3Ctext x='8' y='12' font-family='monospace' font-size='10' fill='%23DBDBDB' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"
+        />
+        <link rel="stylesheet" href="./assets/dna.css" />
+    </head>
+    <body>
+        <div class="layout">
+            <aside class="sidebar">
+                <a class="brand" href="./index.html">
+                    ДНК UI-Kit'а
+                    <small>Rosinfotech</small>
+                </a>
+                <nav class="nav">
+                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
+                    <a href="./clr.html" aria-current="page"
+                        >Абсолютный цвет <span class="tag">CLR</span></a
+                    >
+                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
+                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
+                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
+                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
+                    <a href="./fty.html">Функц. типографика <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
+                </nav>
+            </aside>
+            <main class="content">
+                <h1>Абсолютная цветовая палитра / CLR</h1>
+                <p class="lead">
+                    Сырьё цветов дизайн-системы: 11 семейств × шкала из 40 шагов плюс особые белый и
+                    чёрный — 442 значения. Абсолютные токены не применяются в компонентах напрямую:
+                    из них собирается
+                    <a href="./fcl.html">функциональная палитра</a>.
+                </p>
+
+                <h2 id="grammar">Грамматика</h2>
+                <div class="formula">
+                    &lt;семейство&gt;/&lt;шаг&gt;<br />
+                    GRY/200 · BLU/425 · BRA/PRM/025
+                </div>
+                <ul>
+                    <li>
+                        Шаг — трёхзначное число <code>025…975</code> с интервалом 25, у GRY есть
+                        <code>000</code> и шаг <code>1000</code>; чем больше, тем темнее;
+                    </li>
+                    <li>
+                        Особые семейства без шкалы: <code>WHT</code> — белый, <code>BLC</code> —
+                        чёрный;
+                    </li>
+                    <li>
+                        Брендовые семейства <code>BRA/PRM</code> и <code>BRA/SEC</code> —
+                        единственные с составным кодом; сейчас совпадают с GRY и будут
+                        переопределены брендом;
+                    </li>
+                </ul>
+
+                <h2 id="families">Семейства</h2>
+                <section class="family" id="WHT">
+                    <div class="family-head">
+                        <h3><code>WHT</code></h3>
+                        <span class="count">1 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #ffffff"></div>
+                            <span class="step">000</span><span>#FFFFFF</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="BLC">
+                    <div class="family-head">
+                        <h3><code>BLC</code></h3>
+                        <span class="count">1 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #1a1a1a"></div>
+                            <span class="step">000</span><span>#1A1A1A</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="GRY">
+                    <div class="family-head">
+                        <h3><code>GRY</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #fcfcfc"></div>
+                            <span class="step">025</span><span>#FCFCFC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fbfbfb"></div>
+                            <span class="step">050</span><span>#FBFBFB</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f9f9f9"></div>
+                            <span class="step">075</span><span>#F9F9F9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f6f6f6"></div>
+                            <span class="step">100</span><span>#F6F6F6</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #efefef"></div>
+                            <span class="step">125</span><span>#EFEFEF</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e9e9e9"></div>
+                            <span class="step">150</span><span>#E9E9E9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e2e2e2"></div>
+                            <span class="step">175</span><span>#E2E2E2</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #dbdbdb"></div>
+                            <span class="step">200</span><span>#DBDBDB</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #d5d5d5"></div>
+                            <span class="step">225</span><span>#D5D5D5</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #cecece"></div>
+                            <span class="step">250</span><span>#CECECE</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c8c8c8"></div>
+                            <span class="step">275</span><span>#C8C8C8</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c1c1c1"></div>
+                            <span class="step">300</span><span>#C1C1C1</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #bababa"></div>
+                            <span class="step">325</span><span>#BABABA</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b4b4b4"></div>
+                            <span class="step">350</span><span>#B4B4B4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #adadad"></div>
+                            <span class="step">375</span><span>#ADADAD</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a6a6a6"></div>
+                            <span class="step">400</span><span>#A6A6A6</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a0a0a0"></div>
+                            <span class="step">425</span><span>#A0A0A0</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #999999"></div>
+                            <span class="step">450</span><span>#999999</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #939393"></div>
+                            <span class="step">475</span><span>#939393</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8c8c8c"></div>
+                            <span class="step">500</span><span>#8C8C8C</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #858585"></div>
+                            <span class="step">525</span><span>#858585</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7f7f7f"></div>
+                            <span class="step">550</span><span>#7F7F7F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #787878"></div>
+                            <span class="step">575</span><span>#787878</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #727272"></div>
+                            <span class="step">600</span><span>#727272</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #6b6b6b"></div>
+                            <span class="step">625</span><span>#6B6B6B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #646464"></div>
+                            <span class="step">650</span><span>#646464</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5e5e5e"></div>
+                            <span class="step">675</span><span>#5E5E5E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #575757"></div>
+                            <span class="step">700</span><span>#575757</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #505050"></div>
+                            <span class="step">725</span><span>#505050</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #4a4a4a"></div>
+                            <span class="step">750</span><span>#4A4A4A</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #434343"></div>
+                            <span class="step">775</span><span>#434343</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3d3d3d"></div>
+                            <span class="step">800</span><span>#3D3D3D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #363636"></div>
+                            <span class="step">825</span><span>#363636</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #2f2f2f"></div>
+                            <span class="step">850</span><span>#2F2F2F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #292929"></div>
+                            <span class="step">875</span><span>#292929</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #222222"></div>
+                            <span class="step">900</span><span>#222222</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #1b1b1b"></div>
+                            <span class="step">925</span><span>#1B1B1B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #151515"></div>
+                            <span class="step">950</span><span>#151515</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0e0e0e"></div>
+                            <span class="step">975</span><span>#0E0E0E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #080808"></div>
+                            <span class="step">1000</span><span>#080808</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="BLU">
+                    <div class="family-head">
+                        <h3><code>BLU</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #fafafc"></div>
+                            <span class="step">025</span><span>#FAFAFC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f5f5fb"></div>
+                            <span class="step">050</span><span>#F5F5FB</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f0f0f9"></div>
+                            <span class="step">075</span><span>#F0F0F9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e7e7f6"></div>
+                            <span class="step">100</span><span>#E7E7F6</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #d5d5ef"></div>
+                            <span class="step">125</span><span>#D5D5EF</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c3c3e9"></div>
+                            <span class="step">150</span><span>#C3C3E9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b2b2e2"></div>
+                            <span class="step">175</span><span>#B2B2E2</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a2a2db"></div>
+                            <span class="step">200</span><span>#A2A2DB</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #9393d5"></div>
+                            <span class="step">225</span><span>#9393D5</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8585ce"></div>
+                            <span class="step">250</span><span>#8585CE</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7777c8"></div>
+                            <span class="step">275</span><span>#7777C8</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #6a6ac1"></div>
+                            <span class="step">300</span><span>#6A6AC1</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5f5fba"></div>
+                            <span class="step">325</span><span>#5F5FBA</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5454b4"></div>
+                            <span class="step">350</span><span>#5454B4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #4a4aad"></div>
+                            <span class="step">375</span><span>#4A4AAD</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #4141a6"></div>
+                            <span class="step">400</span><span>#4141A6</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3939a0"></div>
+                            <span class="step">425</span><span>#3939A0</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #323299"></div>
+                            <span class="step">450</span><span>#323299</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #2b2b93"></div>
+                            <span class="step">475</span><span>#2B2B93</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #25258c"></div>
+                            <span class="step">500</span><span>#25258C</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #202085"></div>
+                            <span class="step">525</span><span>#202085</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #1b1b7f"></div>
+                            <span class="step">550</span><span>#1B1B7F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #171778"></div>
+                            <span class="step">575</span><span>#171778</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #131372"></div>
+                            <span class="step">600</span><span>#131372</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #10106b"></div>
+                            <span class="step">625</span><span>#10106B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0d0d64"></div>
+                            <span class="step">650</span><span>#0D0D64</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0b0b5e"></div>
+                            <span class="step">675</span><span>#0B0B5E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #090957"></div>
+                            <span class="step">700</span><span>#090957</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #070750"></div>
+                            <span class="step">725</span><span>#070750</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #05054a"></div>
+                            <span class="step">750</span><span>#05054A</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #040443"></div>
+                            <span class="step">775</span><span>#040443</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #03033d"></div>
+                            <span class="step">800</span><span>#03033D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #020236"></div>
+                            <span class="step">825</span><span>#020236</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #02022f"></div>
+                            <span class="step">850</span><span>#02022F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #010129"></div>
+                            <span class="step">875</span><span>#010129</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #010122"></div>
+                            <span class="step">900</span><span>#010122</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #00001b"></div>
+                            <span class="step">925</span><span>#00001B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #000015"></div>
+                            <span class="step">950</span><span>#000015</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #00000e"></div>
+                            <span class="step">975</span><span>#00000E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #000008"></div>
+                            <span class="step">1000</span><span>#000008</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="BRN">
+                    <div class="family-head">
+                        <h3><code>BRN</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #fcfaf9"></div>
+                            <span class="step">025</span><span>#FCFAF9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fbf5f2"></div>
+                            <span class="step">050</span><span>#FBF5F2</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f9f1ec"></div>
+                            <span class="step">075</span><span>#F9F1EC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f6e8e0"></div>
+                            <span class="step">100</span><span>#F6E8E0</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #efd6c8"></div>
+                            <span class="step">125</span><span>#EFD6C8</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e9c4b1"></div>
+                            <span class="step">150</span><span>#E9C4B1</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e2b49b"></div>
+                            <span class="step">175</span><span>#E2B49B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #dba486"></div>
+                            <span class="step">200</span><span>#DBA486</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #d59572"></div>
+                            <span class="step">225</span><span>#D59572</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ce8660"></div>
+                            <span class="step">250</span><span>#CE8660</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c8794f"></div>
+                            <span class="step">275</span><span>#C8794F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c16d3f"></div>
+                            <span class="step">300</span><span>#C16D3F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ba6131"></div>
+                            <span class="step">325</span><span>#BA6131</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b45724"></div>
+                            <span class="step">350</span><span>#B45724</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ad4d19"></div>
+                            <span class="step">375</span><span>#AD4D19</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a6440f"></div>
+                            <span class="step">400</span><span>#A6440F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a03c06"></div>
+                            <span class="step">425</span><span>#A03C06</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #993600"></div>
+                            <span class="step">450</span><span>#993600</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #933300"></div>
+                            <span class="step">475</span><span>#933300</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8c3100"></div>
+                            <span class="step">500</span><span>#8C3100</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #852f00"></div>
+                            <span class="step">525</span><span>#852F00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7f2c00"></div>
+                            <span class="step">550</span><span>#7F2C00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #782a00"></div>
+                            <span class="step">575</span><span>#782A00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #722800"></div>
+                            <span class="step">600</span><span>#722800</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #6b2500"></div>
+                            <span class="step">625</span><span>#6B2500</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #642300"></div>
+                            <span class="step">650</span><span>#642300</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5e2100"></div>
+                            <span class="step">675</span><span>#5E2100</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #571e00"></div>
+                            <span class="step">700</span><span>#571E00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #501c00"></div>
+                            <span class="step">725</span><span>#501C00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #4a1a00"></div>
+                            <span class="step">750</span><span>#4A1A00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #431800"></div>
+                            <span class="step">775</span><span>#431800</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3d1500"></div>
+                            <span class="step">800</span><span>#3D1500</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #361300"></div>
+                            <span class="step">825</span><span>#361300</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #2f1100"></div>
+                            <span class="step">850</span><span>#2F1100</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #290e00"></div>
+                            <span class="step">875</span><span>#290E00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #220c00"></div>
+                            <span class="step">900</span><span>#220C00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #1b0a00"></div>
+                            <span class="step">925</span><span>#1B0A00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #150700"></div>
+                            <span class="step">950</span><span>#150700</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0e0500"></div>
+                            <span class="step">975</span><span>#0E0500</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #080300"></div>
+                            <span class="step">1000</span><span>#080300</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="GRN">
+                    <div class="family-head">
+                        <h3><code>GRN</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #f9fcfb"></div>
+                            <span class="step">025</span><span>#F9FCFB</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f2fbf7"></div>
+                            <span class="step">050</span><span>#F2FBF7</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ecf9f4"></div>
+                            <span class="step">075</span><span>#ECF9F4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e0f6ec"></div>
+                            <span class="step">100</span><span>#E0F6EC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c8efde"></div>
+                            <span class="step">125</span><span>#C8EFDE</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b1e9d0"></div>
+                            <span class="step">150</span><span>#B1E9D0</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #9be2c3"></div>
+                            <span class="step">175</span><span>#9BE2C3</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #86dbb6"></div>
+                            <span class="step">200</span><span>#86DBB6</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #72d5aa"></div>
+                            <span class="step">225</span><span>#72D5AA</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #60ce9e"></div>
+                            <span class="step">250</span><span>#60CE9E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #4fc893"></div>
+                            <span class="step">275</span><span>#4FC893</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3fc189"></div>
+                            <span class="step">300</span><span>#3FC189</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #31ba7f"></div>
+                            <span class="step">325</span><span>#31BA7F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #24b476"></div>
+                            <span class="step">350</span><span>#24B476</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #19ad6d"></div>
+                            <span class="step">375</span><span>#19AD6D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0fa665"></div>
+                            <span class="step">400</span><span>#0FA665</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #06a05d"></div>
+                            <span class="step">425</span><span>#06A05D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #009957"></div>
+                            <span class="step">450</span><span>#009957</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #009353"></div>
+                            <span class="step">475</span><span>#009353</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #008c4f"></div>
+                            <span class="step">500</span><span>#008C4F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #00854c"></div>
+                            <span class="step">525</span><span>#00854C</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #007f48"></div>
+                            <span class="step">550</span><span>#007F48</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #007844"></div>
+                            <span class="step">575</span><span>#007844</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #007240"></div>
+                            <span class="step">600</span><span>#007240</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #006b3d"></div>
+                            <span class="step">625</span><span>#006B3D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #006439"></div>
+                            <span class="step">650</span><span>#006439</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #005e35"></div>
+                            <span class="step">675</span><span>#005E35</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #005731"></div>
+                            <span class="step">700</span><span>#005731</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #00502e"></div>
+                            <span class="step">725</span><span>#00502E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #004a2a"></div>
+                            <span class="step">750</span><span>#004A2A</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #004326"></div>
+                            <span class="step">775</span><span>#004326</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #003d22"></div>
+                            <span class="step">800</span><span>#003D22</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #00361f"></div>
+                            <span class="step">825</span><span>#00361F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #002f1b"></div>
+                            <span class="step">850</span><span>#002F1B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #002917"></div>
+                            <span class="step">875</span><span>#002917</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #002213"></div>
+                            <span class="step">900</span><span>#002213</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #001b10"></div>
+                            <span class="step">925</span><span>#001B10</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #00150c"></div>
+                            <span class="step">950</span><span>#00150C</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #000e08"></div>
+                            <span class="step">975</span><span>#000E08</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #000804"></div>
+                            <span class="step">1000</span><span>#000804</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="ORG">
+                    <div class="family-head">
+                        <h3><code>ORG</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #fcfbf9"></div>
+                            <span class="step">025</span><span>#FCFBF9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcf9f4"></div>
+                            <span class="step">050</span><span>#FCF9F4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcf8ef"></div>
+                            <span class="step">075</span><span>#FCF8EF</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcf4e6"></div>
+                            <span class="step">100</span><span>#FCF4E6</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcedd2"></div>
+                            <span class="step">125</span><span>#FCEDD2</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fbe6be"></div>
+                            <span class="step">150</span><span>#FBE6BE</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f9deab"></div>
+                            <span class="step">175</span><span>#F9DEAB</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f7d697"></div>
+                            <span class="step">200</span><span>#F7D697</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f5cd84"></div>
+                            <span class="step">225</span><span>#F5CD84</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f3c571"></div>
+                            <span class="step">250</span><span>#F3C571</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f0bd5f"></div>
+                            <span class="step">275</span><span>#F0BD5F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ecb54d"></div>
+                            <span class="step">300</span><span>#ECB54D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e8ac3d"></div>
+                            <span class="step">325</span><span>#E8AC3D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e4a42e"></div>
+                            <span class="step">350</span><span>#E4A42E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #df9c20"></div>
+                            <span class="step">375</span><span>#DF9C20</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #da9413"></div>
+                            <span class="step">400</span><span>#DA9413</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #d48d08"></div>
+                            <span class="step">425</span><span>#D48D08</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ce8600"></div>
+                            <span class="step">450</span><span>#CE8600</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c78200"></div>
+                            <span class="step">475</span><span>#C78200</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c07d00"></div>
+                            <span class="step">500</span><span>#C07D00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b97800"></div>
+                            <span class="step">525</span><span>#B97800</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b17300"></div>
+                            <span class="step">550</span><span>#B17300</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a96e00"></div>
+                            <span class="step">575</span><span>#A96E00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a06800"></div>
+                            <span class="step">600</span><span>#A06800</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #986300"></div>
+                            <span class="step">625</span><span>#986300</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8e5d00"></div>
+                            <span class="step">650</span><span>#8E5D00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #855600"></div>
+                            <span class="step">675</span><span>#855600</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7b5000"></div>
+                            <span class="step">700</span><span>#7B5000</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #714900"></div>
+                            <span class="step">725</span><span>#714900</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #674300"></div>
+                            <span class="step">750</span><span>#674300</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5d3c00"></div>
+                            <span class="step">775</span><span>#5D3C00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #523600"></div>
+                            <span class="step">800</span><span>#523600</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #482f00"></div>
+                            <span class="step">825</span><span>#482F00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3e2800"></div>
+                            <span class="step">850</span><span>#3E2800</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #342200"></div>
+                            <span class="step">875</span><span>#342200</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #2a1b00"></div>
+                            <span class="step">900</span><span>#2A1B00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #211500"></div>
+                            <span class="step">925</span><span>#211500</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #180f00"></div>
+                            <span class="step">950</span><span>#180F00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0f0a00"></div>
+                            <span class="step">975</span><span>#0F0A00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #080500"></div>
+                            <span class="step">1000</span><span>#080500</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="PNK">
+                    <div class="family-head">
+                        <h3><code>PNK</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #fcf9fa"></div>
+                            <span class="step">025</span><span>#FCF9FA</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcf4f8"></div>
+                            <span class="step">050</span><span>#FCF4F8</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fceff5"></div>
+                            <span class="step">075</span><span>#FCEFF5</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fce6ef"></div>
+                            <span class="step">100</span><span>#FCE6EF</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcd2e4"></div>
+                            <span class="step">125</span><span>#FCD2E4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fbbed9"></div>
+                            <span class="step">150</span><span>#FBBED9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f9abcd"></div>
+                            <span class="step">175</span><span>#F9ABCD</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f797c1"></div>
+                            <span class="step">200</span><span>#F797C1</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f584b5"></div>
+                            <span class="step">225</span><span>#F584B5</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f371a9"></div>
+                            <span class="step">250</span><span>#F371A9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f05f9d"></div>
+                            <span class="step">275</span><span>#F05F9D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ec4d92"></div>
+                            <span class="step">300</span><span>#EC4D92</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e83d87"></div>
+                            <span class="step">325</span><span>#E83D87</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e42e7d"></div>
+                            <span class="step">350</span><span>#E42E7D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #df2073"></div>
+                            <span class="step">375</span><span>#DF2073</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #da1369"></div>
+                            <span class="step">400</span><span>#DA1369</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #d40860"></div>
+                            <span class="step">425</span><span>#D40860</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ce0059"></div>
+                            <span class="step">450</span><span>#CE0059</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c70056"></div>
+                            <span class="step">475</span><span>#C70056</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c00053"></div>
+                            <span class="step">500</span><span>#C00053</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b90050"></div>
+                            <span class="step">525</span><span>#B90050</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b1004d"></div>
+                            <span class="step">550</span><span>#B1004D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a90049"></div>
+                            <span class="step">575</span><span>#A90049</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a00046"></div>
+                            <span class="step">600</span><span>#A00046</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #980042"></div>
+                            <span class="step">625</span><span>#980042</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8e003e"></div>
+                            <span class="step">650</span><span>#8E003E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #85003a"></div>
+                            <span class="step">675</span><span>#85003A</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7b0035"></div>
+                            <span class="step">700</span><span>#7B0035</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #710031"></div>
+                            <span class="step">725</span><span>#710031</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #67002d"></div>
+                            <span class="step">750</span><span>#67002D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5d0028"></div>
+                            <span class="step">775</span><span>#5D0028</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #520024"></div>
+                            <span class="step">800</span><span>#520024</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #48001f"></div>
+                            <span class="step">825</span><span>#48001F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3e001b"></div>
+                            <span class="step">850</span><span>#3E001B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #340016"></div>
+                            <span class="step">875</span><span>#340016</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #2a0012"></div>
+                            <span class="step">900</span><span>#2A0012</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #21000e"></div>
+                            <span class="step">925</span><span>#21000E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #18000a"></div>
+                            <span class="step">950</span><span>#18000A</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0f0007"></div>
+                            <span class="step">975</span><span>#0F0007</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #080003"></div>
+                            <span class="step">1000</span><span>#080003</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="RED">
+                    <div class="family-head">
+                        <h3><code>RED</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #fcf9f9"></div>
+                            <span class="step">025</span><span>#FCF9F9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcf4f4"></div>
+                            <span class="step">050</span><span>#FCF4F4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fceff0"></div>
+                            <span class="step">075</span><span>#FCEFF0</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fce6e6"></div>
+                            <span class="step">100</span><span>#FCE6E6</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcd2d4"></div>
+                            <span class="step">125</span><span>#FCD2D4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fbbec0"></div>
+                            <span class="step">150</span><span>#FBBEC0</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f9abad"></div>
+                            <span class="step">175</span><span>#F9ABAD</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f7979a"></div>
+                            <span class="step">200</span><span>#F7979A</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f58487"></div>
+                            <span class="step">225</span><span>#F58487</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f37175"></div>
+                            <span class="step">250</span><span>#F37175</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f05f63"></div>
+                            <span class="step">275</span><span>#F05F63</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ec4d53"></div>
+                            <span class="step">300</span><span>#EC4D53</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e83d43"></div>
+                            <span class="step">325</span><span>#E83D43</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e42e34"></div>
+                            <span class="step">350</span><span>#E42E34</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #df2026"></div>
+                            <span class="step">375</span><span>#DF2026</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #da131a"></div>
+                            <span class="step">400</span><span>#DA131A</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #d4080f"></div>
+                            <span class="step">425</span><span>#D4080F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ce0007"></div>
+                            <span class="step">450</span><span>#CE0007</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c70007"></div>
+                            <span class="step">475</span><span>#C70007</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c00006"></div>
+                            <span class="step">500</span><span>#C00006</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b90006"></div>
+                            <span class="step">525</span><span>#B90006</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b10006"></div>
+                            <span class="step">550</span><span>#B10006</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a90006"></div>
+                            <span class="step">575</span><span>#A90006</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a00005"></div>
+                            <span class="step">600</span><span>#A00005</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #980005"></div>
+                            <span class="step">625</span><span>#980005</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8e0005"></div>
+                            <span class="step">650</span><span>#8E0005</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #850004"></div>
+                            <span class="step">675</span><span>#850004</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7b0004"></div>
+                            <span class="step">700</span><span>#7B0004</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #710004"></div>
+                            <span class="step">725</span><span>#710004</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #670003"></div>
+                            <span class="step">750</span><span>#670003</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5d0003"></div>
+                            <span class="step">775</span><span>#5D0003</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #520003"></div>
+                            <span class="step">800</span><span>#520003</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #480002"></div>
+                            <span class="step">825</span><span>#480002</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3e0002"></div>
+                            <span class="step">850</span><span>#3E0002</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #340002"></div>
+                            <span class="step">875</span><span>#340002</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #2a0001"></div>
+                            <span class="step">900</span><span>#2A0001</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #210001"></div>
+                            <span class="step">925</span><span>#210001</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #180001"></div>
+                            <span class="step">950</span><span>#180001</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0f0001"></div>
+                            <span class="step">975</span><span>#0F0001</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #080000"></div>
+                            <span class="step">1000</span><span>#080000</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="VIL">
+                    <div class="family-head">
+                        <h3><code>VIL</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #fbf9fc"></div>
+                            <span class="step">025</span><span>#FBF9FC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #faf4fc"></div>
+                            <span class="step">050</span><span>#FAF4FC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f9effc"></div>
+                            <span class="step">075</span><span>#F9EFFC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f1e6fc"></div>
+                            <span class="step">100</span><span>#F1E6FC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f0d2fc"></div>
+                            <span class="step">125</span><span>#F0D2FC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #eabefb"></div>
+                            <span class="step">150</span><span>#EABEFB</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e3abf9"></div>
+                            <span class="step">175</span><span>#E3ABF9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #dc97f7"></div>
+                            <span class="step">200</span><span>#DC97F7</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #d584f5"></div>
+                            <span class="step">225</span><span>#D584F5</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ce71f3"></div>
+                            <span class="step">250</span><span>#CE71F3</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c75ff0"></div>
+                            <span class="step">275</span><span>#C75FF0</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #bf4dec"></div>
+                            <span class="step">300</span><span>#BF4DEC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b83de8"></div>
+                            <span class="step">325</span><span>#B83DE8</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b02ee4"></div>
+                            <span class="step">350</span><span>#B02EE4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a920df"></div>
+                            <span class="step">375</span><span>#A920DF</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a213da"></div>
+                            <span class="step">400</span><span>#A213DA</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #9a08d4"></div>
+                            <span class="step">425</span><span>#9A08D4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #9400ce"></div>
+                            <span class="step">450</span><span>#9400CE</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8f00c7"></div>
+                            <span class="step">475</span><span>#8F00C7</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8a00c0"></div>
+                            <span class="step">500</span><span>#8A00C0</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8500b9"></div>
+                            <span class="step">525</span><span>#8500B9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7f00b1"></div>
+                            <span class="step">550</span><span>#7F00B1</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7900a9"></div>
+                            <span class="step">575</span><span>#7900A9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7300a0"></div>
+                            <span class="step">600</span><span>#7300A0</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #6d0098"></div>
+                            <span class="step">625</span><span>#6D0098</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #66008e"></div>
+                            <span class="step">650</span><span>#66008E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5f0085"></div>
+                            <span class="step">675</span><span>#5F0085</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #58007b"></div>
+                            <span class="step">700</span><span>#58007B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #510071"></div>
+                            <span class="step">725</span><span>#510071</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #4a0067"></div>
+                            <span class="step">750</span><span>#4A0067</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #42005d"></div>
+                            <span class="step">775</span><span>#42005D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3b0052"></div>
+                            <span class="step">800</span><span>#3B0052</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #340048"></div>
+                            <span class="step">825</span><span>#340048</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #2c003e"></div>
+                            <span class="step">850</span><span>#2C003E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #250034"></div>
+                            <span class="step">875</span><span>#250034</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #1e002a"></div>
+                            <span class="step">900</span><span>#1E002A</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #170021"></div>
+                            <span class="step">925</span><span>#170021</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #110018"></div>
+                            <span class="step">950</span><span>#110018</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0b000f"></div>
+                            <span class="step">975</span><span>#0B000F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #050008"></div>
+                            <span class="step">1000</span><span>#050008</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="YEL">
+                    <div class="family-head">
+                        <h3><code>YEL</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #fcfcf7"></div>
+                            <span class="step">025</span><span>#FCFCF7</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcfbf1"></div>
+                            <span class="step">050</span><span>#FCFBF1</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcfaeb"></div>
+                            <span class="step">075</span><span>#FCFAEB</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcf9de"></div>
+                            <span class="step">100</span><span>#FCF9DE</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fcf5c4"></div>
+                            <span class="step">125</span><span>#FCF5C4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fbf1aa"></div>
+                            <span class="step">150</span><span>#FBF1AA</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f9ed90"></div>
+                            <span class="step">175</span><span>#F9ED90</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f7e877"></div>
+                            <span class="step">200</span><span>#F7E877</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f5e45e"></div>
+                            <span class="step">225</span><span>#F5E45E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f3de45"></div>
+                            <span class="step">250</span><span>#F3DE45</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f0d92e"></div>
+                            <span class="step">275</span><span>#F0D92E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ecd319"></div>
+                            <span class="step">300</span><span>#ECD319</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e8ce04"></div>
+                            <span class="step">325</span><span>#E8CE04</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e4c900"></div>
+                            <span class="step">350</span><span>#E4C900</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #dfc500"></div>
+                            <span class="step">375</span><span>#DFC500</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #dac000"></div>
+                            <span class="step">400</span><span>#DAC000</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #d4bb00"></div>
+                            <span class="step">425</span><span>#D4BB00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ceb600"></div>
+                            <span class="step">450</span><span>#CEB600</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c7b000"></div>
+                            <span class="step">475</span><span>#C7B000</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c0aa00"></div>
+                            <span class="step">500</span><span>#C0AA00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b9a300"></div>
+                            <span class="step">525</span><span>#B9A300</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b19d00"></div>
+                            <span class="step">550</span><span>#B19D00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a99500"></div>
+                            <span class="step">575</span><span>#A99500</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a08e00"></div>
+                            <span class="step">600</span><span>#A08E00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #988600"></div>
+                            <span class="step">625</span><span>#988600</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8e7e00"></div>
+                            <span class="step">650</span><span>#8E7E00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #857500"></div>
+                            <span class="step">675</span><span>#857500</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7b6d00"></div>
+                            <span class="step">700</span><span>#7B6D00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #716400"></div>
+                            <span class="step">725</span><span>#716400</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #675b00"></div>
+                            <span class="step">750</span><span>#675B00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5d5200"></div>
+                            <span class="step">775</span><span>#5D5200</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #524900"></div>
+                            <span class="step">800</span><span>#524900</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #484000"></div>
+                            <span class="step">825</span><span>#484000</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3e3700"></div>
+                            <span class="step">850</span><span>#3E3700</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #342e00"></div>
+                            <span class="step">875</span><span>#342E00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #2a2500"></div>
+                            <span class="step">900</span><span>#2A2500</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #211d00"></div>
+                            <span class="step">925</span><span>#211D00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #181500"></div>
+                            <span class="step">950</span><span>#181500</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0f0e00"></div>
+                            <span class="step">975</span><span>#0F0E00</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #080700"></div>
+                            <span class="step">1000</span><span>#080700</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="BRAPRM">
+                    <div class="family-head">
+                        <h3><code>BRA/PRM</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #fcfafa"></div>
+                            <span class="step">025</span><span>#FCFAFA</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fef7f7"></div>
+                            <span class="step">050</span><span>#FEF7F7</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fff3f3"></div>
+                            <span class="step">075</span><span>#FFF3F3</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ffeced"></div>
+                            <span class="step">100</span><span>#FFECED</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ffdfdf"></div>
+                            <span class="step">125</span><span>#FFDFDF</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ffd1d1"></div>
+                            <span class="step">150</span><span>#FFD1D1</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ffc2c3"></div>
+                            <span class="step">175</span><span>#FFC2C3</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ffb3b5"></div>
+                            <span class="step">200</span><span>#FFB3B5</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ffa5a6"></div>
+                            <span class="step">225</span><span>#FFA5A6</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ff9698"></div>
+                            <span class="step">250</span><span>#FF9698</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fe8889"></div>
+                            <span class="step">275</span><span>#FE8889</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fb7a7c"></div>
+                            <span class="step">300</span><span>#FB7A7C</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f96d6e"></div>
+                            <span class="step">325</span><span>#F96D6E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f66062"></div>
+                            <span class="step">350</span><span>#F66062</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f35355"></div>
+                            <span class="step">375</span><span>#F35355</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ef484a"></div>
+                            <span class="step">400</span><span>#EF484A</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ea3d3f"></div>
+                            <span class="step">425</span><span>#EA3D3F</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e63335"></div>
+                            <span class="step">450</span><span>#E63335</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e12a2c"></div>
+                            <span class="step">475</span><span>#E12A2C</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #db2123"></div>
+                            <span class="step">500</span><span>#DB2123</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #d5191b"></div>
+                            <span class="step">525</span><span>#D5191B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #cc1416"></div>
+                            <span class="step">550</span><span>#CC1416</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c21012"></div>
+                            <span class="step">575</span><span>#C21012</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b80c0e"></div>
+                            <span class="step">600</span><span>#B80C0E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #ae090b"></div>
+                            <span class="step">625</span><span>#AE090B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a30709"></div>
+                            <span class="step">650</span><span>#A30709</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #980507"></div>
+                            <span class="step">675</span><span>#980507</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8d0305"></div>
+                            <span class="step">700</span><span>#8D0305</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #810204"></div>
+                            <span class="step">725</span><span>#810204</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #760103"></div>
+                            <span class="step">750</span><span>#760103</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #6a0002"></div>
+                            <span class="step">775</span><span>#6A0002</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5e0001"></div>
+                            <span class="step">800</span><span>#5E0001</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #520001"></div>
+                            <span class="step">825</span><span>#520001</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #470001"></div>
+                            <span class="step">850</span><span>#470001</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3b0001"></div>
+                            <span class="step">875</span><span>#3B0001</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #300001"></div>
+                            <span class="step">900</span><span>#300001</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #250001"></div>
+                            <span class="step">925</span><span>#250001</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #1b0000"></div>
+                            <span class="step">950</span><span>#1B0000</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #110000"></div>
+                            <span class="step">975</span><span>#110000</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #080000"></div>
+                            <span class="step">1000</span><span>#080000</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="family" id="BRASEC">
+                    <div class="family-head">
+                        <h3><code>BRA/SEC</code></h3>
+                        <span class="count">40 знач.</span>
+                    </div>
+                    <div class="strip">
+                        <div class="cell">
+                            <div class="chip" style="background: #fcfcfc"></div>
+                            <span class="step">025</span><span>#FCFCFC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #fbfbfb"></div>
+                            <span class="step">050</span><span>#FBFBFB</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f9f9f9"></div>
+                            <span class="step">075</span><span>#F9F9F9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #f6f6f6"></div>
+                            <span class="step">100</span><span>#F6F6F6</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #efefef"></div>
+                            <span class="step">125</span><span>#EFEFEF</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e8e8e8"></div>
+                            <span class="step">150</span><span>#E8E8E8</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #e1e1e1"></div>
+                            <span class="step">175</span><span>#E1E1E1</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #dbdbdb"></div>
+                            <span class="step">200</span><span>#DBDBDB</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #d4d4d4"></div>
+                            <span class="step">225</span><span>#D4D4D4</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #cdcdcd"></div>
+                            <span class="step">250</span><span>#CDCDCD</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c7c7c7"></div>
+                            <span class="step">275</span><span>#C7C7C7</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #c0c0c0"></div>
+                            <span class="step">300</span><span>#C0C0C0</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b9b9b9"></div>
+                            <span class="step">325</span><span>#B9B9B9</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #b3b3b3"></div>
+                            <span class="step">350</span><span>#B3B3B3</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #acacac"></div>
+                            <span class="step">375</span><span>#ACACAC</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #a5a5a5"></div>
+                            <span class="step">400</span><span>#A5A5A5</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #9e9e9e"></div>
+                            <span class="step">425</span><span>#9E9E9E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #989898"></div>
+                            <span class="step">450</span><span>#989898</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #919191"></div>
+                            <span class="step">475</span><span>#919191</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #8a8a8a"></div>
+                            <span class="step">500</span><span>#8A8A8A</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #848484"></div>
+                            <span class="step">525</span><span>#848484</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #7d7d7d"></div>
+                            <span class="step">550</span><span>#7D7D7D</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #767676"></div>
+                            <span class="step">575</span><span>#767676</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #707070"></div>
+                            <span class="step">600</span><span>#707070</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #696969"></div>
+                            <span class="step">625</span><span>#696969</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #626262"></div>
+                            <span class="step">650</span><span>#626262</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #5b5b5b"></div>
+                            <span class="step">675</span><span>#5B5B5B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #555555"></div>
+                            <span class="step">700</span><span>#555555</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #4e4e4e"></div>
+                            <span class="step">725</span><span>#4E4E4E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #484848"></div>
+                            <span class="step">750</span><span>#484848</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #414141"></div>
+                            <span class="step">775</span><span>#414141</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #3b3b3b"></div>
+                            <span class="step">800</span><span>#3B3B3B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #343434"></div>
+                            <span class="step">825</span><span>#343434</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #2e2e2e"></div>
+                            <span class="step">850</span><span>#2E2E2E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #282828"></div>
+                            <span class="step">875</span><span>#282828</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #212121"></div>
+                            <span class="step">900</span><span>#212121</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #1b1b1b"></div>
+                            <span class="step">925</span><span>#1B1B1B</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #141414"></div>
+                            <span class="step">950</span><span>#141414</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #0e0e0e"></div>
+                            <span class="step">975</span><span>#0E0E0E</span>
+                        </div>
+                        <div class="cell">
+                            <div class="chip" style="background: #080808"></div>
+                            <span class="step">1000</span><span>#080808</span>
+                        </div>
+                    </div>
+                </section>
+
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
+            </main>
+        </div>
+    </body>
+</html>

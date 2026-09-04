@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0] - 2026-09-04
+
+### Added
+
+- DNA documentation subproject (apps/dna): static HTML documentation of the UI kit design system core — semantics registry of three-letter codes and name grammars, absolute (CLR) and functional (FCL) color palette pages with full token tables, spacing/radius/thickness scale pages, typography matrix (TXT) with live samples, functional text roles (FTY) with vertical rhythm, elevation gradients (GRD); served by `npm run dna` (Vite, port 33335)
+- Fluid rem-based typography scaling on DNA pages (root clamp 16–20px), centered layout plate on black background, FTY text roles applied to all page text; editorial conventions: list punctuation rules (no trailing periods, colon only with sub-items), base-4 spacing unit, FTY-derived vertical rhythm
+
 ## [0.1.0] - 2026-09-02
 
 ### Added

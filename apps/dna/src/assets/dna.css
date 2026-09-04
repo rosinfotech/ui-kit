@@ -1,0 +1,640 @@
+:root {
+    /* Абсолютная палитра CLR (GRY) — тёмная поверхность документации */
+    --clr-gry-025: #fcfcfc;
+    --clr-gry-100: #f6f6f6;
+    --clr-gry-200: #dbdbdb;
+    --clr-gry-475: #7f7f7f;
+    --clr-gry-600: #646464;
+    --clr-gry-750: #363636;
+    --clr-gry-875: #141414;
+    --clr-gry-900: #0e0e0e;
+    --clr-gry-925: #1b1b1b;
+    --clr-gry-975: #080808;
+
+    /* Акценты (FCL, слой ABV, RGL) */
+    --fcl-dft-bgr: #dbdbdb;
+    --fcl-acc-fgr: #b80c0e;
+    --fcl-pos-fgr: #0fa665;
+    --fcl-atn-fgr: #da9413;
+
+    --font-heading: "Inter", "Roboto Flex", system-ui, sans-serif;
+    --font-body: "Roboto Flex", Roboto, system-ui, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+
+    --sp-xxs: 0.25rem;
+    --sp-sxs: 0.5rem;
+    --sp-szs: 1rem;
+    --sp-szm: 1.5rem;
+    --sp-szl: 2rem;
+    --sp-sxl: 3rem;
+    --sp-xxl: 4rem;
+
+    --rad-szs: 0.75rem;
+    --rad-szm: 1rem;
+}
+
+/* ---------- Базовая единица ----------
+   База DS = 4: все отступы, размеры и координаты кратны 4 (шкала SPC —
+   её кратные ступени). Допустимые исключения — толщины линий (0.0625rem) и
+   метрики шрифта (кегли/интерлиньяжи/трекинг из TXT/FTY). */
+
+/* ---------- Типографика страниц = роли FTY (см. fty.html) ----------
+   h1 → FTY/HD1  Inter 500 32/38.73/-0.48
+   h2 → FTY/HD2  Roboto Flex 500 24/28.13/-0.24
+   h3 → FTY/HD3  Roboto Flex 500 20/23.44/-0.2
+   текст → FTY/PAR  Roboto Flex 400 16/24
+   подписи → FTY/FTN  Roboto Flex 400 10/16
+   code и .formula — технический моноширинный шрифт, вне реестра FTY */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Флюидный масштаб: корень 16px на узких экранах (минимум = текущие
+       метрики FTY), пропорциональный рост до 20px на широких */
+    font-size: clamp(1rem, calc(0.6rem + 0.5vw), 1.25rem);
+}
+
+body {
+    margin: 0;
+    background: #000;
+    color: var(--clr-gry-200);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    max-width: 90rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: var(--clr-gry-975);
+    border-left: 1px solid var(--clr-gry-925);
+    border-right: 1px solid var(--clr-gry-925);
+}
+
+/* ---------- Шапка и навигация ---------- */
+
+.sidebar {
+    border-right: 1px solid var(--clr-gry-925);
+    background: var(--clr-gry-900);
+    padding: var(--sp-szm);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.brand {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.465rem;
+    letter-spacing: -0.0125rem;
+    color: var(--clr-gry-025);
+    text-decoration: none;
+    display: block;
+    margin-bottom: var(--sp-sxs);
+}
+
+.brand small {
+    display: block;
+    font-weight: 400;
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-475);
+    letter-spacing: 0.04em;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xxs);
+}
+
+.nav a {
+    color: var(--clr-gry-200);
+    text-decoration: none;
+    padding: var(--sp-xxs) var(--sp-sxs);
+    gap: var(--sp-sxs);
+    border-radius: var(--sp-xxs);
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.nav a:hover {
+    background: var(--clr-gry-875);
+    border-color: var(--clr-gry-925);
+}
+
+.nav a[aria-current="page"] {
+    background: var(--clr-gry-875);
+    border-color: var(--clr-gry-750);
+    color: var(--clr-gry-025);
+}
+
+.nav .tag {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: var(--clr-gry-475);
+    font-family: var(--font-mono);
+}
+
+.nav .tag.soon {
+    color: var(--clr-gry-600);
+}
+
+/* ---------- Витрины палитр ---------- */
+
+.family {
+    margin: var(--sp-szm) 0 var(--sp-szl);
+}
+
+.family-head {
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-sxs);
+    margin-bottom: var(--sp-sxs);
+}
+
+.family-head h3 {
+    margin: 0;
+}
+
+.family-head .count {
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-600);
+    font-family: var(--font-mono);
+}
+
+.strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(4.75rem, 1fr));
+    gap: var(--sp-sxs);
+}
+
+.cell {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xxs);
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-475);
+}
+
+.cell .chip {
+    height: 2.75rem;
+    border-radius: var(--sp-sxs);
+    border: 1px solid var(--clr-gry-750);
+}
+
+.cell .step {
+    color: var(--clr-gry-200);
+    font-weight: 500;
+}
+
+.fcl-group {
+    margin: var(--sp-szl) 0;
+}
+
+.fcl-emph {
+    margin: var(--sp-szm) 0 var(--sp-sxs);
+}
+
+.swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(21.25rem, 1fr));
+    gap: var(--sp-szs);
+    align-items: start;
+}
+
+.swatch-card {
+    background: var(--clr-gry-900);
+    border: 1px solid var(--clr-gry-925);
+    border-radius: var(--rad-szm);
+    padding: var(--sp-sxs);
+}
+
+.swatch-card .code {
+    display: block;
+    margin-bottom: var(--sp-sxs);
+}
+
+.roles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-sxs);
+}
+
+.fcl-role {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xxs);
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-475);
+}
+
+.fcl-role .chip {
+    height: 2.5rem;
+    border-radius: var(--sp-sxs);
+    border: 1px solid var(--clr-gry-750);
+}
+
+.fcl-role .ref {
+    color: var(--clr-gry-600);
+}
+
+.fcl-role .hex {
+    color: var(--clr-gry-200);
+}
+
+/* ---------- Шкалы ---------- */
+
+.scale-row {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-szs);
+    padding: var(--sp-sxs) 0;
+    border-bottom: 1px solid var(--clr-gry-925);
+}
+
+.scale-row .name {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-025);
+    width: 3rem;
+}
+
+.scale-row .vals {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-475);
+    width: 9.375rem;
+}
+
+.scale-row .demo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.sp-sample {
+    height: var(--sp-sxs);
+    background: var(--clr-gry-475);
+    border-radius: var(--sp-xxs);
+}
+
+.rad-chip {
+    width: 7.5rem;
+    height: 3.5rem;
+    background: var(--clr-gry-475);
+}
+
+.thk-chip {
+    width: 11.25rem;
+    background: var(--clr-gry-200);
+    border-radius: var(--sp-xxs);
+}
+
+/* ---------- Типографика ---------- */
+
+.type-matrix {
+    overflow-x: auto;
+}
+
+.type-matrix td,
+.type-matrix th {
+    white-space: nowrap;
+}
+
+.type-matrix td {
+    border-bottom: 1px solid var(--clr-gry-900);
+}
+
+.type-cell {
+    font-family: "Roboto Flex", Roboto, system-ui, sans-serif;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.fty-row {
+    display: grid;
+    grid-template-columns: 8.75rem 1fr;
+    gap: var(--sp-szs);
+    padding: var(--sp-szm) 0;
+    border-bottom: 1px solid var(--clr-gry-925);
+    align-items: start;
+}
+
+.fty-row .meta {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-475);
+}
+
+.fty-row .meta code {
+    display: inline-block;
+    margin-bottom: var(--sp-xxs);
+}
+
+/* ---------- Градиенты ---------- */
+
+.gradient-card {
+    background: var(--clr-gry-900);
+    border: 1px solid var(--clr-gry-925);
+    border-radius: var(--rad-szm);
+    padding: var(--sp-szs);
+}
+
+.gradient-chip {
+    height: 4.5rem;
+    border-radius: var(--rad-szs);
+    border: 1px solid var(--clr-gry-750);
+    margin-bottom: var(--sp-sxs);
+}
+
+.gradient-card .stops {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-475);
+}
+
+/* ---------- Контент ---------- */
+
+.content {
+    padding: var(--sp-sxl) var(--sp-sxl) var(--sp-xxl);
+}
+
+/* ---------- Вертикальный ритм = раскладка секции FTY в Figma ----------
+   Заголовок → контент блока:              24 = SPC/SZM
+   Блок → подпись следующего раздела:      48 = SPC/SXL
+   Подпись раздела (h2/h3) → контент:      24 = SPC/SZM
+   Контент → подраздел (h3):               48 = SPC/SXL
+   Абзац/блок → абзац/блок:                24 = SPC/SZM
+   Цитата → автор:                          4 = SPC/XXS
+   Поля страницы:                          48 = SPC/SXL (паддинг фрейма FTY)
+   Примечание: линия-разделитель витрины FTY (0.0625rem между рядами) на страницах
+   не воспроизводится — разделам достаточно воздуха 48. */
+
+h1 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.420625rem;
+    letter-spacing: -0.03rem;
+    color: var(--clr-gry-025);
+    margin: 0 0 var(--sp-szm);
+}
+
+h2 {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.758125rem;
+    letter-spacing: -0.015rem;
+    color: var(--clr-gry-025);
+    margin: var(--sp-sxl) 0 var(--sp-szm);
+}
+
+h3 {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.465rem;
+    letter-spacing: -0.0125rem;
+    color: var(--clr-gry-025);
+    margin: var(--sp-sxl) 0 var(--sp-szm);
+}
+
+p {
+    margin: 0 0 var(--sp-szm);
+}
+
+ul,
+ol {
+    margin: 0 0 var(--sp-szm);
+    padding-left: var(--sp-szl);
+}
+
+li {
+    margin: 0;
+}
+
+li + li {
+    margin-top: var(--sp-sxs);
+}
+
+/* Подпункты: воздух 8 (SXS) после текста родителя, без нижнего маргина
+   внутри родителя, отступ вложенности меньше, межпунктный ритм плотнее
+   верхнего уровня (28 против 32) */
+li > ul,
+li > ol {
+    margin: var(--sp-sxs) 0 0;
+    padding-left: var(--sp-szs);
+}
+
+li > ul li + li,
+li > ol li + li {
+    margin-top: var(--sp-xxs);
+}
+
+a {
+    color: var(--clr-gry-100);
+}
+
+.lead {
+    color: var(--clr-gry-200);
+}
+
+/* ---------- Коды и чипы ---------- */
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    background: var(--clr-gry-900);
+    border: 1px solid var(--clr-gry-925);
+    border-radius: var(--sp-xxs);
+    padding: 0.125rem var(--sp-xxs);
+    color: var(--clr-gry-100);
+    white-space: nowrap;
+}
+
+/* code, содержащий бейдж .seg, сам не рисует рамку — иначе двойной чип */
+code:has(> .seg) {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* Бейдж-сегмент: нейтральный, как чип code (без самодельной раскраски) */
+.seg {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    background: var(--clr-gry-900);
+    border: 1px solid var(--clr-gry-925);
+    border-radius: var(--sp-xxs);
+    padding: 0.125rem var(--sp-xxs);
+    color: var(--clr-gry-100);
+    white-space: nowrap;
+}
+
+/* ---------- Таблицы ---------- */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: var(--sp-sxl) 0 var(--sp-szm);
+}
+
+h2 + table,
+h3 + table {
+    margin-top: var(--sp-szm);
+}
+
+th {
+    text-align: left;
+    font-weight: 400;
+    color: var(--clr-gry-025);
+    border-bottom: 1px solid var(--clr-gry-750);
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+}
+
+td {
+    border-bottom: 1px solid var(--clr-gry-925);
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+}
+
+td code {
+    white-space: nowrap;
+}
+
+th code {
+    font-weight: 400;
+}
+
+.swatch {
+    display: inline-block;
+    width: var(--sp-sxs);
+    height: var(--sp-sxs);
+    border-radius: var(--sp-xxs);
+    border: 1px solid var(--clr-gry-750);
+    vertical-align: -0.125rem;
+    margin-right: var(--sp-xxs);
+}
+
+/* ---------- Блоки ---------- */
+
+.formula {
+    background: var(--clr-gry-900);
+    border: 1px solid var(--clr-gry-925);
+    border-radius: var(--rad-szs);
+    padding: var(--sp-szm);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    overflow-x: auto;
+    margin: var(--sp-szm) 0;
+}
+
+.note {
+    border-left: 3px solid var(--fcl-atn-fgr);
+    background: var(--clr-gry-900);
+    border-radius: 0 var(--rad-szs) var(--rad-szs) 0;
+    padding: var(--sp-szs) var(--sp-szm);
+    margin: var(--sp-szm) 0;
+}
+
+.note.pos {
+    border-left-color: var(--fcl-pos-fgr);
+}
+
+.note.danger {
+    border-left-color: var(--fcl-acc-fgr);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16.25rem, 1fr));
+    gap: var(--sp-szs);
+    margin: var(--sp-szm) 0;
+}
+
+.card {
+    background: var(--clr-gry-900);
+    border: 1px solid var(--clr-gry-925);
+    border-radius: var(--rad-szm);
+    padding: var(--sp-szm);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 120ms ease;
+}
+
+.card:hover {
+    border-color: var(--clr-gry-750);
+}
+
+.card h3 {
+    margin: 0 0 var(--sp-xxs);
+}
+
+.card p {
+    margin: 0;
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-475);
+}
+
+.footer {
+    margin-top: var(--sp-xxl);
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-600);
+}
+
+@media (max-width: 860px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--clr-gry-925);
+    }
+
+    .content {
+        padding: var(--sp-szm);
+    }
+}
+
+/* Подписи внутри шапок матрицы типографики */
+.type-matrix th small,
+.family-head .count,
+.scale-row .vals {
+    font-weight: 400;
+}

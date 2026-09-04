@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Толщины — DNA</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23080808'/%3E%3Ctext x='8' y='12' font-family='monospace' font-size='10' fill='%23DBDBDB' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"
+        />
+        <link rel="stylesheet" href="./assets/dna.css" />
+    </head>
+    <body>
+        <div class="layout">
+            <aside class="sidebar">
+                <a class="brand" href="./index.html">
+                    ДНК UI-Kit'а
+                    <small>Rosinfotech</small>
+                </a>
+                <nav class="nav">
+                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
+                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
+                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
+                    <a href="./thk.html" aria-current="page"
+                        >Толщины <span class="tag">THK</span></a
+                    >
+                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
+                    <a href="./fty.html">Функц. типографика <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
+                </nav>
+            </aside>
+            <main class="content">
+                <h1>Толщины / THK</h1>
+                <p class="lead">
+                    Шкала толщин линий: обводки, разделители, подчёркивания, рамки. Семь
+                    последовательных значений от 1 до 7 px.
+                </p>
+
+                <h2 id="scale">Шкала</h2>
+                <div class="scale-row">
+                    <span class="name">XXS</span>
+                    <span class="vals">1 px</span>
+                    <div class="demo"><div class="thk-chip" style="height: 1px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">SXS</span>
+                    <span class="vals">2 px</span>
+                    <div class="demo"><div class="thk-chip" style="height: 2px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">SZS</span>
+                    <span class="vals">3 px</span>
+                    <div class="demo"><div class="thk-chip" style="height: 3px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">SZM</span>
+                    <span class="vals">4 px</span>
+                    <div class="demo"><div class="thk-chip" style="height: 4px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">SZL</span>
+                    <span class="vals">5 px</span>
+                    <div class="demo"><div class="thk-chip" style="height: 5px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">SXL</span>
+                    <span class="vals">6 px</span>
+                    <div class="demo"><div class="thk-chip" style="height: 6px"></div></div>
+                </div>
+                <div class="scale-row">
+                    <span class="name">XXL</span>
+                    <span class="vals">7 px</span>
+                    <div class="demo"><div class="thk-chip" style="height: 7px"></div></div>
+                </div>
+
+                <h2 id="usage">Применение</h2>
+                <ul>
+                    <li>
+                        Тонкие акценты и разделители — XXS/SXS; обводки контролов — SZS/SZM; крупные
+                        рамки и контуры — SZL+;
+                    </li>
+                    <li>
+                        Толщина обводки меняется по состоянию: например, фокус поля ввода утолщает
+                        рамку на шаг;
+                    </li>
+                </ul>
+
+                <div class="note danger">
+                    Единственная шкала без живых переменных: значения существуют только на
+                    канвас-витрине. Перед использованием в Figma нужно оцифровать: THK/XXS…THK/XXL =
+                    1…7.
+                </div>
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
+            </main>
+        </div>
+    </body>
+</html>

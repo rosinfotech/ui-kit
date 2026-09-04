@@ -1,0 +1,11 @@
+{
+    "name": "@rosinfo.tech/dna",
+    "private": true,
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "vite src --open --port 33335 --strictPort",
+        "preview": "vite preview src --port 33335 --strictPort",
+        "type-check": "echo DNA: no TypeScript sources"
+    }
+}

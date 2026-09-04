@@ -1,0 +1,2018 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Функциональная цветовая палитра — DNA</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23080808'/%3E%3Ctext x='8' y='12' font-family='monospace' font-size='10' fill='%23DBDBDB' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"
+        />
+        <link rel="stylesheet" href="./assets/dna.css" />
+    </head>
+    <body>
+        <div class="layout">
+            <aside class="sidebar">
+                <a class="brand" href="./index.html">
+                    ДНК UI-Kit'а
+                    <small>Rosinfotech</small>
+                </a>
+                <nav class="nav">
+                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
+                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                    <a href="./fcl.html" aria-current="page"
+                        >Функциональный цвет <span class="tag">FCL</span></a
+                    >
+                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
+                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
+                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
+                    <a href="./fty.html">Функц. типографика <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
+                </nav>
+            </aside>
+            <main class="content">
+                <h1>Функциональная цветовая палитра / FCL</h1>
+                <p class="lead">
+                    Единственный источник цвета для компонентов: 263 переменные, собираемые из
+                    слоёв, акцентов, состояний и ролей. Значения ссылаются на токены
+                    <a href="./clr.html">абсолютной палитры</a>. Ниже — полная таблица всех 90
+                    сочетаний × 3 роли.
+                </p>
+
+                <h2 id="grammar">Грамматика</h2>
+                <div class="formula">
+                    &lt;слой&gt;/&lt;акцент&gt;/&lt;состояние&gt;/&lt;роль&gt;<br />
+                    <span class="seg layer">ABV</span>/<span class="seg emph">DFT</span>/<span
+                        class="seg state"
+                        >RGL</span
+                    >/<span class="seg role">BGR</span>
+                    &nbsp;→&nbsp; GRY/200 = #DBDBDB
+                </div>
+                <ul>
+                    <li>
+                        <strong>Слой</strong> — где элемент в пространстве (полный реестр — в
+                        <a href="./semantics.html">Семантике</a>):
+                        <ul>
+                            <li><code>ABV</code> — приподнят над поверхностью;</li>
+                            <li><code>SFC</code> — несущая поверхность;</li>
+                            <li><code>BLW</code> — утоплен, «в яме»;</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Смысловые сегменты имени:
+                        <ul>
+                            <li><strong>акцент</strong> — смысловая роль элемента;</li>
+                            <li><strong>состояние</strong> — интерактив;</li>
+                            <li>
+                                <strong>роль</strong> — что красим:
+                                <ul>
+                                    <li>контент <code>FGR</code> — текст, иконка, глиф;</li>
+                                    <li>рамка <code>BRD</code> — обводка, граница;</li>
+                                    <li>фон <code>BGR</code> — заливка элемента;</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        У переключаемых компонентов (CHB, TOG, RAD) вместо PRS используется CHD, у
+                        полей ввода INP — состояния с суффиксом <code>_FLD</code>;
+                    </li>
+                    <li>Роли в каждой карточке: чип цвета, hex, ссылка на токен CLR;</li>
+                </ul>
+
+                <div class="note">
+                    Пространственность дополняется объёмом: для приподнятых элементов — градиент
+                    света
+                    <code>ABV/…/GRD</code>, для глубины — тени <code>&lt;слой&gt;/…/SHD</code> (у
+                    ABV тень вниз, у BLW — внутрь ямы).
+                </div>
+
+                <h2 id="table">Полная таблица</h2>
+                <section class="fcl-group" id="ABV">
+                    <h2>Above surface — над поверхностью</h2>
+                    <section class="fcl-emph">
+                        <h3><code>ABV/DFT</code> — Default — обычный</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">ABV/DFT/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #1b1b1b"></div>
+                                        <span>FGR</span><span class="hex">#1B1B1B</span
+                                        ><span class="ref">GRY/925</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #dbdbdb"></div>
+                                        <span>BRD</span><span class="hex">#DBDBDB</span
+                                        ><span class="ref">GRY/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #dbdbdb"></div>
+                                        <span>BGR</span><span class="hex">#DBDBDB</span
+                                        ><span class="ref">GRY/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/DFT/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>FGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #cecece"></div>
+                                        <span>BRD</span><span class="hex">#CECECE</span
+                                        ><span class="ref">GRY/250</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #cecece"></div>
+                                        <span>BGR</span><span class="hex">#CECECE</span
+                                        ><span class="ref">GRY/250</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/DFT/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>FGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #dbdbdb"></div>
+                                        <span>BRD</span><span class="hex">#DBDBDB</span
+                                        ><span class="ref">GRY/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #cecece"></div>
+                                        <span>BGR</span><span class="hex">#CECECE</span
+                                        ><span class="ref">GRY/250</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/DFT/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #363636"></div>
+                                        <span>FGR</span><span class="hex">#363636</span
+                                        ><span class="ref">GRY/825</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #c1c1c1"></div>
+                                        <span>BRD</span><span class="hex">#C1C1C1</span
+                                        ><span class="ref">GRY/300</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #c1c1c1"></div>
+                                        <span>BGR</span><span class="hex">#C1C1C1</span
+                                        ><span class="ref">GRY/300</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/DFT/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #575757"></div>
+                                        <span>FGR</span><span class="hex">#575757</span
+                                        ><span class="ref">GRY/700</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>ABV/PRM</code> — Primary — основной</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">ABV/PRM/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #212121"></div>
+                                        <span>FGR</span><span class="hex">#212121</span
+                                        ><span class="ref">BRA/SEC/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #dbdbdb"></div>
+                                        <span>BRD</span><span class="hex">#DBDBDB</span
+                                        ><span class="ref">GRY/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f6f6f6"></div>
+                                        <span>BGR</span><span class="hex">#F6F6F6</span
+                                        ><span class="ref">GRY/100</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/PRM/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #141414"></div>
+                                        <span>FGR</span><span class="hex">#141414</span
+                                        ><span class="ref">BRA/SEC/950</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #cdcdcd"></div>
+                                        <span>BRD</span><span class="hex">#CDCDCD</span
+                                        ><span class="ref">BRA/SEC/250</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #e8e8e8"></div>
+                                        <span>BGR</span><span class="hex">#E8E8E8</span
+                                        ><span class="ref">BRA/SEC/150</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/PRM/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #141414"></div>
+                                        <span>FGR</span><span class="hex">#141414</span
+                                        ><span class="ref">BRA/SEC/950</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #e8e8e8"></div>
+                                        <span>BRD</span><span class="hex">#E8E8E8</span
+                                        ><span class="ref">BRA/SEC/150</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #e8e8e8"></div>
+                                        <span>BGR</span><span class="hex">#E8E8E8</span
+                                        ><span class="ref">BRA/SEC/150</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/PRM/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #212121"></div>
+                                        <span>FGR</span><span class="hex">#212121</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #dbdbdb"></div>
+                                        <span>BRD</span><span class="hex">#DBDBDB</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f6f6f6"></div>
+                                        <span>BGR</span><span class="hex">#F6F6F6</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/PRM/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #575757"></div>
+                                        <span>FGR</span><span class="hex">#575757</span
+                                        ><span class="ref">GRY/700</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>ABV/ACC</code> — Accent — акцент</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">ABV/ACC/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffeced"></div>
+                                        <span>FGR</span><span class="hex">#FFECED</span
+                                        ><span class="ref">BRA/PRM/100</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #8d0305"></div>
+                                        <span>BRD</span><span class="hex">#8D0305</span
+                                        ><span class="ref">BRA/PRM/700</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #b80c0e"></div>
+                                        <span>BGR</span><span class="hex">#B80C0E</span
+                                        ><span class="ref">BRA/PRM/600</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/ACC/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fef7f7"></div>
+                                        <span>FGR</span><span class="hex">#FEF7F7</span
+                                        ><span class="ref">BRA/PRM/050</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #760103"></div>
+                                        <span>BRD</span><span class="hex">#760103</span
+                                        ><span class="ref">BRA/PRM/750</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #a30709"></div>
+                                        <span>BGR</span><span class="hex">#A30709</span
+                                        ><span class="ref">BRA/PRM/650</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/ACC/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fef7f7"></div>
+                                        <span>FGR</span><span class="hex">#FEF7F7</span
+                                        ><span class="ref">BRA/PRM/050</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #a30709"></div>
+                                        <span>BRD</span><span class="hex">#A30709</span
+                                        ><span class="ref">BRA/PRM/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #a30709"></div>
+                                        <span>BGR</span><span class="hex">#A30709</span
+                                        ><span class="ref">BRA/PRM/650</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/ACC/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffd1d1"></div>
+                                        <span>FGR</span><span class="hex">#FFD1D1</span
+                                        ><span class="ref">BRA/PRM/150</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #760103"></div>
+                                        <span>BRD</span><span class="hex">#760103</span
+                                        ><span class="ref">BRA/PRM/750</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #8d0305"></div>
+                                        <span>BGR</span><span class="hex">#8D0305</span
+                                        ><span class="ref">BRA/PRM/700</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/ACC/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #575757"></div>
+                                        <span>FGR</span><span class="hex">#575757</span
+                                        ><span class="ref">GRY/700</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>ABV/POS</code> — Positive — успех</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">ABV/POS/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #e0f6ec"></div>
+                                        <span>FGR</span><span class="hex">#E0F6EC</span
+                                        ><span class="ref">GRN/100</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0fa665"></div>
+                                        <span>BRD</span><span class="hex">#0FA665</span
+                                        ><span class="ref">GRN/400</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0fa665"></div>
+                                        <span>BGR</span><span class="hex">#0FA665</span
+                                        ><span class="ref">GRN/400</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/POS/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #f2fbf7"></div>
+                                        <span>FGR</span><span class="hex">#F2FBF7</span
+                                        ><span class="ref">GRN/050</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #009957"></div>
+                                        <span>BRD</span><span class="hex">#009957</span
+                                        ><span class="ref">GRN/450</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #009957"></div>
+                                        <span>BGR</span><span class="hex">#009957</span
+                                        ><span class="ref">GRN/450</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/POS/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #f2fbf7"></div>
+                                        <span>FGR</span><span class="hex">#F2FBF7</span
+                                        ><span class="ref">GRN/050</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0fa665"></div>
+                                        <span>BRD</span><span class="hex">#0FA665</span
+                                        ><span class="ref">GRN/400</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #009957"></div>
+                                        <span>BGR</span><span class="hex">#009957</span
+                                        ><span class="ref">GRN/450</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/POS/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #b1e9d0"></div>
+                                        <span>FGR</span><span class="hex">#B1E9D0</span
+                                        ><span class="ref">GRN/150</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #008c4f"></div>
+                                        <span>BRD</span><span class="hex">#008C4F</span
+                                        ><span class="ref">GRN/500</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #008c4f"></div>
+                                        <span>BGR</span><span class="hex">#008C4F</span
+                                        ><span class="ref">GRN/500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/POS/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #575757"></div>
+                                        <span>FGR</span><span class="hex">#575757</span
+                                        ><span class="ref">GRY/700</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>ABV/ATN</code> — Attention — внимание</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">ABV/ATN/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fcf4e6"></div>
+                                        <span>FGR</span><span class="hex">#FCF4E6</span
+                                        ><span class="ref">ORG/100</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #da9413"></div>
+                                        <span>BRD</span><span class="hex">#DA9413</span
+                                        ><span class="ref">ORG/400</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #da9413"></div>
+                                        <span>BGR</span><span class="hex">#DA9413</span
+                                        ><span class="ref">ORG/400</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/ATN/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fcf9f4"></div>
+                                        <span>FGR</span><span class="hex">#FCF9F4</span
+                                        ><span class="ref">ORG/050</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #ce8600"></div>
+                                        <span>BRD</span><span class="hex">#CE8600</span
+                                        ><span class="ref">ORG/450</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #ce8600"></div>
+                                        <span>BGR</span><span class="hex">#CE8600</span
+                                        ><span class="ref">ORG/450</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/ATN/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fcf9f4"></div>
+                                        <span>FGR</span><span class="hex">#FCF9F4</span
+                                        ><span class="ref">ORG/050</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #da9413"></div>
+                                        <span>BRD</span><span class="hex">#DA9413</span
+                                        ><span class="ref">ORG/400</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #ce8600"></div>
+                                        <span>BGR</span><span class="hex">#CE8600</span
+                                        ><span class="ref">ORG/450</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/ATN/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fbe6be"></div>
+                                        <span>FGR</span><span class="hex">#FBE6BE</span
+                                        ><span class="ref">ORG/150</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #c07d00"></div>
+                                        <span>BRD</span><span class="hex">#C07D00</span
+                                        ><span class="ref">ORG/500</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #c07d00"></div>
+                                        <span>BGR</span><span class="hex">#C07D00</span
+                                        ><span class="ref">ORG/500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/ATN/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #575757"></div>
+                                        <span>FGR</span><span class="hex">#575757</span
+                                        ><span class="ref">GRY/700</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>ABV/NEG</code> — Negative — ошибка</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">ABV/NEG/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fce6e6"></div>
+                                        <span>FGR</span><span class="hex">#FCE6E6</span
+                                        ><span class="ref">RED/100</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #da131a"></div>
+                                        <span>BRD</span><span class="hex">#DA131A</span
+                                        ><span class="ref">RED/400</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #da131a"></div>
+                                        <span>BGR</span><span class="hex">#DA131A</span
+                                        ><span class="ref">RED/400</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/NEG/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fcf4f4"></div>
+                                        <span>FGR</span><span class="hex">#FCF4F4</span
+                                        ><span class="ref">RED/050</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #ce0007"></div>
+                                        <span>BRD</span><span class="hex">#CE0007</span
+                                        ><span class="ref">RED/450</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #ce0007"></div>
+                                        <span>BGR</span><span class="hex">#CE0007</span
+                                        ><span class="ref">RED/450</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/NEG/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fcf4f4"></div>
+                                        <span>FGR</span><span class="hex">#FCF4F4</span
+                                        ><span class="ref">RED/050</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #da131a"></div>
+                                        <span>BRD</span><span class="hex">#DA131A</span
+                                        ><span class="ref">RED/400</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #ce0007"></div>
+                                        <span>BGR</span><span class="hex">#CE0007</span
+                                        ><span class="ref">RED/450</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/NEG/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fbbec0"></div>
+                                        <span>FGR</span><span class="hex">#FBBEC0</span
+                                        ><span class="ref">RED/150</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #c00006"></div>
+                                        <span>BRD</span><span class="hex">#C00006</span
+                                        ><span class="ref">RED/500</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #c00006"></div>
+                                        <span>BGR</span><span class="hex">#C00006</span
+                                        ><span class="ref">RED/500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">ABV/NEG/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #575757"></div>
+                                        <span>FGR</span><span class="hex">#575757</span
+                                        ><span class="ref">GRY/700</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section class="fcl-group" id="SFC">
+                    <h2>Surface — поверхность</h2>
+                    <section class="fcl-emph">
+                        <h3><code>SFC/DFT</code> — Default — обычный</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">SFC/DFT/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fcfcfc"></div>
+                                        <span>FGR</span><span class="hex">#FCFCFC</span
+                                        ><span class="ref">GRY/025</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #080808"></div>
+                                        <span>BGR</span><span class="hex">#080808</span
+                                        ><span class="ref">GRY/1000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/DFT/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>FGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">WHT/000</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/DFT/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>FGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">WHT/000</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>BGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/DFT/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>FGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">WHT/000</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/DFT/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #727272"></div>
+                                        <span>FGR</span><span class="hex">#727272</span
+                                        ><span class="ref">GRY/600</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>SFC/PRM</code> — Primary — основной</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">SFC/PRM/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fbfbfb"></div>
+                                        <span>FGR</span><span class="hex">#FBFBFB</span
+                                        ><span class="ref">GRY/050</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #292929"></div>
+                                        <span>BRD</span><span class="hex">#292929</span
+                                        ><span class="ref">GRY/875</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>BGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/PRM/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>FGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">WHT/000</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/PRM/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>FGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">WHT/000</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/PRM/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>FGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">WHT/000</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/PRM/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #727272"></div>
+                                        <span>FGR</span><span class="hex">#727272</span
+                                        ><span class="ref">GRY/600</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #fbfbfb"></div>
+                                        <span>BRD</span><span class="hex">#FBFBFB</span
+                                        ><span class="ref">GRY/050</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>SFC/ACC</code> — Accent — акцент</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">SFC/ACC/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>FGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">WHT/000</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #3d3d3d"></div>
+                                        <span>BRD</span><span class="hex">#3D3D3D</span
+                                        ><span class="ref">GRY/800</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/ACC/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>FGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">WHT/000</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/ACC/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>FGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">WHT/000</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/ACC/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffffff"></div>
+                                        <span>FGR</span><span class="hex">#FFFFFF</span
+                                        ><span class="ref">WHT/000</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/ACC/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #727272"></div>
+                                        <span>FGR</span><span class="hex">#727272</span
+                                        ><span class="ref">GRY/600</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>SFC/POS</code> — Positive — успех</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">SFC/POS/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ecf9f4"></div>
+                                        <span>FGR</span><span class="hex">#ECF9F4</span
+                                        ><span class="ref">GRN/075</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #005731"></div>
+                                        <span>BRD</span><span class="hex">#005731</span
+                                        ><span class="ref">GRN/700</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #003d22"></div>
+                                        <span>BGR</span><span class="hex">#003D22</span
+                                        ><span class="ref">GRN/800</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/POS/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #002213"></div>
+                                        <span>FGR</span><span class="hex">#002213</span
+                                        ><span class="ref">GRN/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #86dbb6"></div>
+                                        <span>BRD</span><span class="hex">#86DBB6</span
+                                        ><span class="ref">GRN/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #86dbb6"></div>
+                                        <span>BGR</span><span class="hex">#86DBB6</span
+                                        ><span class="ref">GRN/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/POS/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #002213"></div>
+                                        <span>FGR</span><span class="hex">#002213</span
+                                        ><span class="ref">GRN/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #86dbb6"></div>
+                                        <span>BRD</span><span class="hex">#86DBB6</span
+                                        ><span class="ref">GRN/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #86dbb6"></div>
+                                        <span>BGR</span><span class="hex">#86DBB6</span
+                                        ><span class="ref">GRN/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/POS/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #002213"></div>
+                                        <span>FGR</span><span class="hex">#002213</span
+                                        ><span class="ref">GRN/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #86dbb6"></div>
+                                        <span>BRD</span><span class="hex">#86DBB6</span
+                                        ><span class="ref">GRN/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #86dbb6"></div>
+                                        <span>BGR</span><span class="hex">#86DBB6</span
+                                        ><span class="ref">GRN/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/POS/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #727272"></div>
+                                        <span>FGR</span><span class="hex">#727272</span
+                                        ><span class="ref">GRY/600</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>SFC/ATN</code> — Attention — внимание</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">SFC/ATN/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fcf4e6"></div>
+                                        <span>FGR</span><span class="hex">#FCF4E6</span
+                                        ><span class="ref">ORG/100</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #7b5000"></div>
+                                        <span>BRD</span><span class="hex">#7B5000</span
+                                        ><span class="ref">ORG/700</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #523600"></div>
+                                        <span>BGR</span><span class="hex">#523600</span
+                                        ><span class="ref">ORG/800</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/ATN/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #2a1b00"></div>
+                                        <span>FGR</span><span class="hex">#2A1B00</span
+                                        ><span class="ref">ORG/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7d697"></div>
+                                        <span>BRD</span><span class="hex">#F7D697</span
+                                        ><span class="ref">ORG/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7d697"></div>
+                                        <span>BGR</span><span class="hex">#F7D697</span
+                                        ><span class="ref">ORG/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/ATN/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #2a1b00"></div>
+                                        <span>FGR</span><span class="hex">#2A1B00</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7d697"></div>
+                                        <span>BRD</span><span class="hex">#F7D697</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7d697"></div>
+                                        <span>BGR</span><span class="hex">#F7D697</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/ATN/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #2a1b00"></div>
+                                        <span>FGR</span><span class="hex">#2A1B00</span
+                                        ><span class="ref">ORG/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7d697"></div>
+                                        <span>BRD</span><span class="hex">#F7D697</span
+                                        ><span class="ref">ORG/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7d697"></div>
+                                        <span>BGR</span><span class="hex">#F7D697</span
+                                        ><span class="ref">ORG/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/ATN/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #727272"></div>
+                                        <span>FGR</span><span class="hex">#727272</span
+                                        ><span class="ref">GRY/600</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BRD</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #222222"></div>
+                                        <span>BGR</span><span class="hex">#222222</span
+                                        ><span class="ref">GRY/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>SFC/NEG</code> — Negative — ошибка</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">SFC/NEG/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fceff0"></div>
+                                        <span>FGR</span><span class="hex">#FCEFF0</span
+                                        ><span class="ref">RED/075</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #a00005"></div>
+                                        <span>BRD</span><span class="hex">#A00005</span
+                                        ><span class="ref">RED/600</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #480002"></div>
+                                        <span>BGR</span><span class="hex">#480002</span
+                                        ><span class="ref">RED/825</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/NEG/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #2a0001"></div>
+                                        <span>FGR</span><span class="hex">#2A0001</span
+                                        ><span class="ref">RED/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7979a"></div>
+                                        <span>BRD</span><span class="hex">#F7979A</span
+                                        ><span class="ref">RED/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7979a"></div>
+                                        <span>BGR</span><span class="hex">#F7979A</span
+                                        ><span class="ref">RED/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/NEG/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #2a0001"></div>
+                                        <span>FGR</span><span class="hex">#2A0001</span
+                                        ><span class="ref">RED/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7979a"></div>
+                                        <span>BRD</span><span class="hex">#F7979A</span
+                                        ><span class="ref">RED/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7979a"></div>
+                                        <span>BGR</span><span class="hex">#F7979A</span
+                                        ><span class="ref">RED/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/NEG/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #2a0001"></div>
+                                        <span>FGR</span><span class="hex">#2A0001</span
+                                        ><span class="ref">RED/900</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7979a"></div>
+                                        <span>BRD</span><span class="hex">#F7979A</span
+                                        ><span class="ref">RED/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7979a"></div>
+                                        <span>BGR</span><span class="hex">#F7979A</span
+                                        ><span class="ref">RED/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">SFC/NEG/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #2a0001"></div>
+                                        <span>FGR</span><span class="hex">#2A0001</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7979a"></div>
+                                        <span>BRD</span><span class="hex">#F7979A</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7979a"></div>
+                                        <span>BGR</span><span class="hex">#F7979A</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section class="fcl-group" id="BLW">
+                    <h2>Below surface — под поверхностью, «в яме»</h2>
+                    <section class="fcl-emph">
+                        <h3><code>BLW/DFT</code> — Default — обычный</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">BLW/DFT/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #646464"></div>
+                                        <span>FGR</span><span class="hex">#646464</span
+                                        ><span class="ref">GRY/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #646464"></div>
+                                        <span>BRD</span><span class="hex">#646464</span
+                                        ><span class="ref">GRY/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>BGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/DFT/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #646464"></div>
+                                        <span>FGR</span><span class="hex">#646464</span
+                                        ><span class="ref">GRY/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #646464"></div>
+                                        <span>BRD</span><span class="hex">#646464</span
+                                        ><span class="ref">GRY/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #151515"></div>
+                                        <span>BGR</span><span class="hex">#151515</span
+                                        ><span class="ref">GRY/950</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/DFT/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #c1c1c1"></div>
+                                        <span>FGR</span><span class="hex">#C1C1C1</span
+                                        ><span class="ref">GRY/300</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #c1c1c1"></div>
+                                        <span>BRD</span><span class="hex">#C1C1C1</span
+                                        ><span class="ref">GRY/300</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #080808"></div>
+                                        <span>BGR</span><span class="hex">#080808</span
+                                        ><span class="ref">GRY/1000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/DFT/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #e2e2e2"></div>
+                                        <span>FGR</span><span class="hex">#E2E2E2</span
+                                        ><span class="ref">GRY/175</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #727272"></div>
+                                        <span>BRD</span><span class="hex">#727272</span
+                                        ><span class="ref">GRY/600</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #080808"></div>
+                                        <span>BGR</span><span class="hex">#080808</span
+                                        ><span class="ref">GRY/1000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/DFT/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #4a4a4a"></div>
+                                        <span>FGR</span><span class="hex">#4A4A4A</span
+                                        ><span class="ref">GRY/750</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #292929"></div>
+                                        <span>BRD</span><span class="hex">#292929</span
+                                        ><span class="ref">GRY/875</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>BGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>BLW/PRM</code> — Primary — основной</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">BLW/PRM/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #626262"></div>
+                                        <span>FGR</span><span class="hex">#626262</span
+                                        ><span class="ref">BRA/SEC/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #626262"></div>
+                                        <span>BRD</span><span class="hex">#626262</span
+                                        ><span class="ref">BRA/SEC/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #212121"></div>
+                                        <span>BGR</span><span class="hex">#212121</span
+                                        ><span class="ref">BRA/SEC/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/PRM/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #626262"></div>
+                                        <span>FGR</span><span class="hex">#626262</span
+                                        ><span class="ref">BRA/SEC/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #626262"></div>
+                                        <span>BRD</span><span class="hex">#626262</span
+                                        ><span class="ref">BRA/SEC/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #282828"></div>
+                                        <span>BGR</span><span class="hex">#282828</span
+                                        ><span class="ref">BRA/SEC/875</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/PRM/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #c0c0c0"></div>
+                                        <span>FGR</span><span class="hex">#C0C0C0</span
+                                        ><span class="ref">BRA/SEC/300</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #c0c0c0"></div>
+                                        <span>BRD</span><span class="hex">#C0C0C0</span
+                                        ><span class="ref">BRA/SEC/300</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #1b1b1b"></div>
+                                        <span>BGR</span><span class="hex">#1B1B1B</span
+                                        ><span class="ref">GRY/925</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/PRM/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #e1e1e1"></div>
+                                        <span>FGR</span><span class="hex">#E1E1E1</span
+                                        ><span class="ref">BRA/SEC/175</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #8a8a8a"></div>
+                                        <span>BRD</span><span class="hex">#8A8A8A</span
+                                        ><span class="ref">BRA/SEC/500</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>BGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/PRM/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #4a4a4a"></div>
+                                        <span>FGR</span><span class="hex">#4A4A4A</span
+                                        ><span class="ref">GRY/750</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #292929"></div>
+                                        <span>BRD</span><span class="hex">#292929</span
+                                        ><span class="ref">GRY/875</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>BGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>BLW/ACC</code> — Accent — акцент</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">BLW/ACC/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #a30709"></div>
+                                        <span>FGR</span><span class="hex">#A30709</span
+                                        ><span class="ref">BRA/PRM/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #a30709"></div>
+                                        <span>BRD</span><span class="hex">#A30709</span
+                                        ><span class="ref">BRA/PRM/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #250001"></div>
+                                        <span>BGR</span><span class="hex">#250001</span
+                                        ><span class="ref">BRA/PRM/925</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/ACC/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fb7a7c"></div>
+                                        <span>FGR</span><span class="hex">#FB7A7C</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #fb7a7c"></div>
+                                        <span>BRD</span><span class="hex">#FB7A7C</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #1b0000"></div>
+                                        <span>BGR</span><span class="hex">#1B0000</span
+                                        ><span class="ref">—</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/ACC/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #fb7a7c"></div>
+                                        <span>FGR</span><span class="hex">#FB7A7C</span
+                                        ><span class="ref">BRA/PRM/300</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #fb7a7c"></div>
+                                        <span>BRD</span><span class="hex">#FB7A7C</span
+                                        ><span class="ref">BRA/PRM/300</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #1b0000"></div>
+                                        <span>BGR</span><span class="hex">#1B0000</span
+                                        ><span class="ref">BRA/PRM/950</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/ACC/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ffc2c3"></div>
+                                        <span>FGR</span><span class="hex">#FFC2C3</span
+                                        ><span class="ref">BRA/PRM/175</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #760103"></div>
+                                        <span>BRD</span><span class="hex">#760103</span
+                                        ><span class="ref">BRA/PRM/750</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #110000"></div>
+                                        <span>BGR</span><span class="hex">#110000</span
+                                        ><span class="ref">BRA/PRM/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/ACC/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #4a4a4a"></div>
+                                        <span>FGR</span><span class="hex">#4A4A4A</span
+                                        ><span class="ref">GRY/750</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #292929"></div>
+                                        <span>BRD</span><span class="hex">#292929</span
+                                        ><span class="ref">GRY/875</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>BGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>BLW/POS</code> — Positive — успех</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">BLW/POS/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #005e35"></div>
+                                        <span>FGR</span><span class="hex">#005E35</span
+                                        ><span class="ref">GRN/675</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #005e35"></div>
+                                        <span>BRD</span><span class="hex">#005E35</span
+                                        ><span class="ref">GRN/675</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #00150c"></div>
+                                        <span>BGR</span><span class="hex">#00150C</span
+                                        ><span class="ref">GRN/950</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/POS/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #005e35"></div>
+                                        <span>FGR</span><span class="hex">#005E35</span
+                                        ><span class="ref">GRN/675</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #005e35"></div>
+                                        <span>BRD</span><span class="hex">#005E35</span
+                                        ><span class="ref">GRN/675</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #001b10"></div>
+                                        <span>BGR</span><span class="hex">#001B10</span
+                                        ><span class="ref">GRN/925</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/POS/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #31ba7f"></div>
+                                        <span>FGR</span><span class="hex">#31BA7F</span
+                                        ><span class="ref">GRN/325</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #31ba7f"></div>
+                                        <span>BRD</span><span class="hex">#31BA7F</span
+                                        ><span class="ref">GRN/325</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #000e08"></div>
+                                        <span>BGR</span><span class="hex">#000E08</span
+                                        ><span class="ref">GRN/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/POS/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #9be2c3"></div>
+                                        <span>FGR</span><span class="hex">#9BE2C3</span
+                                        ><span class="ref">GRN/175</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #3fc189"></div>
+                                        <span>BRD</span><span class="hex">#3FC189</span
+                                        ><span class="ref">GRN/300</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #000e08"></div>
+                                        <span>BGR</span><span class="hex">#000E08</span
+                                        ><span class="ref">GRN/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/POS/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #4a4a4a"></div>
+                                        <span>FGR</span><span class="hex">#4A4A4A</span
+                                        ><span class="ref">GRY/750</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #292929"></div>
+                                        <span>BRD</span><span class="hex">#292929</span
+                                        ><span class="ref">GRY/875</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>BGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>BLW/ATN</code> — Attention — внимание</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">BLW/ATN/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #8e5d00"></div>
+                                        <span>FGR</span><span class="hex">#8E5D00</span
+                                        ><span class="ref">ORG/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #8e5d00"></div>
+                                        <span>BRD</span><span class="hex">#8E5D00</span
+                                        ><span class="ref">ORG/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #211500"></div>
+                                        <span>BGR</span><span class="hex">#211500</span
+                                        ><span class="ref">ORG/925</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/ATN/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #8e5d00"></div>
+                                        <span>FGR</span><span class="hex">#8E5D00</span
+                                        ><span class="ref">ORG/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #8e5d00"></div>
+                                        <span>BRD</span><span class="hex">#8E5D00</span
+                                        ><span class="ref">ORG/650</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #2a1b00"></div>
+                                        <span>BGR</span><span class="hex">#2A1B00</span
+                                        ><span class="ref">ORG/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/ATN/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #ecb54d"></div>
+                                        <span>FGR</span><span class="hex">#ECB54D</span
+                                        ><span class="ref">ORG/300</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #ecb54d"></div>
+                                        <span>BRD</span><span class="hex">#ECB54D</span
+                                        ><span class="ref">ORG/300</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #180f00"></div>
+                                        <span>BGR</span><span class="hex">#180F00</span
+                                        ><span class="ref">ORG/950</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/ATN/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #f9deab"></div>
+                                        <span>FGR</span><span class="hex">#F9DEAB</span
+                                        ><span class="ref">ORG/175</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #a06800"></div>
+                                        <span>BRD</span><span class="hex">#A06800</span
+                                        ><span class="ref">ORG/600</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0f0a00"></div>
+                                        <span>BGR</span><span class="hex">#0F0A00</span
+                                        ><span class="ref">ORG/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/ATN/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #4a4a4a"></div>
+                                        <span>FGR</span><span class="hex">#4A4A4A</span
+                                        ><span class="ref">GRY/750</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #292929"></div>
+                                        <span>BRD</span><span class="hex">#292929</span
+                                        ><span class="ref">GRY/875</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>BGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="fcl-emph">
+                        <h3><code>BLW/NEG</code> — Negative — ошибка</h3>
+                        <div class="swatches">
+                            <div class="swatch-card">
+                                <code class="code">BLW/NEG/RGL</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #b10006"></div>
+                                        <span>FGR</span><span class="hex">#B10006</span
+                                        ><span class="ref">RED/550</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #b10006"></div>
+                                        <span>BRD</span><span class="hex">#B10006</span
+                                        ><span class="ref">RED/550</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #210001"></div>
+                                        <span>BGR</span><span class="hex">#210001</span
+                                        ><span class="ref">RED/925</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/NEG/HVR</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #b10006"></div>
+                                        <span>FGR</span><span class="hex">#B10006</span
+                                        ><span class="ref">RED/550</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #b10006"></div>
+                                        <span>BRD</span><span class="hex">#B10006</span
+                                        ><span class="ref">RED/550</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #2a0001"></div>
+                                        <span>BGR</span><span class="hex">#2A0001</span
+                                        ><span class="ref">RED/900</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/NEG/FCS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7979a"></div>
+                                        <span>FGR</span><span class="hex">#F7979A</span
+                                        ><span class="ref">RED/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #f7979a"></div>
+                                        <span>BRD</span><span class="hex">#F7979A</span
+                                        ><span class="ref">RED/200</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #180001"></div>
+                                        <span>BGR</span><span class="hex">#180001</span
+                                        ><span class="ref">RED/950</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/NEG/PRS</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #f9abad"></div>
+                                        <span>FGR</span><span class="hex">#F9ABAD</span
+                                        ><span class="ref">RED/175</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #b90006"></div>
+                                        <span>BRD</span><span class="hex">#B90006</span
+                                        ><span class="ref">RED/525</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0f0001"></div>
+                                        <span>BGR</span><span class="hex">#0F0001</span
+                                        ><span class="ref">RED/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swatch-card">
+                                <code class="code">BLW/NEG/DSB</code>
+                                <div class="roles">
+                                    <div class="role">
+                                        <div class="chip" style="background: #4a4a4a"></div>
+                                        <span>FGR</span><span class="hex">#4A4A4A</span
+                                        ><span class="ref">GRY/750</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #292929"></div>
+                                        <span>BRD</span><span class="hex">#292929</span
+                                        ><span class="ref">GRY/875</span>
+                                    </div>
+                                    <div class="role">
+                                        <div class="chip" style="background: #0e0e0e"></div>
+                                        <span>BGR</span><span class="hex">#0E0E0E</span
+                                        ><span class="ref">GRY/975</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <h2 id="usage">Как применять</h2>
+                <ul>
+                    <li>
+                        Кнопка (не нажата, обычная): фон — <code>ABV/DFT/RGL/BGR</code>, текст —
+                        <code>ABV/DFT/RGL/FGR</code>, рамка — <code>ABV/DFT/RGL/BRD</code>;
+                    </li>
+                    <li>
+                        Поле ввода: дно «ямы» — <code>BLW/DFT/*/BGR</code>, введённый текст —
+                        <code>BLW/DFT/*/FGR</code>;
+                    </li>
+                    <li>
+                        Карточка — сама поверхность: <code>SFC/DFT/RGL/BGR</code> + тень
+                        <code>SFC/DFT/RGL/SHD</code>;
+                    </li>
+                </ul>
+
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
+            </main>
+        </div>
+    </body>
+</html>
