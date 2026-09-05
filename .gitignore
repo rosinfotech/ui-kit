@@ -1,9 +1,10 @@
+*.local
 .DS_Store
 .build/
 .figma/
 .playwright-mcp/
+.tanstack/
+apps/explorer/src/routeTree.gen.ts
 coverage/
 dist/
 node_modules/
-*.local
-apps/explorer/src/routeTree.gen.ts

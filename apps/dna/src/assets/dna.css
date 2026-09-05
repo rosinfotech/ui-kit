@@ -239,7 +239,7 @@ body {
     gap: var(--sp-sxs);
 }
 
-.fcl-role {
+.swatch-card .role {
     display: flex;
     flex-direction: column;
     gap: var(--sp-xxs);
@@ -249,17 +249,17 @@ body {
     color: var(--clr-gry-475);
 }
 
-.fcl-role .chip {
+.swatch-card .role .chip {
     height: 2.5rem;
     border-radius: var(--sp-sxs);
     border: 1px solid var(--clr-gry-750);
 }
 
-.fcl-role .ref {
+.swatch-card .role .ref {
     color: var(--clr-gry-600);
 }
 
-.fcl-role .hex {
+.swatch-card .role .hex {
     color: var(--clr-gry-200);
 }
 
@@ -459,6 +459,8 @@ li > ol li + li {
 
 a {
     color: var(--clr-gry-100);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25rem;
 }
 
 .lead {
@@ -567,6 +569,11 @@ th code {
     margin: var(--sp-szm) 0;
 }
 
+.note ul,
+.note ol {
+    margin-top: var(--sp-sxs);
+}
+
 .note.pos {
     border-left-color: var(--fcl-pos-fgr);
 }
@@ -637,4 +644,90 @@ th code {
 .family-head .count,
 .scale-row .vals {
     font-weight: 400;
+}
+
+/* ---------- Иллюстрации ---------- */
+
+.figure {
+    margin: var(--sp-szm) 0;
+    background: var(--clr-gry-900);
+    border: 1px solid var(--clr-gry-925);
+    border-radius: var(--rad-szm);
+    padding: var(--sp-szm);
+}
+
+.figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.figure figcaption {
+    margin-top: var(--sp-sxs);
+    font-size: 0.625rem;
+    line-height: 1rem;
+    color: var(--clr-gry-600);
+}
+
+/* ---------- Витрина FCL (повторяет раскладку палитры в Figma) ---------- */
+
+.fsw-title {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.465rem;
+    letter-spacing: -0.0125rem;
+    color: var(--clr-gry-025);
+}
+
+.fsw-code {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--clr-gry-300);
+}
+
+.fsw {
+    display: flex;
+    flex-direction: column;
+}
+
+.fsw-roles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.fsw-role {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.fsw-plate {
+    height: 3.5rem;
+    border-radius: var(--rad-szs);
+    flex: 1;
+    min-width: 0;
+}
+
+.fsw-label {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--clr-gry-300);
+    flex: none;
+}
+
+.fsw-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 1rem;
+    row-gap: 2rem;
+    margin: var(--sp-szm) 0;
 }

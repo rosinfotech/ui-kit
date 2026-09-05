@@ -1,0 +1,68 @@
+<svg width="960" height="480" viewBox="0 0 960 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>Пространственная модель: лестница слоёв и ролей</title>
+
+    <text x="40" y="40" font-family="Roboto Flex, Roboto, system-ui, sans-serif" font-size="16" font-weight="500" fill="#FCFCFC">
+        Пространственная модель: лестница слоёв и ролей
+    </text>
+
+    <!-- Групповые скобки зон -->
+    <g stroke="#646464" stroke-width="1.5">
+        <path d="M112 88 L104 88 L104 196 L112 196" />
+        <path d="M112 196 L104 196 L104 304 L112 304" />
+        <path d="M112 304 L104 304 L104 412 L112 412" />
+    </g>
+    <g stroke="#646464" stroke-width="1.5">
+        <line x1="92" y1="96" x2="92" y2="400" />
+    </g>
+    <path d="M92 412 L87 400 L97 400 Z" fill="#646464" />
+    <text x="84" y="254" font-family="Roboto Flex, Roboto, system-ui, sans-serif" font-size="12" fill="#646464" text-anchor="middle" transform="rotate(-90 84 254)">
+        глубина
+    </text>
+
+    <g font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#C1C1C1">
+        <text x="8" y="136">ABV</text>
+        <text x="8" y="152">над</text>
+        <text x="8" y="244">SFC</text>
+        <text x="8" y="260">0</text>
+        <text x="8" y="352">BLW</text>
+        <text x="8" y="368">под</text>
+    </g>
+
+    <!-- Лестница ступеней: 9 ролей сверху вниз -->
+    <g stroke="#222222" stroke-width="1">
+        <rect x="120" y="88" width="620" height="36" fill="#1B1B1B" />
+        <rect x="144" y="124" width="620" height="36" fill="#DBDBDB" />
+        <rect x="168" y="160" width="620" height="36" fill="#DBDBDB" />
+        <rect x="192" y="196" width="620" height="36" fill="#FCFCFC" />
+        <rect x="216" y="232" width="620" height="36" fill="#080808" />
+        <rect x="240" y="268" width="620" height="36" fill="#222222" />
+        <rect x="264" y="304" width="620" height="36" fill="#646464" />
+        <rect x="288" y="340" width="620" height="36" fill="#646464" />
+        <rect x="312" y="376" width="620" height="36" fill="#0E0E0E" />
+    </g>
+
+    <!-- Подписи ролей в ступенях -->
+    <g font-family="ui-monospace, Menlo, monospace" font-size="12">
+        <text x="136" y="110" fill="#C1C1C1">ABV/DFT/RGL/FGR &#183; #1B1B1B</text>
+        <text x="160" y="146" fill="#1B1B1B">ABV/DFT/RGL/BGR &#183; #DBDBDB</text>
+        <text x="184" y="182" fill="#1B1B1B">ABV/DFT/RGL/BRD &#183; #DBDBDB</text>
+        <text x="208" y="218" fill="#1B1B1B">SFC/DFT/RGL/FGR &#183; #FCFCFC</text>
+        <text x="232" y="254" fill="#C1C1C1">SFC/DFT/RGL/BGR &#183; #080808</text>
+        <text x="256" y="290" fill="#C1C1C1">SFC/DFT/RGL/BRD &#183; #222222</text>
+        <text x="280" y="326" fill="#1B1B1B">BLW/DFT/RGL/BRD &#183; #646464</text>
+        <text x="304" y="362" fill="#1B1B1B">BLW/DFT/RGL/FGR &#183; #646464</text>
+        <text x="328" y="398" fill="#C1C1C1">BLW/DFT/RGL/BGR &#183; #0E0E0E</text>
+    </g>
+
+    <!-- Контур лестницы: спуск в глубину -->
+    <path d="M120 88 L120 124 L144 124 L144 160 L168 160 L168 196 L192 196 L192 232 L216 232 L216 268 L240 268 L240 304 L264 304 L264 340 L288 340 L288 376 L312 376 L312 412" stroke="#646464" stroke-width="1.5" fill="none" />
+
+    <!-- Пометки -->
+    <g font-family="Roboto Flex, Roboto, system-ui, sans-serif" font-size="12" fill="#C1C1C1">
+        <text x="760" y="106">контент выступа</text>
+    </g>
+    <text x="120" y="444" font-family="Roboto Flex, Roboto, system-ui, sans-serif" font-size="12" fill="#C1C1C1">
+        Под поверхностью порядок инвертирован: первой встречает кромка BRD, затем контент FGR, последним дно BGR.
+    </text>
+
+</svg>
