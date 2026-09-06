@@ -1,50 +1,50 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Thicknesses — DNA</title>
+        <title>Толщины — DNA</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./assets/dna.css" />
-        <script src="./assets/theme.js"></script>
-        <link rel="icon" href="./assets/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="./assets/favicon-180.png" />
+        <link rel="stylesheet" href="../assets/dna.css" />
+        <script src="../assets/theme.js"></script>
+        <link rel="icon" href="../assets/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../assets/favicon-180.png" />
         <meta name="robots" content="noindex, nofollow" />
     </head>
     <body>
         <div class="layout">
             <aside class="sidebar">
                 <a class="brand" href="./index.html">
-                    DNA of the UI-Kit
+                    ДНК UI-Kit'а
                     <small>Rosinfotech</small>
                 </a>
                 <nav class="nav">
-                    <a href="./semantics.html">Semantics <span class="tag">SEM</span></a>
-                    <a href="./clr.html">Absolute color <span class="tag">CLR</span></a>
-                    <a href="./fcl.html">Functional color <span class="tag">FCL</span></a>
-                    <a href="./spc.html">Spacing <span class="tag">SPC</span></a>
-                    <a href="./rad.html">Radiuses <span class="tag">RAD</span></a>
+                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
+                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
+                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
                     <a href="./thk.html" aria-current="page"
-                        >Thicknesses <span class="tag">THK</span></a
+                        >Толщины <span class="tag">THK</span></a
                     >
-                    <a href="./txt.html">Typography <span class="tag">TXT</span></a>
-                    <a href="./fty.html">Functional typography <span class="tag">FTY</span></a>
-                    <a href="./grd.html">Elevation gradients <span class="tag">GRD</span></a>
+                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
+                    <a href="./fty.html">Функциональная типографика <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
                 </nav>
-                <a class="lang-toggle" href="./ru/thk.html" aria-label="Switch to Russian"
-                    ><span>RU</span></a
+                <a class="lang-toggle" href="../thk.html" aria-label="Switch to English"
+                    ><span>EN</span></a
                 >
                 <button
                     class="theme-toggle"
                     id="theme-toggle"
                     type="button"
-                    aria-label="Toggle theme"
+                    aria-label="Переключить тему"
                 >
                     <svg
                         class="icon-sun"
@@ -77,17 +77,17 @@
                             stroke-linejoin="round"
                         />
                     </svg>
-                    <span>Theme</span>
+                    <span>Тема</span>
                 </button>
             </aside>
             <main class="content">
-                <h1>Thicknesses / THK</h1>
+                <h1>Толщины / THK</h1>
                 <p class="lead">
-                    The line thickness scale: strokes, dividers, underlines, frames. Seven
-                    consecutive values from 1 to 7 px.
+                    Шкала толщин линий: обводки, разделители, подчёркивания, рамки. Семь
+                    последовательных значений от 1 до 7 px.
                 </p>
 
-                <h2 id="scale">Scale</h2>
+                <h2 id="scale">Шкала</h2>
                 <div class="scale-row">
                     <span class="name">XXS</span>
                     <span class="vals">1 px</span>
@@ -124,24 +124,24 @@
                     <div class="demo"><div class="thk-chip" style="height: 7px"></div></div>
                 </div>
 
-                <h2 id="usage">Usage</h2>
+                <h2 id="usage">Применение</h2>
                 <ul>
                     <li>
-                        Fine accents and dividers — <code>XXS</code>/<code>SXS</code>; control
-                        strokes — <code>SZS</code>/<code>SZM</code>; large frames and outlines —
-                        <code>SZL</code>+;+;
+                        Тонкие акценты и разделители — XXS/SXS; обводки контролов — SZS/SZM; крупные
+                        рамки и контуры — SZL+;
                     </li>
                     <li>
-                        Stroke thickness changes with state: an input focus thickens the frame by
-                        one step;;
+                        Толщина обводки меняется по состоянию: фокус поля ввода утолщает рамку на
+                        шаг;
                     </li>
                 </ul>
 
                 <div class="note danger">
-                    The only scale without live variables: the values exist only on the canvas
-                    vitrine. Before use in Figma they must be digitized: THK/XXS…THK/XXL = 1…7.
+                    Единственная шкала без живых переменных: значения существуют только на
+                    канвас-витрине. Перед использованием в Figma нужно оцифровать: THK/XXS…THK/XXL =
+                    1…7.
                 </div>
-                <p class="footer">Rosinfotech UI-Kit DNA</p>
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
             </main>
         </div>
     </body>

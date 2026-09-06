@@ -6,6 +6,7 @@
     "scripts": {
         "dev": "vite src --open --port 33335 --strictPort",
         "preview": "vite preview src --port 33335 --strictPort",
-        "type-check": "echo DNA: no TypeScript sources"
+        "type-check": "echo DNA: no TypeScript sources",
+        "format": "prettier --check \"src/**/*.{html,css,js}\""
     }
 }

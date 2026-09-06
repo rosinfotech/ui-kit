@@ -1,50 +1,50 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Spacing — DNA</title>
+        <title>Отступы — DNA</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./assets/dna.css" />
-        <script src="./assets/theme.js"></script>
-        <link rel="icon" href="./assets/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="./assets/favicon-180.png" />
+        <link rel="stylesheet" href="../assets/dna.css" />
+        <script src="../assets/theme.js"></script>
+        <link rel="icon" href="../assets/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../assets/favicon-180.png" />
         <meta name="robots" content="noindex, nofollow" />
     </head>
     <body>
         <div class="layout">
             <aside class="sidebar">
                 <a class="brand" href="./index.html">
-                    DNA of the UI-Kit
+                    ДНК UI-Kit'а
                     <small>Rosinfotech</small>
                 </a>
                 <nav class="nav">
-                    <a href="./semantics.html">Semantics <span class="tag">SEM</span></a>
-                    <a href="./clr.html">Absolute color <span class="tag">CLR</span></a>
-                    <a href="./fcl.html">Functional color <span class="tag">FCL</span></a>
+                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
+                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
                     <a href="./spc.html" aria-current="page"
-                        >Spacing <span class="tag">SPC</span></a
+                        >Отступы <span class="tag">SPC</span></a
                     >
-                    <a href="./rad.html">Radiuses <span class="tag">RAD</span></a>
-                    <a href="./thk.html">Thicknesses <span class="tag">THK</span></a>
-                    <a href="./txt.html">Typography <span class="tag">TXT</span></a>
-                    <a href="./fty.html">Functional typography <span class="tag">FTY</span></a>
-                    <a href="./grd.html">Elevation gradients <span class="tag">GRD</span></a>
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
+                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
+                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
+                    <a href="./fty.html">Функциональная типографика <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
                 </nav>
-                <a class="lang-toggle" href="./ru/spc.html" aria-label="Switch to Russian"
-                    ><span>RU</span></a
+                <a class="lang-toggle" href="../spc.html" aria-label="Switch to English"
+                    ><span>EN</span></a
                 >
                 <button
                     class="theme-toggle"
                     id="theme-toggle"
                     type="button"
-                    aria-label="Toggle theme"
+                    aria-label="Переключить тему"
                 >
                     <svg
                         class="icon-sun"
@@ -77,17 +77,17 @@
                             stroke-linejoin="round"
                         />
                     </svg>
-                    <span>Theme</span>
+                    <span>Тема</span>
                 </button>
             </aside>
             <main class="content">
-                <h1>Spacing / SPC</h1>
+                <h1>Отступы / SPC</h1>
                 <p class="lead">
-                    A unified distance scale: outer and inner spacing, auto-layout gaps, control
-                    heights. Seven numeric variables applied directly.
+                    Единая шкала расстояний: внешние и внутренние отступы, промежутки auto-layout
+                    (gap), высоты строк контролов. Семь числовых переменных — применяются напрямую.
                 </p>
 
-                <h2 id="scale">Scale</h2>
+                <h2 id="scale">Шкала</h2>
                 <div class="scale-row">
                     <span class="name">XXS</span>
                     <span class="vals">4 px · 0.25 rem</span>
@@ -125,29 +125,28 @@
                 </div>
 
                 <div class="note">
-                    The design system base unit is <strong>4</strong>. All spacings, sizes and
-                    coordinates are multiples of it; the <code>SPC</code> scale is its multiple
-                    steps. Allowed exceptions are line thicknesses (<code>THK</code> starts at 1)
-                    and font metrics from <code>TXT</code>/<code>FTY</code>;.
+                    Базовая единица дизайн-системы — <strong>4</strong>. Все отступы, размеры и
+                    координаты кратны ей; шкала SPC — её кратные ступени. Допустимые исключения —
+                    толщины линий (THK начинается с 1) и метрики шрифта из TXT/FTY.
                 </div>
 
-                <h2 id="usage">Usage</h2>
+                <h2 id="usage">Применение</h2>
                 <ul>
                     <li>
-                        <code>gap</code> / <code>itemSpacing</code> and padding of auto-layout
-                        layers are bound to the scale variables;
+                        <code>gap</code> / <code>itemSpacing</code> и
+                        <code>padding</code> auto-layout-слоёв привязываются к переменным шкалы;
                     </li>
                     <li>
-                        Control heights come from the same scale:
+                        Высоты контролов берутся из той же шкалы:
                         <ul>
-                            <li><code>SZS</code> = 16 — small size;</li>
-                            <li><code>SZM</code> = 24 — medium size;</li>
-                            <li><code>SZL</code> = 32 — large size;</li>
+                            <li><code>SZS</code> = 16 — малый размер;</li>
+                            <li><code>SZM</code> = 24 — средний размер;</li>
+                            <li><code>SZL</code> = 32 — большой размер;</li>
                         </ul>
                     </li>
                 </ul>
 
-                <p class="footer">Rosinfotech UI-Kit DNA</p>
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
             </main>
         </div>
     </body>

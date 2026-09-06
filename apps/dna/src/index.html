@@ -1,45 +1,48 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>DNA — ДНК дизайн-системы UI-кита</title>
+        <title>DNA — Rosinfotech UI-Kit design system</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
             rel="stylesheet"
         />
-        <link
-            rel="icon"
-            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23080808'/%3E%3Ctext x='8' y='12' font-family='monospace' font-size='10' fill='%23DBDBDB' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"
-        />
         <link rel="stylesheet" href="./assets/dna.css" />
         <script src="./assets/theme.js"></script>
+        <link rel="icon" href="./assets/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="./assets/favicon-180.png" />
+        <meta name="robots" content="noindex, nofollow" />
     </head>
     <body>
         <div class="layout">
             <aside class="sidebar">
                 <a class="brand" href="./index.html">
-                    ДНК UI-Kit'а
+                    DNA of the UI-Kit
                     <small>Rosinfotech</small>
                 </a>
                 <nav class="nav">
-                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
-                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
-                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
-                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
-                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
-                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
-                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
-                    <a href="./fty.html">Функц. типографика <span class="tag">FTY</span></a>
-                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
+                    <a href="./semantics.html">Semantics <span class="tag">SEM</span></a>
+                    <a href="./clr.html">Absolute color <span class="tag">CLR</span></a>
+                    <a href="./fcl.html">Functional color <span class="tag">FCL</span></a>
+                    <a href="./spc.html">Spacing <span class="tag">SPC</span></a>
+                    <a href="./rad.html">Radiuses <span class="tag">RAD</span></a>
+                    <a href="./thk.html">Thicknesses <span class="tag">THK</span></a>
+                    <a href="./txt.html">Typography <span class="tag">TXT</span></a>
+                    <a href="./fty.html">Functional typography <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Elevation gradients <span class="tag">GRD</span></a>
                 </nav>
+                <a class="lang-toggle" href="./ru/index.html" aria-label="Switch to Russian"
+                    ><span>RU</span></a
+                >
                 <button
                     class="theme-toggle"
                     id="theme-toggle"
                     type="button"
-                    aria-label="Переключить тему"
+                    aria-label="Toggle theme"
                 >
                     <svg
                         class="icon-sun"
@@ -72,85 +75,84 @@
                             stroke-linejoin="round"
                         />
                     </svg>
-                    <span>Тема</span>
+                    <span>Theme</span>
                 </button>
             </aside>
             <main class="content">
-                <h1>DNA — ДНК дизайн-системы</h1>
+                <h1>DNA — the design system core</h1>
                 <p class="lead">
-                    Основы UI-кита: пространственная цветовая модель, функциональные токены, шкалы и
-                    правила именования. DNA — не реализация кита, а его описание: спецификация, по
-                    которой дизайн-система строится и развивается в Figma.
+                    The UI-Kit foundations: the spatial color model, functional tokens, scales and
+                    naming rules. DNA is not the kit implementation but its specification — the
+                    contract by which the design system is built and evolved in Figma.
                 </p>
 
-                <h2>Разделы</h2>
+                <h2>Sections</h2>
                 <div class="cards">
                     <a class="card" href="./semantics.html">
-                        <h3>Семантика / SEM</h3>
+                        <h3>Semantics / SEM</h3>
                         <p>
-                            Как всё именуется: реестр трёхбуквенных кодов, грамматики имён токенов и
-                            компонентов, шкалы шагов.
+                            How everything is named: the registry of three-letter codes, name
+                            grammars for tokens and components, step scales.
                         </p>
                     </a>
                     <a class="card" href="./clr.html">
-                        <h3>Абсолютная палитра / CLR</h3>
+                        <h3>Absolute palette / CLR</h3>
                         <p>
-                            Сырьё цветов: 11 семейств × шкала из 40 шагов, особые WHT и BLC — 442
-                            токена со значениями.
+                            The color raw stock: 11 families × a 40-step scale, plus the special WHT
+                            and BLC — 442 tokens with values.
                         </p>
                     </a>
                     <a class="card" href="./fcl.html">
-                        <h3>Функциональная палитра / FCL</h3>
+                        <h3>Functional palette / FCL</h3>
                         <p>
-                            263 переменные: слои, акценты, состояния, роли. Полная таблица с
-                            разрешением в абсолютные токены.
+                            263 variables: layers, emphases, states, roles. The full table resolved
+                            into absolute tokens.
                         </p>
                     </a>
                     <a class="card" href="./spc.html">
-                        <h3>Отступы / SPC</h3>
-                        <p>Шкала расстояний 4–64 px: gap, padding, высоты контролов.</p>
+                        <h3>Spacing / SPC</h3>
+                        <p>The distance scale 4–64 px: gaps, padding, control heights.</p>
                     </a>
                     <a class="card" href="./rad.html">
-                        <h3>Скругления / RAD</h3>
-                        <p>Радиусы 4–40 px; компонентный дефолт — SZS = 12 px.</p>
+                        <h3>Radiuses / RAD</h3>
+                        <p>Radii 4–40 px; the component default is SZS = 12 px.</p>
                     </a>
                     <a class="card" href="./thk.html">
-                        <h3>Толщины / THK</h3>
-                        <p>Линии и обводки 1–7 px — единственная шкала без переменных.</p>
+                        <h3>Thicknesses / THK</h3>
+                        <p>Lines and strokes 1–7 px — the only scale without variables.</p>
                     </a>
                     <a class="card" href="./txt.html">
-                        <h3>Типографика / TXT</h3>
+                        <h3>Typography / TXT</h3>
                         <p>
-                            Матрица 84 стилей: Roboto Flex, 6 весов × прямое/курсив × 7 кеглей, с
-                            живыми образцами и метриками.
+                            A matrix of 84 styles: Roboto Flex, 6 weights × roman/italic × 7 sizes,
+                            with live samples and metrics.
                         </p>
                     </a>
                     <a class="card" href="./fty.html">
-                        <h3>Функциональная типографика / FTY</h3>
+                        <h3>Functional typography / FTY</h3>
                         <p>
-                            Десять текстовых ролей в порядке Figma: HD1–HD3, PAR, PRP/PRA/PRN, QTE,
-                            QTE_AUT, FTN.
+                            Ten text roles in Figma order: HD1–HD3, PAR, PRP/PRA/PRN, QTE, QTE_AUT,
+                            FTN.
                         </p>
                     </a>
                     <a class="card" href="./grd.html">
-                        <h3>Градиенты высоты / GRD</h3>
+                        <h3>Elevation gradients / GRD</h3>
                         <p>
-                            «Свет сверху» для приподнятых компонентов: 8 градиентов ABV для PRM и
-                            ACC.
+                            «The top light for elevated components: 8 ABV gradients for PRM and ACC.
                         </p>
                     </a>
                 </div>
 
                 <div class="note">
-                    HTML здесь — только носитель документации, не реализация кита. Каждый раздел
-                    фиксирует основу: что означает каждый код, из чего собираются имена, какие
-                    значения допустимы. Эта база — контракт для дизайн-системы в Figma: по ней
-                    создаются переменные, стили и компоненты, и по ней же проверяется их
-                    корректность. Сами страницы набраны ролями <a href="./fty.html">FTY</a>:
-                    заголовки — HD1/HD2/HD3, текст — PAR, подписи — FTN.
+                    The HTML here is only a documentation carrier, not a kit implementation. Every
+                    section fixes a foundation: what each code means, how names are assembled, which
+                    values are allowed. This base is the contract for the design system in Figma:
+                    variables, styles and components are created by it and verified against it. The
+                    pages themselves are typeset with <a href="./fty.html">FTY</a> roles: headings
+                    use HD1/HD2/HD3, body text PAR, captions FTN..
                 </div>
 
-                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
+                <p class="footer">Rosinfotech UI-Kit DNA</p>
             </main>
         </div>
     </body>

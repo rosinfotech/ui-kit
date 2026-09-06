@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0] - 2026-09-06
+
+### Added
+
+- Bilingual DNA documentation: English by default on the main URLs, Russian version in the `ru/` subdirectory with symmetric file names; RU/EN language toggle in the sidebar; menu labels without abbreviations
+- Favicon set (SVG, ICO with 16/32 px frames, 16/32/180 px PNG) rendered from the DNA mark
+- robots.txt disallowing all indexing plus noindex/nofollow meta on every page
+
 ## [0.3.0] - 2026-09-06
 
 ### Added

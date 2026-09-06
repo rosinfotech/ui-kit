@@ -1,50 +1,50 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Semantics — DNA</title>
+        <title>Семантика — DNA</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./assets/dna.css" />
-        <script src="./assets/theme.js"></script>
-        <link rel="icon" href="./assets/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="./assets/favicon-180.png" />
+        <link rel="stylesheet" href="../assets/dna.css" />
+        <script src="../assets/theme.js"></script>
+        <link rel="icon" href="../assets/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../assets/favicon-180.png" />
         <meta name="robots" content="noindex, nofollow" />
     </head>
     <body>
         <div class="layout">
             <aside class="sidebar">
                 <a class="brand" href="./index.html">
-                    DNA of the UI-Kit
+                    ДНК UI-Kit'а
                     <small>Rosinfotech</small>
                 </a>
                 <nav class="nav">
                     <a href="./semantics.html" aria-current="page"
-                        >Semantics <span class="tag">SEM</span></a
+                        >Семантика <span class="tag">SEM</span></a
                     >
-                    <a href="./clr.html">Absolute color <span class="tag">CLR</span></a>
-                    <a href="./fcl.html">Functional color <span class="tag">FCL</span></a>
-                    <a href="./spc.html">Spacing <span class="tag">SPC</span></a>
-                    <a href="./rad.html">Radiuses <span class="tag">RAD</span></a>
-                    <a href="./thk.html">Thicknesses <span class="tag">THK</span></a>
-                    <a href="./txt.html">Typography <span class="tag">TXT</span></a>
-                    <a href="./fty.html">Functional typography <span class="tag">FTY</span></a>
-                    <a href="./grd.html">Elevation gradients <span class="tag">GRD</span></a>
+                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
+                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
+                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
+                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
+                    <a href="./fty.html">Функциональная типографика <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
                 </nav>
-                <a class="lang-toggle" href="./ru/semantics.html" aria-label="Switch to Russian"
-                    ><span>RU</span></a
+                <a class="lang-toggle" href="../semantics.html" aria-label="Switch to English"
+                    ><span>EN</span></a
                 >
                 <button
                     class="theme-toggle"
                     id="theme-toggle"
                     type="button"
-                    aria-label="Toggle theme"
+                    aria-label="Переключить тему"
                 >
                     <svg
                         class="icon-sun"
@@ -77,70 +77,70 @@
                             stroke-linejoin="round"
                         />
                     </svg>
-                    <span>Theme</span>
+                    <span>Тема</span>
                 </button>
             </aside>
             <main class="content">
-                <h1>Semantics / SEM</h1>
+                <h1>Семантика / SEM</h1>
                 <p class="lead">
-                    A unified system of three-letter codes and name grammars. Any name in the design
-                    system — from a color to a component — is assembled from a finite code registry
-                    by fixed formulas. This registry is the foundation on which variables, styles
-                    and components are built: reading a name, you understand the value’s meaning
-                    without opening the file.
+                    Единая система трёхбуквенных кодов и грамматик имён. Любое имя в дизайн-системе
+                    — от цвета до компонента — собирается из конечного реестра кодов по
+                    фиксированным формулам. Этот реестр — основа, на которой строятся переменные,
+                    стили и компоненты: прочитав имя, понимаешь смысл значения, не открывая файл.
                 </p>
 
-                <h2 id="principles">Principles</h2>
+                <h2 id="principles">Принципы</h2>
                 <ul>
                     <li>
-                        A code is three uppercase Latin letters, sometimes with a suffix:
+                        Код — три заглавные латинские буквы, иногда с суффиксом:
                         <ul>
-                            <li><code>BRA</code>/<code>PRM</code> — a family with a slash;</li>
-                            <li><code>FGR_CVB_100</code> — a compound code;</li>
+                            <li><code>BRA</code>/<code>PRM</code> — семейство со слэшем;</li>
+                            <li><code>FGR_CVB_100</code> — составной код;</li>
                         </ul>
                     </li>
                     <li>
-                        One value — one name. A name answers “what is it”, not “what is it like”;
+                        Одно значение — одно имя. Имя отвечает на вопрос «что это», а не «какое
+                        оно»;
                     </li>
                     <li>
-                        A name reads left to right from general to specific: domain → group →
-                        detail;
+                        Имя читается слева направо от общего к частному: домен → группа → деталь;
                     </li>
                     <li>
-                        Separators are normalized:
+                        Разделители нормированы:
                         <ul>
-                            <li><code></code>/<code></code> — inside token paths;</li>
-                            <li><code>_</code> — inside compound codes and set names;</li>
-                            <li><code>=</code> — in variant values;</li>
+                            <li><code></code>/<code></code> — внутри путей токенов;</li>
+                            <li><code>_</code> — внутри составных кодов и имён сетов;</li>
+                            <li><code>=</code> — в значениях вариантов;</li>
                         </ul>
                     </li>
                 </ul>
 
-                <h2 id="space">Space — three layers</h2>
-                <p>The system is spatial:</p>
+                <h2 id="space">Пространство — три слоя</h2>
+                <p>Система пространственная:</p>
                 <ul>
                     <li>
-                        Every component is conceived as three-dimensional, and its elements reside
-                        in one of three layers;
+                        Каждый компонент представляется трёхмерным, а его элементы находятся в одном
+                        из трёх слоёв;
                     </li>
                     <li>
-                        The layer is the first meaningful segment of a functional color token, e.g.:
+                        Слой — первый осмысленный сегмент функционального цветового токена,
+                        например:
                         <ul>
                             <li>
                                 <code>ABV</code>/<code>DFT</code>/<code>RGL</code>/<code>BGR</code>:
                                 <ul>
                                     <li>
-                                        ABV, Above, the 1st segment — the layer above the surface,
-                                        the top layer;
+                                        ABV, Above, 1ый сегмент – слой над поверхностью, верхний
+                                        слой;
                                     </li>
-                                    <li>DFT, Default, the 2nd segment — the default emphasis;</li>
+                                    <li>DFT, Default, 2ой сегмент – стандартный акцент;</li>
                                     <li>
-                                        RGL, Regular, the 3rd segment — the regular component state
-                                        (not hover, for example);
+                                        RGL, Regular, 3ий сегмент – обычное состояние компонента (не
+                                        hover, например);
                                     </li>
                                     <li>
-                                        BGR, Background, 4-й segment — the background color for the
-                                        corresponding foreground
+                                        BGR, Background, 4-й сегмент — фоновый цвет для
+                                        соответствующего переднего плана
                                         (<code>ABV</code>/<code>DFT</code>/<code>RGL</code>/<code>FGR</code>);
                                     </li>
                                 </ul>
@@ -151,10 +151,10 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Code</th>
-                            <th>Full name</th>
-                            <th>Meaning</th>
-                            <th>Examples</th>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Смысл</th>
+                            <th>Примеры</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -164,56 +164,57 @@
                             </td>
                             <td>Above surface</td>
                             <td>
-                                Above the surface. Elevated elements that may cast a shadow downward
+                                Над поверхностью. Могут быть приподнятые элементы, могут отбрасывать
+                                тень вниз
                             </td>
-                            <td>Button “bodies”, the radio ring and dot, chips etc.</td>
+                            <td>«Тела» кнопок, внешний круг и точка радиокнопки, чипы и тд</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg layer">SFC</span></code>
                             </td>
                             <td>Surface</td>
-                            <td>The surface itself, e.g. load-bearing planes</td>
-                            <td>Cards, panels, containers</td>
+                            <td>Сама поверхность, например, несущие плоскости</td>
+                            <td>Карточки, панели, контейнеры</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg layer">BLW</span></code>
                             </td>
                             <td>Below surface</td>
-                            <td>Below the surface, sunken elements</td>
-                            <td>Input wells, grooves</td>
+                            <td>Под поверхностью, утопленные элементы</td>
+                            <td>Ямы полей ввода, канавки</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2 id="structure">Structure — element, component, composite component</h2>
+                <h2 id="structure">Структура — элемент, компонент, составной компонент</h2>
                 <ul>
                     <li>
-                        An element is an atomic visual part of a component; it resides in exactly
-                        one layer — ABV, SFC or BLW;
+                        Элемент — атомарная визуальная часть компонента; находится ровно в одном
+                        слое — ABV, SFC или BLW;
                     </li>
                     <li>
-                        A component is a functional unit of the design system assembled from
-                        elements; e.g. a button;
+                        Компонент — функциональная единица дизайн-системы, собираемая из элементов;
+                        например, кнопка;
                     </li>
                     <li>
-                        A composite component is several components united into a new functional
-                        unit; e.g. an input with a label;
+                        Составной компонент — несколько компонентов, объединённых в новую
+                        функциональную единицу; например, поле ввода с лейблом;
                     </li>
                 </ul>
                 <div class="note">
-                    A layering example: in a radio button the outer ring and the dot are ABV-layer
-                    elements, while the fill between them is an SFC element.
+                    Пример многослойности: в радиокнопке внешний круг и точка — элементы слоя ABV, а
+                    заливка между ними — элемент SFC.
                 </div>
 
-                <h2 id="emphasis">Emphases — the semantic role</h2>
+                <h2 id="emphasis">Акценты — смысловая роль</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Code</th>
-                            <th>Full name</th>
-                            <th>When it applies</th>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Когда применяется</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -222,53 +223,53 @@
                                 <code><span class="seg emph">DFT</span></code>
                             </td>
                             <td>Default</td>
-                            <td>The default, neutral state</td>
+                            <td>Обычное, нейтральное состояние по умолчанию</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg emph">PRM</span></code>
                             </td>
                             <td>Primary</td>
-                            <td>The primary action in context, one per screen</td>
+                            <td>Основное действие в контексте, одно на экран</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg emph">ACC</span></code>
                             </td>
                             <td>Accent</td>
-                            <td>Accent highlighting, special attention drawing</td>
+                            <td>Акцентное выделение, особое привлечение внимания</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg emph">POS</span></code>
                             </td>
                             <td>Positive</td>
-                            <td>Success, confirmation, correctness</td>
+                            <td>Успех, подтверждение, корректность</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg emph">ATN</span></code>
                             </td>
                             <td>Attention</td>
-                            <td>A warning, requires attention</td>
+                            <td>Предупреждение, требует внимания</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg emph">NEG</span></code>
                             </td>
                             <td>Negative</td>
-                            <td>An error, a dangerous action</td>
+                            <td>Ошибка, опасное действие</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2 id="state">States — interaction</h2>
+                <h2 id="state">Состояния — интерактив</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Code</th>
-                            <th>Full name</th>
-                            <th>Meaning</th>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Смысл</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -277,44 +278,42 @@
                                 <code><span class="seg state">RGL</span></code>
                             </td>
                             <td>Regular</td>
-                            <td>Rest, the default state</td>
+                            <td>Покой, состояние по умолчанию</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg state">HVR</span></code>
                             </td>
                             <td>Hover</td>
-                            <td>The cursor over the component</td>
+                            <td>Курсор над компонентом</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg state">FCS</span></code>
                             </td>
                             <td>Focus</td>
-                            <td>Keyboard/input focus</td>
+                            <td>Фокус клавиатуры/ввода</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg state">PRS</span></code>
                             </td>
                             <td>Pressed</td>
-                            <td>Pressing</td>
+                            <td>Нажатие</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg state">DSB</span></code>
                             </td>
                             <td>Disabled</td>
-                            <td>Disabled</td>
+                            <td>Недоступен</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg state">CHD</span></code>
                             </td>
                             <td>Checked</td>
-                            <td>
-                                On/selected — instead of PRS for toggleable ones (CHB, TOG, RDB)
-                            </td>
+                            <td>Включён/выбран — вместо PRS у переключаемых (CHB, TOG, RDB)</td>
                         </tr>
                         <tr>
                             <td>
@@ -322,20 +321,20 @@
                             </td>
                             <td>Filled</td>
                             <td>
-                                The “filled” suffix — only for INP: RGL_FLD, HVR_FLD, FCS_FLD,
+                                Суффикс «заполнено» — только у INP: RGL_FLD, HVR_FLD, FCS_FLD,
                                 DSB_FLD
                             </td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2 id="role">Roles — what we paint</h2>
+                <h2 id="role">Роли — что красим</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Code</th>
-                            <th>Full name</th>
-                            <th>Meaning</th>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Смысл</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -344,14 +343,14 @@
                                 <code><span class="seg role">FGR</span></code>
                             </td>
                             <td>Foreground</td>
-                            <td>The foreground color: text, icon, glyph</td>
+                            <td>Цвет переднего плана: текст, иконка, глиф</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg role">BRD</span></code>
                             </td>
                             <td>Border</td>
-                            <td>The border color: frame, stroke, divider</td>
+                            <td>Цвет рамки, обводки, разделителя</td>
                         </tr>
                         <tr>
                             <td>
@@ -359,21 +358,21 @@
                             </td>
                             <td>Background</td>
                             <td>
-                                The element’s base color, i.e. the background for the foreground
-                                (what the <code>FGR</code> “lies” on)
+                                Основной цвет элемента, он же фоновый цвет для переднего плана
+                                (того, на чём «лежит» FGR)
                             </td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2 id="domains">Value domains</h2>
+                <h2 id="domains">Домены значений</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Code</th>
-                            <th>Full name</th>
-                            <th>What it stores</th>
-                            <th>Form</th>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Что хранит</th>
+                            <th>Форма</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -382,202 +381,202 @@
                                 <code><span class="seg domain">CLR</span></code>
                             </td>
                             <td>Absolute color palette</td>
-                            <td>442 absolute colors: 13 families × the 025–1000 scale</td>
-                            <td>Family/step</td>
+                            <td>442 абсолютных цвета: 13 семейств × шкала 025–1000</td>
+                            <td>Семейство/шаг</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg domain">FCL</span></code>
                             </td>
                             <td>Functional color palette</td>
-                            <td>263 functional colors — variables Figma</td>
-                            <td>Layer/emphasis/state/role</td>
+                            <td>263 функциональных цвета — переменные Figma</td>
+                            <td>Слой/акцент/состояние/роль</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg domain">TXT</span></code>
                             </td>
                             <td>Absolute text palette</td>
-                            <td>84 text styles: 12 typefaces × 7 sizes</td>
-                            <td>TXT/typeface/size</td>
+                            <td>84 текстовых стиля: 12 начертаний × 7 размеров</td>
+                            <td>TXT/начертание/размер</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg domain">FTY</span></code>
                             </td>
                             <td>Functional text palette</td>
-                            <td>10 functional text roles</td>
-                            <td>FTY/role</td>
+                            <td>10 функциональных текстовых ролей</td>
+                            <td>FTY/роль</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg domain">SPC</span></code>
                             </td>
                             <td>Spacings</td>
-                            <td>The spacing scale 4–64 px</td>
-                            <td>Step</td>
+                            <td>Шкала отступов 4–64 px</td>
+                            <td>Шаг</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg domain">RAD</span></code>
                             </td>
                             <td>Radiuses</td>
-                            <td>The radius scale 4–40 px</td>
-                            <td>Step</td>
+                            <td>Шкала скруглений 4–40 px</td>
+                            <td>Шаг</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg domain">THK</span></code>
                             </td>
                             <td>Thicknesses</td>
-                            <td>The thickness scale 1–7 px</td>
-                            <td>Step</td>
+                            <td>Шкала толщин 1–7 px</td>
+                            <td>Шаг</td>
                         </tr>
                         <tr>
                             <td>
                                 <code><span class="seg domain">ICN</span></code>
                             </td>
                             <td>Icons</td>
-                            <td>The icon library</td>
-                            <td>Icon name</td>
+                            <td>Библиотека иконок</td>
+                            <td>Имя иконки</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2 id="components">Components</h2>
+                <h2 id="components">Компоненты</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Code</th>
-                            <th>Full name</th>
-                            <th>Note</th>
+                            <th>Код</th>
+                            <th>Полное имя</th>
+                            <th>Примечание</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><code>BTN</code></td>
                             <td>Button</td>
-                            <td>A button with text and icons</td>
+                            <td>Кнопка с текстом и иконками</td>
                         </tr>
                         <tr>
                             <td><code>BTI</code></td>
                             <td>Icon button</td>
-                            <td>An icon button</td>
+                            <td>Иконочная кнопка</td>
                         </tr>
                         <tr>
                             <td><code>CHB</code></td>
                             <td>Checkbox</td>
-                            <td>State CHD</td>
+                            <td>Состояние CHD</td>
                         </tr>
                         <tr>
                             <td><code>TOG</code></td>
                             <td>Toggle</td>
-                            <td>State CHD</td>
+                            <td>Состояние CHD</td>
                         </tr>
                         <tr>
                             <td><code>INP</code></td>
                             <td>Input</td>
-                            <td>States with the suffix _FLD</td>
+                            <td>Состояния с суффиксом _FLD</td>
                         </tr>
                         <tr>
                             <td><code>RDB</code></td>
                             <td>Radiobutton</td>
-                            <td>The code differs from the radius RAD — no collision</td>
+                            <td>Код отличается от RAD скруглений, коллизии нет</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2 id="modifiers">Modifiers</h2>
+                <h2 id="modifiers">Модификаторы</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Code</th>
-                            <th>Meaning</th>
+                            <th>Код</th>
+                            <th>Смысл</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><code>GRD</code></td>
-                            <td>Gradient — the “top light” gradient for the ABV (8 styles)</td>
+                            <td>Gradient — градиент «света сверху» для слоя ABV (8 стилей)</td>
                         </tr>
                         <tr>
                             <td><code>SHD</code></td>
-                            <td>Shadow — shadow, encodes layer depth (90 styles)</td>
+                            <td>Shadow — тень, кодирует глубину слоя (90 стилей)</td>
                         </tr>
                         <tr>
                             <td><code>CVB</code></td>
                             <td>
-                                Contrast variant — a contrast variant of content on another layer:
+                                Contrast variant — контрастный вариант контента на другом слое:
                                 FGR_CVB_100, FGR_CVB_200
                             </td>
                         </tr>
                         <tr>
                             <td><code>LGT</code></td>
-                            <td>Light — the light theme/mode</td>
+                            <td>Light — тема/режим светлого</td>
                         </tr>
                         <tr>
                             <td><code>DRK</code></td>
-                            <td>Dark — the dark theme/mode</td>
+                            <td>Dark — тема/режим тёмного</td>
                         </tr>
                         <tr>
                             <td><code>SEM</code></td>
-                            <td>Semantics — this documentation section</td>
+                            <td>Semantics — этот раздел документации</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2 id="grammar">Name grammars</h2>
+                <h2 id="grammar">Грамматики имён</h2>
 
-                <h3>Functional color (the FCL variable)</h3>
+                <h3>Функциональный цвет (переменная FCL)</h3>
                 <div class="formula">
-                    &lt;layer&gt;/&lt;emphasis&gt;/&lt;state&gt;/&lt;role&gt;<br />
+                    &lt;слой&gt;/&lt;акцент&gt;/&lt;состояние&gt;/&lt;роль&gt;<br />
                     <span class="seg layer">ABV</span>/<span class="seg emph">DFT</span>/<span
                         class="seg state"
                         >RGL</span
                     >/<span class="seg role">BGR</span>
-                    &nbsp;— the base color of a regular button in its normal state
+                    &nbsp;— основной цвет обычной кнопки в нормальном состоянии
                 </div>
 
-                <h3>Absolute color (the CLR token)</h3>
+                <h3>Абсолютный цвет (токен CLR)</h3>
                 <div class="formula">
-                    &lt;family&gt;/&lt;step&gt;<br />
-                    GRY/200 &nbsp;— gray, step 200 of the 025–1000 scale<br />
-                    BRA/PRM/025 &nbsp;— brand-primary, step 025
+                    &lt;семейство&gt;/&lt;шаг&gt;<br />
+                    GRY/200 &nbsp;— серый, шаг 200 шкалы 025–1000<br />
+                    BRA/PRM/025 &nbsp;— бренд-основной, шаг 025
                 </div>
                 <p>
-                    Families: BLU, BRN, GRY, GRN, ORG, PNK, RED, VIL, YEL, BRA/PRM, BRA/SEC + the
-                    special WHT and BLC. A functional token always references an absolute one:
+                    Семейства: BLU, BRN, GRY, GRN, ORG, PNK, RED, VIL, YEL, BRA/PRM, BRA/SEC +
+                    особые WHT и BLC. Функциональный токен всегда ссылается на абсолютный:
                     <code>FCL → CLR</code>.
                 </p>
 
-                <h3>Shadow and gradient</h3>
+                <h3>Тень и градиент</h3>
                 <div class="formula">
-                    &lt;layer&gt;/&lt;emphasis&gt;/&lt;state&gt;/SHD &nbsp;&nbsp;e.g.
+                    &lt;слой&gt;/&lt;акцент&gt;/&lt;состояние&gt;/SHD &nbsp;&nbsp;напр.
                     <span class="seg layer">BLW</span>/<span class="seg emph">NEG</span>/<span
                         class="seg state"
                         >HVR</span
-                    >/SHD &nbsp;— the well shadow of an error field on hover<br />
-                    ABV/&lt;PRM|ACC&gt;/&lt;state&gt;/GRD &nbsp;&nbsp;e.g. ABV/<span
+                    >/SHD &nbsp;— тень ямы поля ошибки при наведении<br />
+                    ABV/&lt;PRM|ACC&gt;/&lt;состояние&gt;/GRD &nbsp;&nbsp;напр. ABV/<span
                         class="seg emph"
                         >PRM</span
-                    >/<span class="seg state">RGL</span>/GRD &nbsp;— the primary-action gradient at
-                    rest: top light
+                    >/<span class="seg state">RGL</span>/GRD &nbsp;— градиент основного действия в
+                    покое: свет сверху
                 </div>
 
-                <h3>Typography</h3>
+                <h3>Типографика</h3>
                 <div class="formula">
-                    TXT/&lt;typeface&gt;/&lt;size&gt; &nbsp;&nbsp;e.g. TXT/TWR/SZM — Roboto Flex
-                    Regular 16<br />
-                    FTY/&lt;role&gt; &nbsp;&nbsp;e.g. FTY/HD1 — heading 1 (Inter Medium 32)
+                    TXT/&lt;начертание&gt;/&lt;размер&gt; &nbsp;&nbsp;напр. TXT/TWR/SZM — Roboto
+                    Flex Regular 16<br />
+                    FTY/&lt;роль&gt; &nbsp;&nbsp;напр. FTY/HD1 — заголовок 1 (Inter Medium 32)
                 </div>
                 <table>
                     <thead>
                         <tr>
-                            <th>Roman code</th>
-                            <th>Italic code</th>
-                            <th>Typeface</th>
-                            <th>Weight</th>
-                            <th>Description</th>
+                            <th>Код прямого</th>
+                            <th>Код курсива</th>
+                            <th>Начертание</th>
+                            <th>Вес</th>
+                            <th>Пояснение</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -586,82 +585,82 @@
                             <td><code>TIT</code></td>
                             <td>Thin</td>
                             <td>100</td>
-                            <td>Hairline; delicate large headings</td>
+                            <td>Волосковое; деликатные крупные заголовки</td>
                         </tr>
                         <tr>
                             <td><code>TWL</code></td>
                             <td><code>TIL</code></td>
                             <td>Light</td>
                             <td>300</td>
-                            <td>Light; large subheadings, accent text</td>
+                            <td>Светлое; крупные подзаголовки, акцентный текст</td>
                         </tr>
                         <tr>
                             <td><code>TWR</code></td>
                             <td><code>TIR</code></td>
                             <td>Regular</td>
                             <td>400</td>
-                            <td>Regular; body text</td>
+                            <td>Обычное; основной текст</td>
                         </tr>
                         <tr>
                             <td><code>TWM</code></td>
                             <td><code>TIM</code></td>
                             <td>Medium</td>
                             <td>500</td>
-                            <td>Medium; HD2/HD3 headings, buttons</td>
+                            <td>Среднее; заголовки HD2/HD3, кнопки</td>
                         </tr>
                         <tr>
                             <td><code>TWB</code></td>
                             <td><code>TIB</code></td>
                             <td>Bold</td>
                             <td>700</td>
-                            <td>Bold; strong accents</td>
+                            <td>Жирное; сильные акценты</td>
                         </tr>
                         <tr>
                             <td><code>TWE</code></td>
                             <td><code>TIE</code></td>
                             <td>ExtraBold</td>
                             <td>800</td>
-                            <td>ExtraBold; maximum expressiveness</td>
+                            <td>Очень жирное; максимум выразительности</td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="note">
-                    The italic code is formed by replacing <code>W</code> with <code>I</code>: Thin
-                    → TIT, Regular → TIR and so on.
+                    Курсивный код образуется заменой <code>W</code> на <code>I</code>: Thin → TIT,
+                    Regular → TIR и так далее.
                 </div>
 
-                <h3>Component set</h3>
+                <h3>Компонент-сет</h3>
                 <div class="formula">
-                    &lt;COMPONENT_CODE&gt;_&lt;size&gt; &nbsp;&nbsp;e.g. BTN_SZM — the medium-size
-                    button set (height 24)<br />
-                    variant: Emphasis=&lt;code&gt;, State=&lt;code&gt; &nbsp;&nbsp;e.g.
+                    &lt;КОД_КОМПОНЕНТА&gt;_&lt;размер&gt; &nbsp;&nbsp;напр. BTN_SZM — сет кнопок
+                    среднего размера (высота 24)<br />
+                    вариант: Emphasis=&lt;код&gt;, State=&lt;код&gt; &nbsp;&nbsp;напр.
                     Emphasis=<span class="seg emph">PRM</span>, State=<span class="seg state"
                         >HVR</span
                     >
-                    — a primary-action variant on hover
+                    — вариант основного действия при наведении
                 </div>
                 <p>
-                    The size suffix is any scale step from <code>XXS</code> to <code>XXL</code>; the
-                    control height equals that step’s value in the <code>SPC</code>. Current
-                    component sets use <code>SZS</code>, <code>SZM</code> и <code>SZL</code>
-                    (16, 24, 32), but the system is not limited to this set.
+                    Суффикс размера — любой шаг шкалы от <code>XXS</code> до <code>XXL</code>;
+                    высота контрола равна значению этого шага в шкале <code>SPC</code>. Текущие сеты
+                    компонентов используют <code>SZS</code>, <code>SZM</code> и <code>SZL</code>
+                    (16, 24, 32), но этим набором система не ограничена.
                 </p>
 
-                <h2 id="scales">Step scales</h2>
+                <h2 id="scales">Шкалы шагов</h2>
                 <p>
-                    The same step names <code>XXS</code>, <code>SXS</code>, <code>SZS</code>,
-                    <code>SZM</code>, <code>SZL</code>, <code>SXL</code>, <code>XXL</code> are used
-                    across all scales but mean different values. The step is chosen by meaning, the
-                    value comes from the scale table.
+                    Одни и те же имена шагов <code>XXS</code>, <code>SXS</code>, <code>SZS</code>,
+                    <code>SZM</code>, <code>SZL</code>, <code>SXL</code>,
+                    <code>XXL</code> используются во всех шкалах, но означают разные значения. Шаг
+                    выбирается по смыслу, значение — из таблицы шкалы.
                 </p>
                 <table>
                     <thead>
                         <tr>
-                            <th>Step</th>
-                            <th><code>SPC</code> spacing, px</th>
-                            <th><code>RAD</code> radiuses, px</th>
-                            <th><code>THK</code> thicknesses, px</th>
-                            <th><code>TXT</code> size, px</th>
+                            <th>Шаг</th>
+                            <th><code>SPC</code> отступы, px</th>
+                            <th><code>RAD</code> скругления, px</th>
+                            <th><code>THK</code> толщины, px</th>
+                            <th><code>TXT</code> кегль, px</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -717,42 +716,46 @@
                     </tbody>
                 </table>
                 <div class="note">
-                    Spacings are additionally expressed in rem (0.25 / 0.5 / 1 / 1.5 / 2 / 3 / 4) —
-                    base 16 px. The component default radius is <code>RAD</code>/<code>SZS</code> =
+                    Отступы дополнительно выражаются в rem (0.25 / 0.5 / 1 / 1.5 / 2 / 3 / 4) — база
+                    16 px. Скругления компонентов по умолчанию — <code>RAD</code>/<code>SZS</code> =
                     12 px.
                 </div>
 
-                <h2 id="rules">Naming rules</h2>
+                <h2 id="rules">Правила именования</h2>
                 <ul>
                     <li>
-                        A new code is added only to this page’s registry — a free three-letter
-                        combination not colliding with existing ones;
+                        Новый код добавляется только в реестр этой страницы — свободная
+                        трёхбуквенная комбинация, не совпадающая с существующими;
                     </li>
-                    <li>A token name is entirely uppercase;</li>
+                    <li>Имя токена целиком в верхнем регистре;</li>
                     <li>
-                        Name segments are separated by /, the order is fixed by the domain formula;
+                        Сегменты имени разделяются через <code></code>/<code></code>, порядок
+                        фиксирован формулой домена;
                     </li>
-                    <li>A component set name is <code>CODE_SZ*</code>;</li>
-                    <li>A set variant is described by Key=Value pairs, comma-separated;</li>
+                    <li>Имя сета компонентов — <code>КОД_SZ*</code>;</li>
                     <li>
-                        Compound codes are written with <code>_</code>:
+                        Вариант сета описывается парами <code>Ключ=Значение</code> через запятую;
+                    </li>
+                    <li>
+                        Составные коды пишутся через <code>_</code>:
                         <ul>
-                            <li><code>FGR_CVB_100</code> — rule;</li>
+                            <li><code>FGR_CVB_100</code> — правило;</li>
                             <li>
-                                <code>BRA</code>/<code>PRM</code> — the exception: a family with a
-                                slash;
+                                <code>BRA</code>/<code>PRM</code> — исключение: семейство со слэшем;
                             </li>
                         </ul>
                     </li>
-                    <li>A human name is always duplicated by a code (“Emphasis Primary / PRM”);</li>
+                    <li>
+                        Человеческое имя обязательно дублируется кодом («Emphasis Primary / PRM»);
+                    </li>
                 </ul>
 
-                <h2 id="examples">Name parsing</h2>
+                <h2 id="examples">Разбор имён</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Reads as</th>
+                            <th>Имя</th>
+                            <th>Читается как</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -767,8 +770,8 @@
                                 >
                             </td>
                             <td>
-                                The content (text, icon) of a regular elevated button at rest →
-                                GRY/925 = #1B1B1B
+                                Контент (текст, иконка) обычной приподнятой кнопки в покое → GRY/925
+                                = #1B1B1B
                             </td>
                         </tr>
                         <tr>
@@ -781,7 +784,7 @@
                                     ></code
                                 >
                             </td>
-                            <td>The base color of a regular button at rest → GRY/200 = #DBDBDB</td>
+                            <td>Основной цвет обычной кнопки в покое → GRY/200 = #DBDBDB</td>
                         </tr>
                         <tr>
                             <td>
@@ -793,35 +796,33 @@
                                     ></code
                                 >
                             </td>
-                            <td>
-                                The base color of an input at rest, the “well bottom” → GRY/975 =
-                                #0E0E0E
-                            </td>
+                            <td>Основной цвет поля ввода в покое, «дно ямы» → GRY/975 = #0E0E0E</td>
                         </tr>
                         <tr>
                             <td>
                                 <code>ABV</code>/<code>NEG</code>/<code>HVR</code>/<code>SHD</code>
                             </td>
                             <td>
-                                The shadow of an elevated error component on hover: ABV — elevated,
-                                NEG — error, HVR — hover, SHD — shadow
+                                Тень приподнятого компонента ошибки при наведении: ABV —
+                                приподнятый, NEG — ошибка, HVR — наведение, SHD — тень
                             </td>
                         </tr>
                         <tr>
                             <td><code>TXT</code>/<code>TIB</code>/<code>SXS</code></td>
-                            <td>Roboto Flex Bold Italic, size 12</td>
+                            <td>Roboto Flex Bold Italic, кегль 12</td>
                         </tr>
                         <tr>
                             <td><code>INP_SZL</code> <code>Emphasis=POS, State=FCS_FLD</code></td>
                             <td>
-                                A large input, success emphasis, focused, filled: INP — an input,
-                                SZL — large size, POS — success, FCS — focus, FLD — filled
+                                Большое поле ввода, акцент «успех», в фокусе, заполнено: INP — поле
+                                ввода, SZL — большой размер, POS — успех, FCS — фокус, FLD —
+                                заполнено
                             </td>
                         </tr>
                     </tbody>
                 </table>
 
-                <p class="footer">Rosinfotech UI-Kit DNA</p>
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
             </main>
         </div>
     </body>

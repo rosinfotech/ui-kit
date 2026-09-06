@@ -780,3 +780,23 @@ th code {
     row-gap: 2rem;
     margin: var(--sp-szm) 0;
 }
+
+.lang-toggle {
+    margin-top: var(--sp-szm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--sp-xxs) var(--sp-sxs);
+    border: 1px solid var(--clr-gry-925);
+    border-radius: var(--sp-xxs);
+    color: var(--clr-gry-200);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    text-decoration: none;
+}
+
+.lang-toggle:hover {
+    background: var(--clr-gry-875);
+    border-color: var(--clr-gry-750);
+}

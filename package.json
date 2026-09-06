@@ -1,6 +1,6 @@
 {
     "name": "@rosinfo.tech/ui-kit",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "description": "Rosinfotech UI Kit",
     "type": "module",
     "workspaces": [
@@ -51,7 +51,7 @@
         "@rosinfo.tech/eslint-config-import": "^0.0.9",
         "@rosinfo.tech/eslint-config-javascript": "^0.0.33",
         "@rosinfo.tech/eslint-config-react": "^0.0.20",
-        "@rosinfo.tech/eslint-config-typescript": "^0.3.0",
+        "@rosinfo.tech/eslint-config-typescript": "^0.4.0",
         "@rosinfo.tech/prettier-config-standard": "^0.0.12",
         "@types/node": "^22.10.2",
         "@types/react": "^19.2.7",

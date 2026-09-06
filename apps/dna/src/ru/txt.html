@@ -1,50 +1,50 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Typography — DNA</title>
+        <title>Типографика — DNA</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./assets/dna.css" />
-        <script src="./assets/theme.js"></script>
-        <link rel="icon" href="./assets/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="./assets/favicon-180.png" />
+        <link rel="stylesheet" href="../assets/dna.css" />
+        <script src="../assets/theme.js"></script>
+        <link rel="icon" href="../assets/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../assets/favicon-180.png" />
         <meta name="robots" content="noindex, nofollow" />
     </head>
     <body>
         <div class="layout">
             <aside class="sidebar">
                 <a class="brand" href="./index.html">
-                    DNA of the UI-Kit
+                    ДНК UI-Kit'а
                     <small>Rosinfotech</small>
                 </a>
                 <nav class="nav">
-                    <a href="./semantics.html">Semantics <span class="tag">SEM</span></a>
-                    <a href="./clr.html">Absolute color <span class="tag">CLR</span></a>
-                    <a href="./fcl.html">Functional color <span class="tag">FCL</span></a>
-                    <a href="./spc.html">Spacing <span class="tag">SPC</span></a>
-                    <a href="./rad.html">Radiuses <span class="tag">RAD</span></a>
-                    <a href="./thk.html">Thicknesses <span class="tag">THK</span></a>
+                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
+                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
+                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
+                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
                     <a href="./txt.html" aria-current="page"
-                        >Typography <span class="tag">TXT</span></a
+                        >Типографика <span class="tag">TXT</span></a
                     >
-                    <a href="./fty.html">Functional typography <span class="tag">FTY</span></a>
-                    <a href="./grd.html">Elevation gradients <span class="tag">GRD</span></a>
+                    <a href="./fty.html">Функциональная типографика <span class="tag">FTY</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
                 </nav>
-                <a class="lang-toggle" href="./ru/txt.html" aria-label="Switch to Russian"
-                    ><span>RU</span></a
+                <a class="lang-toggle" href="../txt.html" aria-label="Switch to English"
+                    ><span>EN</span></a
                 >
                 <button
                     class="theme-toggle"
                     id="theme-toggle"
                     type="button"
-                    aria-label="Toggle theme"
+                    aria-label="Переключить тему"
                 >
                     <svg
                         class="icon-sun"
@@ -77,26 +77,26 @@
                             stroke-linejoin="round"
                         />
                     </svg>
-                    <span>Theme</span>
+                    <span>Тема</span>
                 </button>
             </aside>
             <main class="content">
-                <h1>Typography / TXT</h1>
+                <h1>Типографика / TXT</h1>
                 <p class="lead">
-                    The absolute text matrix: 84 styles — the Roboto Flex, typeface, six weights in
-                    roman and italic, seven sizes. Components do not reference TXT directly but the
-                    functional <a href="./fty.html">roles</a>.
+                    Абсолютная матрица текста: 84 стиля — шрифт Roboto Flex, шесть весов в прямом и
+                    курсивном начертании, семь кеглей. Компоненты ссылаются не на TXT напрямую, а на
+                    <a href="./fty.html">функциональные роли</a>.
                 </p>
 
-                <h2 id="grammar">Grammar</h2>
+                <h2 id="grammar">Грамматика</h2>
                 <div class="formula">
-                    TXT/&lt;typeface&gt;/&lt;size&gt;<br />
+                    TXT/&lt;начертание&gt;/&lt;размер&gt;<br />
                     TXT/<span class="seg emph">TWM</span>/<span class="seg state">SZL</span> —
-                    Roboto Flex Medium, size 20
+                    Roboto Flex Medium, кегль 20
                 </div>
                 <ul>
                     <li>
-                        Typefaces:
+                        Начертания:
                         <ul>
                             <li><code>TWT</code> — Thin 100;</li>
                             <li><code>TWL</code> — Light 300;</li>
@@ -105,21 +105,23 @@
                             <li><code>TWB</code> — Bold 700;</li>
                             <li><code>TWE</code> — ExtraBold 800;</li>
                             <li>
-                                italics — the same six with <code>I</code> instead of
-                                <code>W</code>: <code>TIT</code><code>…</code><code>TIE</code>;
+                                курсивные — те же шесть с <code>I</code> вместо <code>W</code>:
+                                <code>TIT</code><code>…</code><code>TIE</code>;
                             </li>
                         </ul>
                     </li>
-                    <li>Scale sizes: XXS=10 … XXL=32 px;</li>
+                    <li>Размеры шкалы: XXS=10 … XXL=32 px;</li>
                 </ul>
 
-                <h2 id="metrics">Size metrics</h2>
+                <h2 id="metrics">Метрики кеглей</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Step</th>
-                            <th>Size, px Line height, px</th>
-                            <th>Line height, % Tracking</th>
+                            <th>Шаг</th>
+                            <th>Кегль, px</th>
+                            <th>Интерлиньяж, px</th>
+                            <th>Интерлиньяж, %</th>
+                            <th>Трекинг</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -175,13 +177,13 @@
                     </tbody>
                 </table>
                 <div class="note">
-                    The line height is mixed: some sizes use auto (100%, % font metric), some are
-                    manual (XXS 136%, SZM 128%, SZL 102%). Tracking is non-zero only for XXL
-                    (−0.48). Metric changes go through this registry only.
+                    Интерлиньяж смешанный: часть кеглей — авто (100%, метрика шрифта), часть —
+                    ручной (XXS 136%, SZM 128%, SZL 102%). Трекинг отличен от нуля только у XXL
+                    (−0.48). Изменения метрик — только через этот реестр.
                 </div>
 
-                <h2 id="matrix">Matrix</h2>
-                <h3>Roman</h3>
+                <h2 id="matrix">Матрица</h2>
+                <h3>Прямые</h3>
                 <div class="type-matrix">
                     <table>
                         <thead>
@@ -204,7 +206,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -212,7 +214,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -220,7 +222,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -228,7 +230,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 16px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -236,7 +238,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 20px; line-height: 23px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -244,7 +246,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -252,7 +254,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
@@ -263,7 +265,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -271,7 +273,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -279,7 +281,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -287,7 +289,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 16px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -295,7 +297,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 20px; line-height: 23px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -303,7 +305,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -311,7 +313,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
@@ -322,7 +324,7 @@
                                         class="type-cell"
                                         style="font-weight: 400; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -330,7 +332,7 @@
                                         class="type-cell"
                                         style="font-weight: 400; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -338,7 +340,7 @@
                                         class="type-cell"
                                         style="font-weight: 400; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -346,7 +348,7 @@
                                         class="type-cell"
                                         style="font-weight: 400; font-size: 16px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -354,7 +356,7 @@
                                         class="type-cell"
                                         style="font-weight: 400; font-size: 20px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -362,7 +364,7 @@
                                         class="type-cell"
                                         style="font-weight: 400; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -370,7 +372,7 @@
                                         class="type-cell"
                                         style="font-weight: 400; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
@@ -381,7 +383,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -389,7 +391,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -397,7 +399,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -405,7 +407,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 16px; line-height: 19px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -413,7 +415,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 20px; line-height: 23px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -421,7 +423,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -429,7 +431,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
@@ -440,7 +442,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -448,7 +450,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -456,7 +458,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -464,7 +466,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 16px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -472,7 +474,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 20px; line-height: 23px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -480,7 +482,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -488,7 +490,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
@@ -499,7 +501,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -507,7 +509,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -515,7 +517,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -523,7 +525,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 16px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -531,7 +533,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 20px; line-height: 23px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -539,7 +541,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -547,14 +549,14 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <h3>Italic</h3>
+                <h3>Курсивные</h3>
                 <div class="type-matrix">
                     <table>
                         <thead>
@@ -577,7 +579,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -585,7 +587,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -593,7 +595,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -601,7 +603,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 16px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -609,7 +611,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 20px; line-height: 23px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -617,7 +619,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -625,7 +627,7 @@
                                         class="type-cell"
                                         style="font-weight: 100; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
@@ -636,7 +638,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -644,7 +646,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -652,7 +654,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -660,7 +662,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 16px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -668,7 +670,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 20px; line-height: 23px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -676,7 +678,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -684,7 +686,7 @@
                                         class="type-cell"
                                         style="font-weight: 300; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
@@ -700,7 +702,7 @@
                                             line-height: 16px;
                                         "
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -713,7 +715,7 @@
                                             line-height: 14px;
                                         "
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -726,7 +728,7 @@
                                             line-height: 16px;
                                         "
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -739,7 +741,7 @@
                                             line-height: 24px;
                                         "
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -752,7 +754,7 @@
                                             line-height: 23px;
                                         "
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -765,7 +767,7 @@
                                             line-height: 28px;
                                         "
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -778,7 +780,7 @@
                                             line-height: 38px;
                                         "
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
@@ -789,7 +791,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -797,7 +799,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -805,7 +807,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -813,7 +815,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 16px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -821,7 +823,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 20px; line-height: 23px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -829,7 +831,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -837,7 +839,7 @@
                                         class="type-cell"
                                         style="font-weight: 500; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
@@ -848,7 +850,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -856,7 +858,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -864,7 +866,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -872,7 +874,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 16px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -880,7 +882,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 20px; line-height: 23px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -888,7 +890,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -896,7 +898,7 @@
                                         class="type-cell"
                                         style="font-weight: 700; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
@@ -907,7 +909,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 10px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -915,7 +917,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 12px; line-height: 14px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -923,7 +925,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 14px; line-height: 16px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -931,7 +933,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 16px; line-height: 24px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -939,7 +941,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 20px; line-height: 23px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -947,7 +949,7 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 24px; line-height: 28px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                                 <td>
@@ -955,14 +957,14 @@
                                         class="type-cell"
                                         style="font-weight: 800; font-size: 32px; line-height: 38px"
                                     >
-                                        Aa Zz 39
+                                        Аа Яя 39
                                     </p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="footer">Rosinfotech UI-Kit DNA</p>
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
             </main>
         </div>
     </body>

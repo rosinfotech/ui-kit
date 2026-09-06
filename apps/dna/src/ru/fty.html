@@ -1,50 +1,50 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Functional typography — DNA</title>
+        <title>Функциональная типографика — DNA</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto+Flex:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./assets/dna.css" />
-        <script src="./assets/theme.js"></script>
-        <link rel="icon" href="./assets/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="./assets/favicon-180.png" />
+        <link rel="stylesheet" href="../assets/dna.css" />
+        <script src="../assets/theme.js"></script>
+        <link rel="icon" href="../assets/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../assets/favicon-180.png" />
         <meta name="robots" content="noindex, nofollow" />
     </head>
     <body>
         <div class="layout">
             <aside class="sidebar">
                 <a class="brand" href="./index.html">
-                    DNA of the UI-Kit
+                    ДНК UI-Kit'а
                     <small>Rosinfotech</small>
                 </a>
                 <nav class="nav">
-                    <a href="./semantics.html">Semantics <span class="tag">SEM</span></a>
-                    <a href="./clr.html">Absolute color <span class="tag">CLR</span></a>
-                    <a href="./fcl.html">Functional color <span class="tag">FCL</span></a>
-                    <a href="./spc.html">Spacing <span class="tag">SPC</span></a>
-                    <a href="./rad.html">Radiuses <span class="tag">RAD</span></a>
-                    <a href="./thk.html">Thicknesses <span class="tag">THK</span></a>
-                    <a href="./txt.html">Typography <span class="tag">TXT</span></a>
+                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
+                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
+                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
+                    <a href="./rad.html">Скругления <span class="tag">RAD</span></a>
+                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
+                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
                     <a href="./fty.html" aria-current="page"
-                        >Functional typography <span class="tag">FTY</span></a
+                        >Функциональная типографика <span class="tag">FTY</span></a
                     >
-                    <a href="./grd.html">Elevation gradients <span class="tag">GRD</span></a>
+                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
                 </nav>
-                <a class="lang-toggle" href="./ru/fty.html" aria-label="Switch to Russian"
-                    ><span>RU</span></a
+                <a class="lang-toggle" href="../fty.html" aria-label="Switch to English"
+                    ><span>EN</span></a
                 >
                 <button
                     class="theme-toggle"
                     id="theme-toggle"
                     type="button"
-                    aria-label="Toggle theme"
+                    aria-label="Переключить тему"
                 >
                     <svg
                         class="icon-sun"
@@ -77,90 +77,93 @@
                             stroke-linejoin="round"
                         />
                     </svg>
-                    <span>Theme</span>
+                    <span>Тема</span>
                 </button>
             </aside>
             <main class="content">
-                <h1>Functional typography / FTY</h1>
+                <h1>Функциональная типографика / FTY</h1>
                 <p class="lead">
-                    Ten text roles through which components receive their typeface. A role
-                    references the absolute TXT matrix; color comes from FCL by the same principle
-                    of layers and emphases.
+                    Десять текстовых ролей, через которые компоненты получают начертание. Роль
+                    ссылается на абсолютную матрицу <a href="./txt.html">TXT</a>; цвет берётся из
+                    <a href="./fcl.html">FCL</a> по тому же принципу слоёв и акцентов.
                 </p>
 
-                <h2 id="grammar">Grammar</h2>
+                <h2 id="grammar">Грамматика</h2>
                 <div class="formula">
-                    FTY/&lt;role&gt;<br />
-                    FTY/<span class="seg emph">HD2</span> — heading 2: Roboto Flex Medium 24
+                    FTY/&lt;роль&gt;<br />
+                    FTY/<span class="seg emph">HD2</span> — заголовок 2: Roboto Flex Medium 24
                 </div>
 
-                <h2 id="rhythm">Vertical rhythm</h2>
+                <h2 id="rhythm">Вертикальный ритм</h2>
                 <p>
-                    There are no dedicated rhythm tokens — it is defined by the FTY section layout
-                    and assembled from the SPC scale. The same rhythm is applied to all DNA pages.
+                    Отдельных токенов ритма нет — он задан раскладкой секции FTY и собирается из
+                    шкалы
+                    <a href="./spc.html">SPC</a>. Этот же ритм применён ко всем страницам DNA.
                 </p>
                 <table>
                     <thead>
                         <tr>
-                            <th>Relation</th>
-                            <th>Value</th>
-                            <th>Token</th>
+                            <th>Отношение</th>
+                            <th>Значение</th>
+                            <th>Токен</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Heading → block content 24</td>
-                            <td><code>SPC</code>/<code>SZM</code></td>
-                        </tr>
-                        <tr>
-                            <td>Heading → section group (frame-level) 64</td>
-                            <td>
-                                <code>SPC</code>/<code>XXL</code> — not set separately on pages:
-                                sections carry their own top rhythm 48+1+24
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Block → next section label</td>
-                            <td>48</td>
-                            <td>
-                                <code>SPC</code>/<code>SXL</code> (the FTY vitrine divider line is
-                                not reproduced on pages)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Section label → content</td>
+                            <td>Заголовок → контент блока</td>
                             <td>24</td>
                             <td><code>SPC</code>/<code>SZM</code></td>
                         </tr>
                         <tr>
-                            <td>Content → subsection</td>
+                            <td>Заголовок → группа разделов (фреймовое)</td>
+                            <td>64</td>
+                            <td>
+                                <code>SPC</code>/<code>XXL</code> — на страницах не задаётся
+                                отдельно: разделы несут свой верхний ритм 48+1+24
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Блок → подпись следующего раздела</td>
+                            <td>48</td>
+                            <td>
+                                <code>SPC</code>/<code>SXL</code> (линия-разделитель витрины FTY на
+                                страницах не воспроизводится)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Подпись раздела → контент</td>
+                            <td>24</td>
+                            <td><code>SPC</code>/<code>SZM</code></td>
+                        </tr>
+                        <tr>
+                            <td>Контент → подраздел</td>
                             <td>48</td>
                             <td><code>SPC</code>/<code>SXL</code></td>
                         </tr>
                         <tr>
-                            <td>Block → block within a section</td>
+                            <td>Блок → блок внутри раздела</td>
                             <td>24</td>
                             <td><code>SPC</code>/<code>SZM</code></td>
                         </tr>
                         <tr>
-                            <td>Quote → author name</td>
+                            <td>Цитата → имя автора</td>
                             <td>4</td>
                             <td><code>SPC</code>/<code>XXS</code></td>
                         </tr>
                         <tr>
-                            <td>Page margins</td>
+                            <td>Поля страницы</td>
                             <td>48</td>
                             <td><code>SPC</code>/<code>SXL</code></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2 id="roles">Roles</h2>
+                <h2 id="roles">Роли</h2>
                 <div class="fty-row">
                     <div class="meta">
                         <code>FTY</code>/<code>HD1</code><br />
-                        Header 1 — first-level heading<br />
-                        TXT: XXL · has a variable
+                        Header 1 — заголовок первого уровня<br />
+                        TXT: XXL · есть переменная
                     </div>
                     <div>
                         <p
@@ -180,8 +183,8 @@
                 <div class="fty-row">
                     <div class="meta">
                         <code>FTY</code>/<code>HD2</code><br />
-                        Header 2 — second-level heading<br />
-                        TXT: SXL · has a variable
+                        Header 2 — заголовок второго уровня<br />
+                        TXT: SXL · есть переменная
                     </div>
                     <div>
                         <p
@@ -201,8 +204,8 @@
                 <div class="fty-row">
                     <div class="meta">
                         <code>FTY</code>/<code>HD3</code><br />
-                        Header 3 — third-level heading<br />
-                        TXT: SZL · has a variable
+                        Header 3 — заголовок третьего уровня<br />
+                        TXT: SZL · есть переменная
                     </div>
                     <div>
                         <p
@@ -222,8 +225,8 @@
                 <div class="fty-row">
                     <div class="meta">
                         <code>FTY</code>/<code>PAR</code><br />
-                        Paragraph — regular paragraph text<br />
-                        TXT: SZM · has a variable
+                        Paragraph — обычный текст абзаца<br />
+                        TXT: SZM · есть переменная
                     </div>
                     <div>
                         <p
@@ -242,8 +245,8 @@
                 <div class="fty-row">
                     <div class="meta">
                         <code>FTY</code>/<code>PRP</code><br />
-                        Paragraph positive — success paragraph<br />
-                        TXT: — · no variable
+                        Paragraph positive — абзац «успех»<br />
+                        TXT: — · нет переменной
                     </div>
                     <div>
                         <p
@@ -255,15 +258,15 @@
                                 line-height: 23px;
                             "
                         >
-                            A paragraph marked with a success sign.
+                            Параграф, отмеченный знаком успеха.
                         </p>
                     </div>
                 </div>
                 <div class="fty-row">
                     <div class="meta">
                         <code>FTY</code>/<code>PRA</code><br />
-                        Paragraph attention — attention paragraph<br />
-                        TXT: — · no variable
+                        Paragraph attention — абзац «внимание»<br />
+                        TXT: — · нет переменной
                     </div>
                     <div>
                         <p
@@ -275,15 +278,15 @@
                                 line-height: 23px;
                             "
                         >
-                            A paragraph requiring attention.
+                            Параграф, требующий внимания.
                         </p>
                     </div>
                 </div>
                 <div class="fty-row">
                     <div class="meta">
                         <code>FTY</code>/<code>PRN</code><br />
-                        Paragraph negative — error paragraph<br />
-                        TXT: — · no variable
+                        Paragraph negative — абзац «ошибка»<br />
+                        TXT: — · нет переменной
                     </div>
                     <div>
                         <p
@@ -295,15 +298,15 @@
                                 line-height: 23px;
                             "
                         >
-                            An error paragraph: something went wrong.
+                            Параграф ошибки: что-то пошло не так.
                         </p>
                     </div>
                 </div>
                 <div class="fty-row">
                     <div class="meta">
                         <code>FTY</code>/<code>QTE</code><br />
-                        Quote — quotation<br />
-                        TXT: — · no variable
+                        Quote — цитата<br />
+                        TXT: — · нет переменной
                     </div>
                     <div>
                         <p
@@ -315,15 +318,15 @@
                                 line-height: 23px;
                             "
                         >
-                            “A quote is a verbatim excerpt from the text.”
+                            «Цитата — дословная выдержка из текста.»
                         </p>
                     </div>
                 </div>
                 <div class="fty-row">
                     <div class="meta">
                         <code>FTY/QTE_AUT</code><br />
-                        Quote with author name — quote author name<br />
-                        TXT: — · no variable
+                        Quote with author name — имя автора цитаты<br />
+                        TXT: — · нет переменной
                     </div>
                     <div>
                         <p
@@ -342,8 +345,8 @@
                 <div class="fty-row">
                     <div class="meta">
                         <code>FTY</code>/<code>FTN</code><br />
-                        Footnote — footnote<br />
-                        TXT: XXS · no variable
+                        Footnote — сноска<br />
+                        TXT: XXS · нет переменной
                     </div>
                     <div>
                         <p
@@ -361,23 +364,23 @@
                 </div>
 
                 <div class="note">
-                    These roles are applied to the DNA documentation itself DNA: page headings are
-                    HD1/HD2/HD3, text is PAR, captions are FTN. The role order and labels mirror the
-                    FTY section in Figma: Header 1–3, Paragraph, Paragraph positive / attention /
-                    negative, Quote, Quote with author name, Footnote. It also shows demo cases of a
-                    paragraph wrapping an image left and right — those are PAR usages, not separate
-                    roles.
+                    Эти роли применены и к самой документации DNA: заголовки страниц — HD1/HD2/HD3,
+                    текст — PAR, подписи — FTN. Порядок ролей и подписи повторяют секцию FTY в
+                    Figma: Header 1–3, Paragraph, Paragraph positive / attention / negative, Quote,
+                    Quote with author name, Footnote. Там же показаны демо-кейсы обтекания абзацем
+                    изображения слева и справа — это применения PAR, а не отдельные роли.
                 </div>
                 <div class="note">
-                    <code>HD1</code> is the only role set in Inter (Medium 500); the rest use Roboto
-                    Flex. The HD1, HD2, HD3 and PAR roles also exist as font variables; the rest are
-                    yet to be created.
+                    <code>HD1</code> — единственная роль на шрифте Inter (Medium 500); остальные —
+                    Roboto Flex. Роли HD1, HD2, HD3, PAR существуют и как шрифтовые переменные;
+                    остальным переменные предстоит создать.
                 </div>
                 <div class="note danger">
-                    A mismatch in the Figma style registry: the role is labeled QTE_AUT while the
-                    style itself is named FTY/QTE_OUT. The style should be renamed to FTY/QTE_AUT.
+                    Несоответствие в реестре стилей Figma: роль подписана <code>QTE_AUT</code>, а
+                    сам стиль называется <code>FTY/QTE_OUT</code>. Следует переименовать стиль в
+                    <code>FTY/QTE_AUT</code>.
                 </div>
-                <p class="footer">Rosinfotech UI-Kit DNA</p>
+                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
             </main>
         </div>
     </body>
