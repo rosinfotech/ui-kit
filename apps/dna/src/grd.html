@@ -40,7 +40,7 @@
             <main class="content">
                 <h1>Градиенты высоты / GRD</h1>
                 <p class="lead">
-                    Псевдообъём приподнятых элементов: линейный градиент «свет сверху» кладётся
+                    Псевдообъём приподнятых компонентов: линейный градиент «свет сверху» кладётся
                     поверх фона слоя ABV и усиливает пространственную модель вместе с тенями SHD.
                 </p>
 
@@ -58,7 +58,7 @@
                             class="gradient-chip"
                             style="background: linear-gradient(180deg, #3b3b3b 50%, #212121 100%)"
                         ></div>
-                        <code>ABV/PRM/RGL/GRD</code>
+                        <code>ABV</code>/<code>PRM</code>/<code>RGL</code>/<code>GRD</code>
                         <div class="stops">#3B3B3B @ 50%<br />#212121 @ 100%</div>
                     </div>
                     <div class="gradient-card">
@@ -66,7 +66,7 @@
                             class="gradient-chip"
                             style="background: linear-gradient(180deg, #e8e8e8 50%, #cdcdcd 100%)"
                         ></div>
-                        <code>ABV/PRM/HVR/GRD</code>
+                        <code>ABV</code>/<code>PRM</code>/<code>HVR</code>/<code>GRD</code>
                         <div class="stops">#E8E8E8 @ 50%<br />#CDCDCD @ 100%</div>
                     </div>
                     <div class="gradient-card">
@@ -74,7 +74,7 @@
                             class="gradient-chip"
                             style="background: linear-gradient(180deg, #e8e8e8 50%, #cdcdcd 100%)"
                         ></div>
-                        <code>ABV/PRM/FCS/GRD</code>
+                        <code>ABV</code>/<code>PRM</code>/<code>FCS</code>/<code>GRD</code>
                         <div class="stops">#E8E8E8 @ 50%<br />#CDCDCD @ 100%</div>
                     </div>
                     <div class="gradient-card">
@@ -82,7 +82,7 @@
                             class="gradient-chip"
                             style="background: linear-gradient(180deg, #cdcdcd 50%, #dbdbdb 100%)"
                         ></div>
-                        <code>ABV/PRM/PRS/GRD</code>
+                        <code>ABV</code>/<code>PRM</code>/<code>PRS</code>/<code>GRD</code>
                         <div class="stops">#CDCDCD @ 50%<br />#DBDBDB @ 100%</div>
                     </div>
                     <div class="gradient-card">
@@ -90,7 +90,7 @@
                             class="gradient-chip"
                             style="background: linear-gradient(180deg, #ef484a 50%, #db2123 100%)"
                         ></div>
-                        <code>ABV/ACC/RGL/GRD</code>
+                        <code>ABV</code>/<code>ACC</code>/<code>RGL</code>/<code>GRD</code>
                         <div class="stops">#EF484A @ 50%<br />#DB2123 @ 100%</div>
                     </div>
                     <div class="gradient-card">
@@ -98,7 +98,7 @@
                             class="gradient-chip"
                             style="background: linear-gradient(180deg, #a30709 50%, #760103 100%)"
                         ></div>
-                        <code>ABV/ACC/HVR/GRD</code>
+                        <code>ABV</code>/<code>ACC</code>/<code>HVR</code>/<code>GRD</code>
                         <div class="stops">#A30709 @ 50%<br />#760103 @ 100%</div>
                     </div>
                     <div class="gradient-card">
@@ -106,7 +106,7 @@
                             class="gradient-chip"
                             style="background: linear-gradient(180deg, #a30709 50%, #760103 100%)"
                         ></div>
-                        <code>ABV/ACC/FCS/GRD</code>
+                        <code>ABV</code>/<code>ACC</code>/<code>FCS</code>/<code>GRD</code>
                         <div class="stops">#A30709 @ 50%<br />#760103 @ 100%</div>
                     </div>
                     <div class="gradient-card">
@@ -114,7 +114,7 @@
                             class="gradient-chip"
                             style="background: linear-gradient(180deg, #8d0305 50.5%, #760103 100%)"
                         ></div>
-                        <code>ABV/ACC/PRS/GRD</code>
+                        <code>ABV</code>/<code>ACC</code>/<code>PRS</code>/<code>GRD</code>
                         <div class="stops">#8D0305 @ 50.5%<br />#760103 @ 100%</div>
                     </div>
                 </div>
@@ -130,14 +130,14 @@
                     </li>
                     <li>
                         Градиенты существуют только для ABV и только для акцентов PRM и ACC: у
-                        DFT/POS/ATN/NEG приподнятые элементы плоские;
+                        DFT/POS/ATN/NEG приподнятые компоненты плоские;
                     </li>
                     <li>
                         Состояния HVR и FCS используют один градиент, PRS — собственный
                         (темнее/плотнее);
                     </li>
                     <li>
-                        Состоянию DSB градиента не полагается: недоступные элементы лишены объёма;
+                        Состоянию DSB градиента не полагается: недоступные компоненты лишены объёма;
                     </li>
                     <li>
                         Градиент — слой поверх <a href="./fcl.html">FCL-фона</a>, не его замена;

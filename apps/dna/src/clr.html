@@ -39,12 +39,16 @@
             </aside>
             <main class="content">
                 <h1>Абсолютная цветовая палитра / CLR</h1>
-                <p class="lead">
-                    Сырьё цветов дизайн-системы: 11 семейств × шкала из 40 шагов плюс особые белый и
-                    чёрный — 442 значения. Абсолютные токены не применяются в компонентах напрямую:
-                    из них собирается
-                    <a href="./fcl.html">функциональная палитра</a>.
-                </p>
+                <p class="lead">Цветовая основа дизайн-системы:</p>
+                <ul>
+                    <li>
+                        11 семейств × шкала из 40 шагов плюс особые белый и чёрный — 442 значения;
+                    </li>
+                    <li>
+                        Абсолютные токены не применяются в компонентах напрямую — из них собирается
+                        <a href="./fcl.html">функциональная палитра</a>;
+                    </li>
+                </ul>
 
                 <h2 id="grammar">Грамматика</h2>
                 <div class="formula">
@@ -53,8 +57,12 @@
                 </div>
                 <ul>
                     <li>
-                        Шаг — трёхзначное число <code>025…975</code> с интервалом 25, у GRY есть
-                        <code>000</code> и шаг <code>1000</code>; чем больше, тем темнее;
+                        Шаг:
+                        <ul>
+                            <li>Число от <code>025</code> до <code>1000</code>;</li>
+                            <li>C интервалом 25 (40 значений в каждом семействе);</li>
+                            <li>Чем больше, тем темнее;</li>
+                        </ul>
                     </li>
                     <li>
                         Особые семейства без шкалы:
@@ -64,9 +72,18 @@
                         </ul>
                     </li>
                     <li>
-                        Брендовые семейства <code>BRA/PRM</code> и <code>BRA/SEC</code> —
-                        единственные с составным кодом; сейчас совпадают с GRY и будут
-                        переопределены брендом;
+                        Брендовые семейства:
+                        <ul>
+                            <li>
+                                Список:
+                                <ul>
+                                    <li><code>BRA</code>/<code>PRM</code> – Brand Primary;</li>
+                                    <li><code>BRA</code>/<code>SEC</code> – Brand Secondary;</li>
+                                </ul>
+                            </li>
+                            <li>Единственные с составным кодом;</li>
+                            <li>Сейчас совпадают с GRY и могут быть переопределены брендом;</li>
+                        </ul>
                     </li>
                 </ul>
 
@@ -1609,7 +1626,7 @@
                 </section>
                 <section class="family" id="BRAPRM">
                     <div class="family-head">
-                        <h3><code>BRA/PRM</code></h3>
+                        <h3><code>BRA</code>/<code>PRM</code></h3>
                         <span class="count">40 знач.</span>
                     </div>
                     <div class="strip">
@@ -1777,7 +1794,7 @@
                 </section>
                 <section class="family" id="BRASEC">
                     <div class="family-head">
-                        <h3><code>BRA/SEC</code></h3>
+                        <h3><code>BRA</code>/<code>SEC</code></h3>
                         <span class="count">40 знач.</span>
                     </div>
                     <div class="strip">

@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.2] - 2026-09-06
+
+### Added
+
+- Semantics page: "Композиция" section defining element, component and composite component with the radiobutton multi-layer example; typefaces presented as a table with weights and usage notes; DRK (dark theme) modifier
+
+### Changed
+
+- Terminology unified: components are no longer called elements; element is defined as an atomic part of a component residing in a single layer; BGR defined as the background for the foreground (FGR), not the component background
+- Token notation unified: every slash-separated segment in its own code element, wildcard written as `***`; radiobutton code renamed RAD → RDB resolving the collision with radius scale
+- Spacer component and its collision section removed (component does not exist in Figma); CLR scale corrected to 025–1000 for all families
+- Example decodings added across semantics grammars and name parsing tables; table cells now start with a capital letter
+
 ## [0.2.1] - 2026-09-05
 
 ### Added

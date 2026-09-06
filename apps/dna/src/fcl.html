@@ -57,8 +57,8 @@
                 </div>
                 <ul>
                     <li>
-                        <strong>Слой</strong> — где элемент в пространстве (полный реестр — в
-                        <a href="./semantics.html">Семантике</a>):
+                        <strong>Слой</strong> — где элемент компонента в пространстве (полный реестр
+                        — в <a href="./semantics.html">Семантике</a>):
                         <ul>
                             <li><code>ABV</code> — приподнят над поверхностью;</li>
                             <li><code>SFC</code> — несущая поверхность;</li>
@@ -68,34 +68,37 @@
                     <li>
                         Смысловые сегменты имени:
                         <ul>
-                            <li><strong>акцент</strong> — смысловая роль элемента;</li>
+                            <li><strong>акцент</strong> — смысловая роль компонента;</li>
                             <li><strong>состояние</strong> — интерактив;</li>
                             <li>
                                 <strong>роль</strong> — что красим:
                                 <ul>
                                     <li>контент <code>FGR</code> — текст, иконка, глиф;</li>
                                     <li>рамка <code>BRD</code> — обводка, граница;</li>
-                                    <li>фон <code>BGR</code> — заливка элемента;</li>
+                                    <li>
+                                        <code>BGR</code> — фоновый цвет для переднего плана: то, на
+                                        чём лежит <code>FGR</code>;
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        У переключаемых компонентов (CHB, TOG, RAD) вместо PRS используется CHD, у
+                        У переключаемых компонентов (CHB, TOG, RDB) вместо PRS используется CHD, у
                         полей ввода INP — состояния с суффиксом <code>_FLD</code>;
                     </li>
                     <li>Роли в каждой карточке показаны цветными пластинами с метками ролей;</li>
                 </ul>
 
                 <div class="note">
-                    Пространственность дополняется объёмом: для приподнятых элементов — градиент
+                    Пространственность дополняется объёмом: для приподнятых компонентов — градиент
                     света
-                    <code>ABV/…/GRD</code>, для глубины — тени <code>&lt;слой&gt;/…/SHD</code> (у
-                    ABV тень вниз, у BLW — внутрь ямы).
+                    <code>ABV</code>/…/<code>GRD</code>, для глубины — тени
+                    <code>&lt;слой&gt;/…/SHD</code> (у ABV тень вниз, у BLW — внутрь ямы).
                 </div>
 
                 <div class="note">
-                    Порядок ролей в карточках отражает пространственное наслоение слоёв:
+                    Порядок ролей в карточках отражает наслоение слоёв внутри одного элемента:
                     <ul>
                         <li>
                             для ABV и SFC:
@@ -133,7 +136,7 @@
                         alt="Кнопка и поле ввода на панели-поверхности"
                     />
                     <figcaption>
-                        Элементы на поверхности: кнопка (ABV) и поле ввода (BLW) на панели (SFC);
+                        Компоненты на поверхности: кнопка (ABV) и поле ввода (BLW) на панели (SFC);
                         все цвета — токены DFT/RGL.
                     </figcaption>
                 </figure>
@@ -141,21 +144,37 @@
                     <li>
                         Кнопка (не нажата, обычная):
                         <ul>
-                            <li>фон — <code>ABV/DFT/RGL/BGR</code>;</li>
-                            <li>текст — <code>ABV/DFT/RGL/FGR</code>;</li>
-                            <li>рамка — <code>ABV/DFT/RGL/BRD</code>;</li>
+                            <li>
+                                фон —
+                                <code>ABV</code>/<code>DFT</code>/<code>RGL</code>/<code>BGR</code>;
+                            </li>
+                            <li>
+                                текст —
+                                <code>ABV</code>/<code>DFT</code>/<code>RGL</code>/<code>FGR</code>;
+                            </li>
+                            <li>
+                                рамка —
+                                <code>ABV</code>/<code>DFT</code>/<code>RGL</code>/<code>BRD</code>;
+                            </li>
                         </ul>
                     </li>
                     <li>
                         Поле ввода:
                         <ul>
-                            <li>дно «ямы» — <code>BLW/DFT/***/BGR</code>;</li>
-                            <li>введённый текст — <code>BLW/DFT/***/FGR</code>;</li>
+                            <li>
+                                дно «ямы» —
+                                <code>BLW</code>/<code>DFT</code>/<code>***</code>/<code>BGR</code>;
+                            </li>
+                            <li>
+                                введённый текст —
+                                <code>BLW</code>/<code>DFT</code>/<code>***</code>/<code>FGR</code>;
+                            </li>
                         </ul>
                     </li>
                     <li>
-                        Карточка — сама поверхность: <code>SFC/DFT/RGL/BGR</code> + тень
-                        <code>SFC/DFT/RGL/SHD</code>;
+                        Карточка — сама поверхность:
+                        <code>SFC</code>/<code>DFT</code>/<code>RGL</code>/<code>BGR</code> + тень
+                        <code>SFC</code>/<code>DFT</code>/<code>RGL</code>/<code>SHD</code>;
                     </li>
                 </ul>
 
