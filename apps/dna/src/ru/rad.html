@@ -17,31 +17,17 @@
         <link rel="apple-touch-icon" href="../assets/favicon-180.png" />
         <meta name="robots" content="noindex, nofollow" />
     </head>
-    <body>
+    <body class="drawer-layout">
         <div class="layout">
-            <aside class="sidebar">
-                <a class="brand" href="./index.html">
-                    ДНК UI-Kit'а
-                    <small>Rosinfotech</small>
-                </a>
-                <nav class="nav">
-                    <a href="./semantics.html">Семантика <span class="tag">SEM</span></a>
-                    <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
-                    <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
-                    <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
-                    <a href="./rad.html" aria-current="page"
-                        >Скругления <span class="tag">RAD</span></a
-                    >
-                    <a href="./thk.html">Толщины <span class="tag">THK</span></a>
-                    <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
-                    <a href="./fty.html">Функциональная типографика <span class="tag">FTY</span></a>
-                    <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
-                </nav>
-                <a class="lang-toggle" href="../rad.html" aria-label="Switch to English"
+            <header class="topbar">
+                <span class="topbar-brand">ДНК UI-Kit'а Rosinfotech</span>
+            </header>
+            <div class="topbar-actions">
+                <a class="tb-btn lang-btn" href="../rad.html" aria-label="Switch to English"
                     ><span>EN</span></a
                 >
                 <button
-                    class="theme-toggle"
+                    class="tb-btn"
                     id="theme-toggle"
                     type="button"
                     aria-label="Переключить тему"
@@ -77,9 +63,39 @@
                             stroke-linejoin="round"
                         />
                     </svg>
-                    <span>Тема</span>
                 </button>
-            </aside>
+                <button
+                    class="tb-btn menu-btn"
+                    id="menu-btn"
+                    type="button"
+                    aria-label="Меню"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="scrim" id="scrim"></div>
+            <div class="drawer-rail">
+                <aside class="drawer" id="drawer">
+                    <nav class="nav">
+                        <a href="./sem.html">Семантика <span class="tag">SEM</span></a>
+                        <a href="./clr.html">Абсолютный цвет <span class="tag">CLR</span></a>
+                        <a href="./fcl.html">Функциональный цвет <span class="tag">FCL</span></a>
+                        <a href="./spc.html">Отступы <span class="tag">SPC</span></a>
+                        <a href="./rad.html" aria-current="page"
+                            >Скругления <span class="tag">RAD</span></a
+                        >
+                        <a href="./thk.html">Толщины <span class="tag">THK</span></a>
+                        <a href="./txt.html">Типографика <span class="tag">TXT</span></a>
+                        <a href="./fty.html"
+                            >Функциональная типографика <span class="tag">FTY</span></a
+                        >
+                        <a href="./grd.html">Градиенты высоты <span class="tag">GRD</span></a>
+                    </nav>
+                </aside>
+            </div>
             <main class="content">
                 <h1>Скругления / RAD</h1>
                 <p class="lead">
@@ -148,8 +164,30 @@
                     только ID привязок. При сборке библиотеки в Figma имена задаются по шагам шкалы:
                     RAD/XXS…RAD/XXL.
                 </div>
-                <p class="footer">ДНК UI-Kit'а Rosinfotech</p>
             </main>
         </div>
+        <script>
+            (function () {
+                var btn = document.getElementById("menu-btn");
+                var scrim = document.getElementById("scrim");
+                function close() {
+                    document.body.classList.remove("drawer-open");
+                    btn.setAttribute("aria-expanded", "false");
+                }
+                btn.addEventListener("click", function () {
+                    var opened = document.body.classList.toggle("drawer-open");
+                    btn.setAttribute("aria-expanded", String(opened));
+                });
+                scrim.addEventListener("click", close);
+                document.addEventListener("keydown", function (e) {
+                    if (e.key === "Escape") close();
+                });
+                window.addEventListener("resize", close);
+                window.addEventListener("scroll", close, true);
+                document.querySelectorAll(".drawer a").forEach(function (a) {
+                    a.addEventListener("click", close);
+                });
+            })();
+        </script>
     </body>
 </html>

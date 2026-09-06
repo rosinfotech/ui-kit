@@ -17,35 +17,16 @@
         <link rel="apple-touch-icon" href="./assets/favicon-180.png" />
         <meta name="robots" content="noindex, nofollow" />
     </head>
-    <body>
+    <body class="drawer-layout">
         <div class="layout">
-            <aside class="sidebar">
-                <a class="brand" href="./index.html">
-                    DNA of the UI-Kit
-                    <small>Rosinfotech</small>
-                </a>
-                <nav class="nav">
-                    <a href="./semantics.html">Semantics <span class="tag">SEM</span></a>
-                    <a href="./clr.html">Absolute color <span class="tag">CLR</span></a>
-                    <a href="./fcl.html">Functional color <span class="tag">FCL</span></a>
-                    <a href="./spc.html" aria-current="page"
-                        >Spacing <span class="tag">SPC</span></a
-                    >
-                    <a href="./rad.html">Radiuses <span class="tag">RAD</span></a>
-                    <a href="./thk.html">Thicknesses <span class="tag">THK</span></a>
-                    <a href="./txt.html">Typography <span class="tag">TXT</span></a>
-                    <a href="./fty.html">Functional typography <span class="tag">FTY</span></a>
-                    <a href="./grd.html">Elevation gradients <span class="tag">GRD</span></a>
-                </nav>
-                <a class="lang-toggle" href="./ru/spc.html" aria-label="Switch to Russian"
+            <header class="topbar">
+                <span class="topbar-brand">DNA of the UI-Kit Rosinfotech</span>
+            </header>
+            <div class="topbar-actions">
+                <a class="tb-btn lang-btn" href="./ru/spc.html" aria-label="Switch to Russian"
                     ><span>RU</span></a
                 >
-                <button
-                    class="theme-toggle"
-                    id="theme-toggle"
-                    type="button"
-                    aria-label="Toggle theme"
-                >
+                <button class="tb-btn" id="theme-toggle" type="button" aria-label="Toggle theme">
                     <svg
                         class="icon-sun"
                         width="16"
@@ -77,9 +58,37 @@
                             stroke-linejoin="round"
                         />
                     </svg>
-                    <span>Theme</span>
                 </button>
-            </aside>
+                <button
+                    class="tb-btn menu-btn"
+                    id="menu-btn"
+                    type="button"
+                    aria-label="Menu"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="scrim" id="scrim"></div>
+            <div class="drawer-rail">
+                <aside class="drawer" id="drawer">
+                    <nav class="nav">
+                        <a href="./sem.html">Semantics <span class="tag">SEM</span></a>
+                        <a href="./clr.html">Absolute color <span class="tag">CLR</span></a>
+                        <a href="./fcl.html">Functional color <span class="tag">FCL</span></a>
+                        <a href="./spc.html" aria-current="page"
+                            >Spacing <span class="tag">SPC</span></a
+                        >
+                        <a href="./rad.html">Radiuses <span class="tag">RAD</span></a>
+                        <a href="./thk.html">Thicknesses <span class="tag">THK</span></a>
+                        <a href="./txt.html">Typography <span class="tag">TXT</span></a>
+                        <a href="./fty.html">Functional typography <span class="tag">FTY</span></a>
+                        <a href="./grd.html">Elevation gradients <span class="tag">GRD</span></a>
+                    </nav>
+                </aside>
+            </div>
             <main class="content">
                 <h1>Spacing / SPC</h1>
                 <p class="lead">
@@ -146,9 +155,30 @@
                         </ul>
                     </li>
                 </ul>
-
-                <p class="footer">Rosinfotech UI-Kit DNA</p>
             </main>
         </div>
+        <script>
+            (function () {
+                var btn = document.getElementById("menu-btn");
+                var scrim = document.getElementById("scrim");
+                function close() {
+                    document.body.classList.remove("drawer-open");
+                    btn.setAttribute("aria-expanded", "false");
+                }
+                btn.addEventListener("click", function () {
+                    var opened = document.body.classList.toggle("drawer-open");
+                    btn.setAttribute("aria-expanded", String(opened));
+                });
+                scrim.addEventListener("click", close);
+                document.addEventListener("keydown", function (e) {
+                    if (e.key === "Escape") close();
+                });
+                window.addEventListener("resize", close);
+                window.addEventListener("scroll", close, true);
+                document.querySelectorAll(".drawer a").forEach(function (a) {
+                    a.addEventListener("click", close);
+                });
+            })();
+        </script>
     </body>
 </html>

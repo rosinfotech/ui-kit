@@ -11,6 +11,7 @@
     --clr-gry-925: #1b1b1b;
     --clr-gry-975: #080808;
     --page-bg: #000;
+    --topbar-glass: rgb(8 8 8 / 0.65);
 
     /* Акценты (FCL, слой ABV, RGL) */
     --fcl-dft-bgr: #dbdbdb;
@@ -49,6 +50,7 @@
     --clr-gry-925: #dbdbdb;
     --clr-gry-975: #fcfcfc;
     --page-bg: #ffffff;
+    --topbar-glass: rgb(252 252 252 / 0.65);
 }
 
 /* ---------- Базовая единица ----------
@@ -173,7 +175,7 @@ body {
 .nav a {
     color: var(--clr-gry-200);
     text-decoration: none;
-    padding: var(--sp-xxs) var(--sp-sxs);
+    padding: var(--sp-xxs) var(--sp-szm);
     gap: var(--sp-sxs);
     border-radius: var(--sp-xxs);
     border: 1px solid transparent;
@@ -799,4 +801,174 @@ th code {
 .lang-toggle:hover {
     background: var(--clr-gry-875);
     border-color: var(--clr-gry-750);
+}
+
+/* ---------- Шторка меню (прототип: semantics) ---------- */
+
+body.drawer-layout .layout {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+/* Шапка основной области: бренд слева, языки/тема/меню справа */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    padding: 0 var(--sp-szm);
+    background: var(--topbar-glass);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--clr-gry-925);
+}
+
+.topbar-brand {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.758125rem;
+    letter-spacing: -0.015rem;
+    color: var(--clr-gry-025);
+}
+
+.topbar-actions {
+    position: fixed;
+    top: 0.75rem;
+    right: calc(max(0px, (100vw - 90rem) / 2) + var(--sp-szm));
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sxs);
+}
+
+.tb-btn {
+    height: 2.5rem;
+    min-width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--sp-sxs);
+    background: var(--clr-gry-900);
+    border: 1px solid var(--clr-gry-925);
+    border-radius: var(--sp-xxs);
+    color: var(--clr-gry-200);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.tb-btn:hover {
+    border-color: var(--clr-gry-750);
+}
+
+.tb-btn svg {
+    display: block;
+}
+
+.lang-btn {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+
+/* Кнопка-бутерброд: при открытии превращается в крест */
+.menu-btn {
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.menu-btn span {
+    display: block;
+    width: 1rem;
+    height: 2px;
+    background: var(--clr-gry-200);
+    border-radius: 1px;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+body.drawer-open .menu-btn span:nth-child(1) {
+    transform: translateY(0.375rem) rotate(45deg);
+}
+
+body.drawer-open .menu-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+body.drawer-open .menu-btn span:nth-child(3) {
+    transform: translateY(-0.375rem) rotate(-45deg);
+}
+
+.scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: rgb(0 0 0 / 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+body.drawer-open .scrim {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Рельса: полоса у края основной области, клиппит шторку —
+   меню выезжает именно из-за кромки плиты */
+.drawer-rail {
+    position: fixed;
+    top: 0;
+    right: calc(max(0px, (100vw - 90rem) / 2) + 1px);
+    width: 16rem;
+    height: 100vh;
+    z-index: 55;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.drawer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16rem;
+    height: 100vh;
+    background: var(--clr-gry-900);
+    padding: calc(4rem - 1px + 22px) var(--sp-szm) var(--sp-szm);
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+body.drawer-open .drawer-rail {
+    pointer-events: auto;
+}
+
+body.drawer-open .drawer {
+    transform: translateX(0);
+}
+
+/* разделитель на уровне нижней рамки шапки, на всю ширину блока */
+.drawer::before {
+    content: "";
+    position: absolute;
+    top: calc(4rem - 1px);
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--clr-gry-925);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-btn span,
+    .scrim,
+    .drawer {
+        transition: none;
+    }
 }

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1] - 2026-09-06
+
+### Changed
+
+- DNA layout reworked across all 20 pages: static sidebar replaced with a glass topbar (brand left, language/theme/menu buttons in an independent overlay layer) and a right drawer sliding from the main-area edge with rail clipping; drawer closes on menu item, outside tap, Escape, resize and scroll; hamburger morphs into a cross
+- Semantics page renamed semantics.html → sem.html (symmetrically in ru/); page footers removed; short pages now start at the top instead of centering (grid rows auto/1fr)
+
 ## [0.4.0] - 2026-09-06
 
 ### Added
