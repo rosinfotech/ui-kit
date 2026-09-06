@@ -1,6 +1,6 @@
 {
     "name": "@rosinfo.tech/ui-kit",
-    "version": "0.2.2",
+    "version": "0.3.0",
     "description": "Rosinfotech UI Kit",
     "type": "module",
     "workspaces": [
@@ -29,8 +29,8 @@
         "dna": "npm run dev --workspace apps/dna",
         "format": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css}\"",
         "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css}\"",
-        "husky:pre-commit": "",
-        "husky:pre-push": "npm run format:fix && npm run lint:fix && npm run type-check",
+        "husky:pre-commit": "npm run format:fix && npm run lint:fix && npm run type-check",
+        "husky:pre-push": "",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "prepare": "husky",
@@ -51,7 +51,7 @@
         "@rosinfo.tech/eslint-config-import": "^0.0.9",
         "@rosinfo.tech/eslint-config-javascript": "^0.0.33",
         "@rosinfo.tech/eslint-config-react": "^0.0.20",
-        "@rosinfo.tech/eslint-config-typescript": "^0.2.2",
+        "@rosinfo.tech/eslint-config-typescript": "^0.3.0",
         "@rosinfo.tech/prettier-config-standard": "^0.0.12",
         "@types/node": "^22.10.2",
         "@types/react": "^19.2.7",

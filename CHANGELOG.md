@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0] - 2026-09-06
+
+### Added
+
+- Light/dark theme switcher on all DNA pages: defaults to the system theme (follows `prefers-color-scheme` until an explicit choice), persists the choice in localStorage, inline SVG sun/moon toggle in the sidebar; light theme mirrors the GRY token scale, illustrations stay on fixed dark plates
+
 ## [0.2.2] - 2026-09-06
 
 ### Added

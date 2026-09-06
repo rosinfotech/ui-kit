@@ -10,6 +10,7 @@
     --clr-gry-900: #0e0e0e;
     --clr-gry-925: #1b1b1b;
     --clr-gry-975: #080808;
+    --page-bg: #000;
 
     /* Акценты (FCL, слой ABV, RGL) */
     --fcl-dft-bgr: #dbdbdb;
@@ -31,6 +32,23 @@
 
     --rad-szs: 0.75rem;
     --rad-szm: 1rem;
+}
+
+/* ---------- Светлая тема ---------- */
+
+[data-theme="light"] {
+    --clr-gry-025: #080808;
+    --clr-gry-100: #1b1b1b;
+    --clr-gry-200: #222222;
+    --clr-gry-300: #363636;
+    --clr-gry-475: #575757;
+    --clr-gry-600: #646464;
+    --clr-gry-750: #c1c1c1;
+    --clr-gry-875: #e8e8e8;
+    --clr-gry-900: #f6f6f6;
+    --clr-gry-925: #dbdbdb;
+    --clr-gry-975: #fcfcfc;
+    --page-bg: #ffffff;
 }
 
 /* ---------- Базовая единица ----------
@@ -59,7 +77,7 @@ html {
 
 body {
     margin: 0;
-    background: #000;
+    background: var(--page-bg, #000);
     color: var(--clr-gry-200);
     font-family: var(--font-body);
     font-weight: 400;
@@ -92,6 +110,37 @@ body {
     top: 0;
     height: 100vh;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.theme-toggle {
+    margin-top: var(--sp-szm);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sxs);
+    padding: var(--sp-xxs) var(--sp-sxs);
+    border: 1px solid var(--clr-gry-925);
+    border-radius: var(--sp-xxs);
+    background: transparent;
+    color: var(--clr-gry-200);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background: var(--clr-gry-875);
+    border-color: var(--clr-gry-750);
+}
+
+[data-theme="dark"] .icon-moon {
+    display: none;
+}
+
+[data-theme="light"] .icon-sun {
+    display: none;
 }
 
 .brand {
@@ -650,8 +699,8 @@ th code {
 
 .figure {
     margin: var(--sp-szm) 0;
-    background: var(--clr-gry-900);
-    border: 1px solid var(--clr-gry-925);
+    background: #0e0e0e;
+    border: 1px solid #1b1b1b;
     border-radius: var(--rad-szm);
     padding: var(--sp-szm);
 }
