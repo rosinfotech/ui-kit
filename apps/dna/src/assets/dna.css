@@ -12,6 +12,7 @@
     --clr-gry-975: #080808;
     --page-bg: #000;
     --topbar-glass: rgb(8 8 8 / 0.65);
+    --fsw-card: 280px;
 
     /* Акценты (FCL, слой ABV, RGL) */
     --fcl-dft-bgr: #dbdbdb;
@@ -51,6 +52,7 @@
     --clr-gry-975: #fcfcfc;
     --page-bg: #ffffff;
     --topbar-glass: rgb(252 252 252 / 0.65);
+    --fsw-card: 280px;
 }
 
 /* ---------- Базовая единица ----------
@@ -72,9 +74,21 @@
 
 html {
     scroll-behavior: smooth;
-    /* Флюидный масштаб: корень 16px на узких экранах (минимум = текущие
-       метрики FTY), пропорциональный рост до 20px на широких */
-    font-size: clamp(1rem, calc(0.6rem + 0.5vw), 1.25rem);
+    text-size-adjust: 100%;
+    /* Масштаб ступенями по брейкпоинтам (мобайл — база): 16 / 17 / 18 */
+    font-size: 16px;
+}
+
+@media (min-width: 769px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 1281px) {
+    html {
+        font-size: 18px;
+    }
 }
 
 body {
@@ -103,18 +117,6 @@ body {
 }
 
 /* ---------- Шапка и навигация ---------- */
-
-.sidebar {
-    border-right: 1px solid var(--clr-gry-925);
-    background: var(--clr-gry-900);
-    padding: var(--sp-szm);
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-}
 
 .theme-toggle {
     margin-top: var(--sp-szm);
@@ -177,6 +179,7 @@ body {
     text-decoration: none;
     padding: var(--sp-xxs) var(--sp-szm);
     gap: var(--sp-sxs);
+    white-space: nowrap;
     border-radius: var(--sp-xxs);
     border: 1px solid transparent;
     display: flex;
@@ -433,6 +436,8 @@ body {
 
 .content {
     padding: var(--sp-sxl) var(--sp-sxl) var(--sp-xxl);
+    min-width: 0;
+    overflow-x: clip;
 }
 
 /* ---------- Вертикальный ритм = раскладка секции FTY в Figma ----------
@@ -554,15 +559,23 @@ code:has(> .seg) {
 
 /* ---------- Таблицы ---------- */
 
-table {
-    border-collapse: collapse;
-    width: 100%;
+.table-wrap {
+    overflow-x: auto;
     margin: var(--sp-sxl) 0 var(--sp-szm);
 }
 
-h2 + table,
-h3 + table {
+h2 + .table-wrap,
+h3 + .table-wrap {
     margin-top: var(--sp-szm);
+}
+
+.table-wrap table {
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
 th {
@@ -673,23 +686,6 @@ th code {
     color: var(--clr-gry-600);
 }
 
-@media (max-width: 860px) {
-    .layout {
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        position: static;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--clr-gry-925);
-    }
-
-    .content {
-        padding: var(--sp-szm);
-    }
-}
-
 /* Подписи внутри шапок матрицы типографики */
 .type-matrix th small,
 .family-head .count,
@@ -759,6 +755,10 @@ th code {
     gap: 1.5rem;
 }
 
+.fsw-role {
+    flex-direction: row-reverse;
+}
+
 .fsw-plate {
     height: 3.5rem;
     border-radius: var(--rad-szs);
@@ -775,9 +775,13 @@ th code {
     flex: none;
 }
 
+.fcl-table {
+    overflow-x: auto;
+}
+
 .fsw-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(var(--fsw-card), 1fr));
     column-gap: 1rem;
     row-gap: 2rem;
     margin: var(--sp-szm) 0;
@@ -811,6 +815,14 @@ body.drawer-layout .layout {
     grid-template-rows: auto 1fr;
 }
 
+body.drawer-layout .layout > * {
+    min-width: 0;
+}
+
+body {
+    overflow-x: clip;
+}
+
 /* Шапка основной области: бренд слева, языки/тема/меню справа */
 .topbar {
     position: sticky;
@@ -838,7 +850,7 @@ body.drawer-layout .layout {
 .topbar-actions {
     position: fixed;
     top: 0.75rem;
-    right: calc(max(0px, (100vw - 90rem) / 2) + var(--sp-szm));
+    right: max(var(--sp-szm), calc(50% - 45rem + var(--sp-szm)));
     z-index: 60;
     display: flex;
     align-items: center;
@@ -923,9 +935,10 @@ body.drawer-open .scrim {
 .drawer-rail {
     position: fixed;
     top: 0;
-    right: calc(max(0px, (100vw - 90rem) / 2) + 1px);
-    width: 16rem;
+    right: max(1px, calc(50% - 45rem + 1px));
+    width: 380px;
     height: 100vh;
+    height: 100dvh;
     z-index: 55;
     overflow: hidden;
     pointer-events: none;
@@ -935,8 +948,9 @@ body.drawer-open .scrim {
     position: absolute;
     top: 0;
     right: 0;
-    width: 16rem;
+    width: 380px;
     height: 100vh;
+    height: 100dvh;
     background: var(--clr-gry-900);
     padding: calc(4rem - 1px + 22px) var(--sp-szm) var(--sp-szm);
     overflow-y: auto;
@@ -970,5 +984,81 @@ body.drawer-open .drawer {
     .scrim,
     .drawer {
         transition: none;
+    }
+}
+
+@media (max-width: 1280px) {
+    :root {
+        --fsw-card: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --fsw-card: 240px;
+    }
+
+    .content {
+        padding: var(--sp-szm) var(--sp-szs) var(--sp-szm);
+    }
+
+    .topbar {
+        padding: 0 var(--sp-sxs);
+    }
+
+    .topbar-brand {
+        font-size: 1.25rem;
+        line-height: 1.465rem;
+        letter-spacing: -0.0125rem;
+    }
+
+    .topbar-actions {
+        right: var(--sp-sxs);
+        gap: var(--sp-xxs);
+    }
+
+    /* таблицы остаются таблицами: ячейки переносятся, таблица тянется на всю ширину */
+    th {
+        white-space: normal;
+    }
+
+    th,
+    td {
+        padding: 0.5rem 0.75rem;
+        overflow-wrap: break-word;
+    }
+
+    th code,
+    td code {
+        white-space: normal;
+    }
+
+    .formula {
+        padding: var(--sp-szs);
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+    }
+
+    .note {
+        padding: var(--sp-szs);
+    }
+
+    .figure {
+        padding: var(--sp-szs);
+    }
+
+    .drawer-rail,
+    .drawer {
+        width: min(340px, 86vw);
+    }
+
+    .drawer {
+        padding-right: var(--sp-szs);
+        padding-left: var(--sp-szs);
+    }
+
+    .nav a {
+        padding-right: var(--sp-szs);
+        padding-left: var(--sp-szs);
     }
 }

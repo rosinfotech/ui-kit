@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.2] - 2026-09-07
+
+### Changed
+
+- Responsive overhaul: fluid root scaling replaced with stepped breakpoints (16/17/18px, mobile as the base); tables wrapped in scrollable containers with wrapping cells instead of overflowing; body and grid items clipped from stray horizontal scroll; fixed elements positioned without 100vw to avoid scrollbar-induced overflow
+- FCL palette: single shared horizontal scroll across the ABV/SFC/BLW sections, chip sizes bound to breakpoints (280/260/240px), role labels moved to the left of the plates with 56px plate height restored
+- Drawer widened (380px desktop, min(340px, 86vw) mobile) with non-wrapping menu items and dynamic viewport height (dvh)
+
 ## [0.4.1] - 2026-09-06
 
 ### Changed
